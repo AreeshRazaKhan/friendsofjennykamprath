@@ -63,15 +63,16 @@ const WhyRunning = () => {
             </h2>
 
             <p className="font-body text-lg leading-[1.7] text-warm-600 mb-8 max-w-lg">
-              Washington County spending is out of control. Taxpayers are being
-              treated like a bottomless ATM while basic services are used as
-              leverage to demand more money.
+              I am not an entrenched incumbent or politician. I am not running
+              to protect the status quo. I am running to represent the
+              overlooked taxpayers of Washington County.
             </p>
 
             <p className="font-body text-lg leading-[1.7] text-warm-600 mb-10 max-w-lg">
-              I&#39;m running to restore accountability, say no to new taxes and
-              fees, and return government to the people who actually pay for
-              it — working families, seniors, and small business owners.
+              County leadership has treated taxpayers like a bottomless piggy
+              bank — taxes go up every year while they claim there is never
+              enough money. It&#39;s time for government to live within its
+              means, just like families and businesses do.
             </p>
 
             <Link

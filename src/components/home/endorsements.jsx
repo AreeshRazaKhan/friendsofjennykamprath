@@ -2,24 +2,24 @@ import Image from 'next/image'
 
 const ENDORSEMENTS = [
   {
-    name: 'Oregon Taxpayers United',
-    type: 'Organization',
-    quote: 'We need leaders who will say no to new taxes. Jenny Kamprath has proven she will hold the line for taxpayers.',
+    name: 'Commissioner Bob Terry',
+    type: 'Former Official',
+    quote: 'Washington County 2010–2018. Jenny will bring the accountability and fiscal discipline our county needs.',
   },
   {
-    name: 'Washington County Small Business Alliance',
-    type: 'Organization',
-    quote: 'Jenny is the only candidate who truly understands the burdens regulations place on local businesses. She has our full endorsement.',
+    name: 'Andy Duyck',
+    type: 'Former Official',
+    quote: 'Past Washington County Chair. Jenny has the leadership and vision to move Washington County forward.',
   },
   {
-    name: 'Sheriff Tom Henderson (Ret.)',
+    name: 'Aaron Dumbrow',
+    type: 'Elected Official',
+    quote: 'Mayor of North Plains. Jenny understands the needs of our communities and will fight for residents.',
+  },
+  {
+    name: 'Kim Rice',
     type: 'Community Leader',
-    quote: 'Jenny\'s commitment to public safety is unwavering. She\'ll make sure our first responders have the support they need.',
-  },
-  {
-    name: 'Pastor Rebecca Owens',
-    type: 'Community Leader',
-    quote: 'Jenny genuinely cares about our neighborhoods and families. She listens, and she acts. That\'s rare in politics.',
+    quote: 'Retired teacher of 27 years. Jenny listens to people and will bring real change to county government.',
   },
 ]
 

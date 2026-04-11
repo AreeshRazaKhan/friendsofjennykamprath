@@ -33,9 +33,10 @@ const PoweredByPeople = () => {
           </h2>
 
           <p className="font-body text-xl leading-[1.7] text-warm-600 max-w-2xl">
-            This campaign is not backed by bureaucrats, insider organizations, or
-            special interest groups. It is powered entirely by local residents who
-            are fed up with reckless spending and unaccountable government.
+            This campaign has no bureaucratic or organizational endorsements.
+            It is powered by the people. Jenny has no allegiance to political
+            insiders or special interests — her sole interest is representing
+            Washington County citizens.
           </p>
         </div>
       </div>

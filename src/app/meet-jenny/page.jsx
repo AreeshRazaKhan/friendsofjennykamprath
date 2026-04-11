@@ -100,13 +100,13 @@ const MeetJenny = () => {
                 About the Candidate
               </p>
               <h1 className="font-display font-black text-[clamp(2.5rem,5vw,3.5rem)] leading-[1.08] text-white mb-6">
-                A Taxpayer Advocate Who Gets{' '}
-                <span className="text-patriot-red">Results.</span>
+                Leadership with a{' '}
+                <span className="text-patriot-red">Fresh Perspective.</span>
               </h1>
               <p className="font-body text-lg text-white/60 leading-relaxed max-w-xl">
-                Jenny Kamprath is a no-nonsense leader with real-world experience
-                in business, budgets, and community advocacy — running to restore
-                fiscal responsibility to Washington County.
+                Jenny Kamprath is a former small business owner, entrepreneur,
+                and strong leader — not a career politician. She is running to
+                represent the overlooked taxpayers of Washington County.
               </p>
             </div>
           </div>
@@ -118,9 +118,9 @@ const MeetJenny = () => {
             <div className="lg:ml-[10%] max-w-3xl">
               <div className="w-16 h-[3px] bg-patriot-red mb-8" />
               <blockquote className="font-display font-bold text-[clamp(1.5rem,3vw,2rem)] leading-[1.3] text-navy-900 mb-6">
-                &quot;Washington County taxpayers deserve a chair who will say no
-                to wasteful spending, stand up for working families, and run
-                government like it belongs to the people — because it does.&quot;
+                &quot;I promise a new vision, transparency, no new taxes, and
+                leadership that will fight for the rights of taxpayers.
+                It&apos;s time to take our county government back.&quot;
               </blockquote>
               <p className="font-body text-base text-warm-400">
                 — Jenny Kamprath
@@ -154,21 +154,22 @@ const MeetJenny = () => {
               </div>
               <div>
                 <p className="font-body text-xs font-bold uppercase tracking-[3px] text-patriot-red mb-4">
-                  Washington County Native
+                  Not a Politician
                 </p>
                 <h2 className="font-display font-extrabold text-[clamp(1.8rem,3.5vw,2.25rem)] leading-[1.15] text-navy-900 mb-6">
-                  Raised Right Here
+                  A Fresh Perspective
                 </h2>
                 <p className="font-body text-lg text-warm-600 leading-[1.7] mb-4">
-                  Jenny Kamprath grew up in the neighborhoods she wants to lead.
-                  She knows the communities of Washington County — from Beaverton
-                  to Hillsboro, Tigard to Sherwood — not from a briefing book, but
-                  from a lifetime of living, working, and raising a family here.
+                  Jenny Kamprath is not an entrenched incumbent or a career
+                  politician. She is not running to protect the status quo. She is
+                  a former small business owner and entrepreneur with practical,
+                  real-world experience — running to represent the overlooked
+                  taxpayers of Washington County.
                 </p>
                 <p className="font-body text-lg text-warm-600 leading-[1.7]">
-                  That firsthand experience is exactly why she understands the
-                  frustration taxpayers feel when they see their hard-earned money
-                  wasted on bloated budgets and misguided priorities.
+                  She offers leadership with a fresh perspective, free of old
+                  allegiances or obligations — focused entirely on solving
+                  problems and getting things done.
                 </p>
               </div>
             </div>
@@ -180,19 +181,19 @@ const MeetJenny = () => {
                   Real-World Experience
                 </p>
                 <h2 className="font-display font-extrabold text-[clamp(1.8rem,3.5vw,2.25rem)] leading-[1.15] text-navy-900 mb-6">
-                  A Career Built on Accountability
+                  Business Owner &amp; Entrepreneur
                 </h2>
                 <p className="font-body text-lg text-warm-600 leading-[1.7] mb-4">
-                  Jenny&apos;s career in business and finance taught her what
-                  government too often forgets: every dollar has to be accounted
-                  for. She has managed budgets, cut waste, and delivered results —
-                  skills she will bring directly to the County Chair&apos;s office.
+                  Jenny&apos;s career in sales and small business taught her that
+                  nearly every aspect of life involves communication, trust, and
+                  the ability to bring people together. She has the ability to
+                  effectively engage with businesses and individuals from all
+                  walks of life and to cut through the noise to negotiate results.
                 </p>
                 <p className="font-body text-lg text-warm-600 leading-[1.7]">
-                  Unlike career politicians who have never balanced a real budget,
-                  Jenny knows how to find the waste, say no to unnecessary
-                  spending, and stretch every dollar to serve the people who
-                  actually pay the bills.
+                  That practical, real-world business experience is exactly what
+                  Washington County needs — a leader who knows how to solve
+                  problems, not create more bureaucracy.
                 </p>
               </div>
               <div className="relative">
@@ -228,19 +229,19 @@ const MeetJenny = () => {
                   Standing Up for Neighbors
                 </p>
                 <h2 className="font-display font-extrabold text-[clamp(1.8rem,3.5vw,2.25rem)] leading-[1.15] text-navy-900 mb-6">
-                  A Voice for the Community
+                  A Strong &amp; Determined Leader
                 </h2>
                 <p className="font-body text-lg text-warm-600 leading-[1.7] mb-4">
-                  Long before she decided to run for office, Jenny was showing up
-                  at public meetings, asking tough questions, and holding elected
-                  officials accountable. She has been a consistent voice for
-                  taxpayers, seniors, and small business owners who feel ignored
-                  by county government.
+                  Jenny is committed to serving with integrity, focusing on
+                  results, and ensuring the voices of our community are heard.
+                  She will listen and collaborate with community members to create
+                  practical solutions that benefit residents, families, and local
+                  businesses.
                 </p>
                 <p className="font-body text-lg text-warm-600 leading-[1.7]">
-                  Jenny has stood shoulder-to-shoulder with neighbors opposing
-                  reckless spending, defending public safety, and demanding that
-                  government serve the people — not the other way around.
+                  She humbly asks for your vote so that together we can bring
+                  thoughtful, effective leadership to Washington County and build
+                  a stronger future for everyone.
                 </p>
               </div>
             </div>
@@ -375,16 +376,11 @@ const MeetJenny = () => {
                 Join Jenny on the Campaign Trail
               </h2>
 
-              <blockquote className="font-body text-lg text-white/70 leading-relaxed mb-10 max-w-2xl mx-auto">
-                &quot;Jenny doesn&apos;t need to be taught how county government
-                works. She needs only the opportunity to demonstrate that it can
-                work better — for all of us.&quot;
-              </blockquote>
-
-              <p className="font-body text-base text-white/60 leading-relaxed mb-10 max-w-xl mx-auto">
-                Whether you volunteer, knock on doors, make phone calls, or
-                contribute financially — every bit of support moves Washington
-                County closer to the accountable government it deserves.
+              <p className="font-body text-lg text-white/70 leading-relaxed mb-10 max-w-2xl mx-auto">
+                Vote for a new direction. Vote for Jenny Kamprath for Washington
+                County Chair. Whether you volunteer, knock on doors, or contribute
+                financially — every bit of support moves us closer to the
+                accountable government Washington County deserves.
               </p>
 
               <div className="flex flex-wrap gap-4 justify-center">

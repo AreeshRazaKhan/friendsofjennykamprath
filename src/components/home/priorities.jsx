@@ -1,31 +1,31 @@
 const PRIORITIES = [
   {
     number: '01',
-    title: 'Stop the Spending — No New Taxes',
+    title: 'Stop Overspending — Say NO to New Taxes',
     items: [
-      'Audit county finances top to bottom',
-      'Oppose every new tax and fee proposal',
-      'Eliminate waste and bureaucratic bloat',
+      'Initiate a full audit for spending transparency',
+      'Eliminate waste and cut bureaucratic bloat',
+      'Make government live within its means like families do',
     ],
     accent: 'bg-patriot-red',
   },
   {
     number: '02',
-    title: 'Cut Red Tape for Housing & Small Business',
+    title: 'Cut Red Tape Strangling Building & Business',
     items: [
-      'Streamline permitting and approvals',
-      'Remove regulations that drive up housing costs',
-      'Make Washington County open for business',
+      'Reduce regulations that drive up housing costs',
+      'Streamline permitting and approvals for builders',
+      'Support small business growth across the county',
     ],
     accent: 'bg-navy-700',
   },
   {
     number: '03',
-    title: 'Protect Public Safety & Neighborhoods',
+    title: 'Support Public Safety — Protect Neighborhoods',
     items: [
-      'Fully back law enforcement and first responders',
-      'Oppose transient housing in stable neighborhoods',
-      'Keep communities safe and livable',
+      'Public safety is government\'s primary responsibility',
+      'No transient housing in suburban neighborhoods',
+      'Stop deprioritizing police and first responders',
     ],
     accent: 'bg-navy-900',
   },

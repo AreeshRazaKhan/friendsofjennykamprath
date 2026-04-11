@@ -61,8 +61,9 @@ const Hero = () => {
           </h1>
 
           <p className="font-body text-lg leading-relaxed text-white/70 max-w-xl mb-10">
-            Jenny Kamprath — a no-nonsense leader focused on fiscal
-            responsibility, safe neighborhoods, and common-sense government.
+            Jenny Kamprath — a former small business owner and entrepreneur,
+            not a career politician. Running to stop overspending, cut red
+            tape, and fight for taxpayers.
           </p>
 
           <div className="flex flex-wrap gap-4">
