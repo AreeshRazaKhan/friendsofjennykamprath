@@ -1,18 +1,7 @@
-'use client'
-
-import { useState } from 'react'
-
 import Image from 'next/image'
 import Link from 'next/link'
 
 const Hero = () => {
-  const [firstName, setFirstName] = useState('')
-  const [email, setEmail] = useState('')
-
-  const handleSubmit = (e) => {
-    e.preventDefault()
-  }
-
   return (
     <section className="relative min-h-screen bg-navy-900 overflow-hidden pt-[72px]">
       {/* Background image with overlay */}
@@ -96,65 +85,50 @@ const Hero = () => {
           </div>
         </div>
 
-        {/* Right — 45% sign-up form */}
+        {/* Right — 45% promise card */}
         <div className="flex-[0_0_45%] flex justify-center lg:justify-end w-full pb-20 lg:pb-0">
-          <div className="w-full max-w-sm mx-auto lg:mx-0 bg-white/[0.05] backdrop-blur-sm
-            border border-white/[0.1] rounded-2xl p-8 relative overflow-hidden">
+          <div className="w-full max-w-md mx-auto lg:mx-0 bg-white/[0.05] backdrop-blur-sm
+            border border-white/[0.1] rounded-2xl p-8 lg:p-10 relative overflow-hidden">
             {/* Card floating circle */}
             <div className="absolute -top-8 -right-8 w-24 h-24 rounded-full
               border border-white/[0.08]" />
 
-            <h2 className="font-display font-bold text-2xl text-white mb-2">
-              Sign Up for Updates
+            <h2 className="font-display font-bold text-2xl text-white mb-6 relative z-[1]">
+              Jenny&apos;s Promise
             </h2>
-            <p className="font-body text-sm text-white/50 mb-6">
-              Join the movement to restore accountability.
+
+            <ul className="space-y-4 mb-8 relative z-[1]">
+              {[
+                'Stop overspending — say NO to new taxes',
+                'Cut the red tape strangling building and business',
+                'Support public safety, no transient housing in suburban neighborhoods',
+                'Listen to taxpayers and residents — not insiders',
+              ].map((item) => (
+                <li key={item} className="flex gap-3 items-start">
+                  <span className="mt-2 flex-shrink-0 w-2 h-2 rounded-full bg-patriot-red" />
+                  <span className="font-body text-base text-white/70 leading-relaxed">
+                    {item}
+                  </span>
+                </li>
+              ))}
+            </ul>
+
+            <p className="font-body text-sm text-white/40 leading-relaxed mb-8 relative z-[1]">
+              I promise a new vision, transparency, no new taxes, and
+              leadership that will fight for the rights of taxpayers.
+              It&apos;s time to take our county government back.
             </p>
 
-            <form onSubmit={handleSubmit} className="flex flex-col gap-4">
-              <div>
-                <label className="block font-body text-xs font-medium uppercase
-                  tracking-[1px] text-white/40 mb-2">
-                  First Name
-                </label>
-                <input
-                  type="text"
-                  required
-                  value={firstName}
-                  onChange={(e) => setFirstName(e.target.value)}
-                  className="w-full bg-white/[0.08] border border-white/[0.12]
-                    rounded-lg px-4 py-3 text-white placeholder:text-white/30
-                    font-body text-base focus:outline-none focus:border-patriot-red
-                    transition-colors"
-                  placeholder="Your first name"
-                />
-              </div>
-              <div>
-                <label className="block font-body text-xs font-medium uppercase
-                  tracking-[1px] text-white/40 mb-2">
-                  Email
-                </label>
-                <input
-                  type="email"
-                  required
-                  value={email}
-                  onChange={(e) => setEmail(e.target.value)}
-                  className="w-full bg-white/[0.08] border border-white/[0.12]
-                    rounded-lg px-4 py-3 text-white placeholder:text-white/30
-                    font-body text-base focus:outline-none focus:border-patriot-red
-                    transition-colors"
-                  placeholder="you@email.com"
-                />
-              </div>
-              <button
-                type="submit"
-                className="w-full font-body font-semibold text-base text-white
-                  bg-patriot-red hover:bg-red-dark py-4 rounded-lg
-                  transition-colors duration-200 mt-2"
-              >
-                Sign Up
-              </button>
-            </form>
+            <Link
+              href="https://secure.anedot.com/b2002057-9fe3-4cb5-8e5a-93539cdc75d4/b2002057-9fe3-4cb5-8e5a-93539cdc75d4"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="block w-full text-center font-body font-semibold text-base
+                text-white bg-patriot-red hover:bg-red-dark py-4 rounded-lg
+                transition-colors duration-200 relative z-[1]"
+            >
+              Donate to the Campaign
+            </Link>
           </div>
         </div>
       </div>
