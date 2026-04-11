@@ -1,0 +1,24 @@
+{
+  "permissions": {
+    "allow": [
+      "WebSearch",
+      "Bash(gh api:*)",
+      "Bash(gh --version)",
+      "WebFetch(domain:raw.githubusercontent.com)",
+      "WebFetch(domain:api.github.com)",
+      "Bash(mkdir -p \"C:/Users/Dev/Documents/GitHub/friendsofjennykamprath/.claude/skills/ui-ux-pro-max/scripts\")",
+      "Bash(mkdir -p \"C:/Users/Dev/Documents/GitHub/friendsofjennykamprath/.claude/skills/ui-ux-pro-max/data/stacks\")",
+      "Bash(cp /tmp/ui-ux-pro-max-skill/.claude/skills/ui-ux-pro-max/SKILL.md \"C:/Users/Dev/Documents/GitHub/friendsofjennykamprath/.claude/skills/ui-ux-pro-max/\")",
+      "Bash(cp /tmp/ui-ux-pro-max-skill/src/ui-ux-pro-max/scripts/*.py \"C:/Users/Dev/Documents/GitHub/friendsofjennykamprath/.claude/skills/ui-ux-pro-max/scripts/\")",
+      "Bash(cp /tmp/ui-ux-pro-max-skill/src/ui-ux-pro-max/data/*.csv \"C:/Users/Dev/Documents/GitHub/friendsofjennykamprath/.claude/skills/ui-ux-pro-max/data/\")",
+      "Bash(python3 .claude/skills/ui-ux-pro-max/scripts/search.py \"modern minimal\" --domain style -n 2)",
+      "Bash(python .claude/skills/ui-ux-pro-max/scripts/search.py \"modern minimal\" --domain style -n 2)",
+      "Bash(py --version)",
+      "Bash(ls /c/Python*)",
+      "Read(//c/Users/Dev/AppData/Local/Programs/Python/**)",
+      "Bash(py .claude/skills/ui-ux-pro-max/scripts/search.py \"modern minimal\" --domain style -n 2)",
+      "Bash(npx create-next-app@latest:*)",
+      "Bash(npx shadcn@latest:*)"
+    ]
+  }
+}
