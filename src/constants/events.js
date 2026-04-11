@@ -1,0 +1,147 @@
+const EVENTS = [
+  {
+    slug: 'town-hall-stop-the-spending',
+    date: '2026-04-19',
+    day: '19',
+    month: 'Apr',
+    weekday: 'Saturday',
+    time: '10:00 AM — 12:00 PM',
+    title: 'Town Hall: Stop the Spending',
+    location: 'Beaverton Community Center',
+    address: '12350 SW 5th St, Beaverton, OR',
+    category: 'Town Hall',
+    description:
+      'Join Jenny for a candid conversation about county spending, taxes, and what we can do to restore fiscal responsibility.',
+    longDescription:
+      'Washington County spending is at an all-time high — and taxpayers are footing the bill. Join Jenny Kamprath for an open, no-holds-barred town hall where she will lay out exactly where your tax dollars are going, which programs are bloated, and what she plans to do about it on Day One as County Chair.\n\nThis is not a scripted speech. Bring your questions, your frustrations, and your ideas. Jenny will take questions from the audience for the full second hour. Light refreshments provided.',
+    featured: true,
+    agenda: [
+      { time: '10:00 AM', item: 'Doors open & check-in' },
+      { time: '10:15 AM', item: 'Opening remarks — Jenny Kamprath' },
+      { time: '10:30 AM', item: 'County spending breakdown presentation' },
+      { time: '11:00 AM', item: 'Open Q&A with the audience' },
+      { time: '11:50 AM', item: 'Closing remarks & next steps' },
+    ],
+  },
+  {
+    slug: 'volunteer-canvass-kickoff',
+    date: '2026-04-26',
+    day: '26',
+    month: 'Apr',
+    weekday: 'Saturday',
+    time: '9:00 AM — 11:00 AM',
+    title: 'Volunteer Canvass Kickoff',
+    location: 'Campaign HQ — Hillsboro',
+    address: '245 SE 3rd Ave, Hillsboro, OR',
+    category: 'Volunteer',
+    description:
+      'Grab a walk list and help spread the word door to door. Training provided for first-time volunteers.',
+    longDescription:
+      'The primary is weeks away and every door knocked matters. Join us at Campaign HQ for our biggest canvass push of the season. Whether you have been knocking doors for years or this is your very first time, we will get you trained, paired up, and out the door with everything you need.\n\nFirst-time volunteers will receive a 20-minute training on how to have effective conversations at the door. Experienced canvassers can grab their walk packets and head straight out. Water, snacks, and sunscreen provided.',
+    featured: false,
+    agenda: [
+      { time: '9:00 AM', item: 'Check-in & coffee' },
+      { time: '9:15 AM', item: 'First-timer training session' },
+      { time: '9:30 AM', item: 'Walk list distribution & team pairing' },
+      { time: '9:45 AM', item: 'Teams deploy to neighborhoods' },
+      { time: '11:00 AM', item: 'Return, debrief & wrap-up' },
+    ],
+  },
+  {
+    slug: 'neighborhood-bbq-rally',
+    date: '2026-05-03',
+    day: '03',
+    month: 'May',
+    weekday: 'Saturday',
+    time: '6:00 PM — 8:30 PM',
+    title: 'Neighborhood BBQ & Rally',
+    location: 'Tualatin Hills Nature Park Pavilion',
+    address: '15655 SW Millikan Way, Beaverton, OR',
+    category: 'Rally',
+    description:
+      'Bring the family for food, conversation, and a short rally. Meet Jenny and hear the plan for Day One.',
+    longDescription:
+      'This is the campaign event of the season — and everyone is invited. Bring your family, your neighbors, and your appetite for great food and even better conversation.\n\nJenny will deliver a short rally speech laying out her Day One action plan for Washington County, followed by an open meet-and-greet where you can talk with Jenny one-on-one. Burgers, hot dogs, and drinks provided free of charge. Kids are welcome — there will be activities for the little ones.\n\nThis event is entirely funded by grassroots supporters. No special interests. No corporate sponsors. Just neighbors gathering to talk about the future of our county.',
+    featured: false,
+    agenda: [
+      { time: '6:00 PM', item: 'Gates open — food service begins' },
+      { time: '6:45 PM', item: 'Welcome & introductions' },
+      { time: '7:00 PM', item: 'Jenny\'s Day One Rally Speech' },
+      { time: '7:30 PM', item: 'Open meet-and-greet with Jenny' },
+      { time: '8:15 PM', item: 'Closing & volunteer sign-ups' },
+    ],
+  },
+  {
+    slug: 'small-business-roundtable',
+    date: '2026-05-10',
+    day: '10',
+    month: 'May',
+    weekday: 'Saturday',
+    time: '2:00 PM — 4:00 PM',
+    title: 'Small Business Roundtable',
+    location: 'Tigard Public Library — Meeting Room A',
+    address: '13500 SW Hall Blvd, Tigard, OR',
+    category: 'Roundtable',
+    description:
+      'Local business owners discuss permitting delays, regulations, and how the county can get out of the way.',
+    longDescription:
+      'If you own or operate a small business in Washington County, you know the headaches: months-long permitting delays, confusing regulations, fees that keep climbing, and a county bureaucracy that seems designed to slow you down.\n\nJenny is hosting this roundtable specifically to hear from you. This is a working session — not a lecture. Bring your stories, your frustrations, and your ideas for how the county can streamline processes and make Washington County a place where businesses want to grow.\n\nSeating is limited to ensure a productive conversation. RSVP recommended.',
+    featured: false,
+    agenda: [
+      { time: '2:00 PM', item: 'Welcome & introductions' },
+      { time: '2:15 PM', item: 'Permitting & regulation pain points — open discussion' },
+      { time: '2:45 PM', item: 'Jenny\'s small business action plan' },
+      { time: '3:15 PM', item: 'Roundtable Q&A and solutions brainstorm' },
+      { time: '3:50 PM', item: 'Closing & next steps' },
+    ],
+  },
+  {
+    slug: 'seniors-coffee-conversation',
+    date: '2026-05-14',
+    day: '14',
+    month: 'May',
+    weekday: 'Wednesday',
+    time: '10:00 AM — 11:30 AM',
+    title: 'Seniors Coffee & Conversation',
+    location: 'Elsie Stuhr Center',
+    address: '5550 SW Hall Blvd, Beaverton, OR',
+    category: 'Community',
+    description:
+      'Jenny sits down with seniors to discuss property taxes, public safety, and keeping Washington County affordable for retirees.',
+    longDescription:
+      'Seniors in Washington County are being squeezed by rising property taxes, increasing fees, and a cost of living that keeps climbing. Many are on fixed incomes and have no margin for error — yet county government keeps finding new ways to take more.\n\nJenny is hosting this intimate coffee and conversation specifically for seniors and retirees. Come share your concerns about property taxes, neighborhood safety, healthcare access, and anything else on your mind. Coffee and pastries provided.\n\nThis is a conversation, not a presentation. Jenny wants to listen.',
+    featured: false,
+    agenda: [
+      { time: '10:00 AM', item: 'Coffee & pastries — informal mingling' },
+      { time: '10:20 AM', item: 'Jenny\'s brief opening on senior priorities' },
+      { time: '10:35 AM', item: 'Open conversation — your concerns, your questions' },
+      { time: '11:20 AM', item: 'Closing remarks' },
+    ],
+  },
+  {
+    slug: 'primary-election-day-gotv',
+    date: '2026-05-19',
+    day: '19',
+    month: 'May',
+    weekday: 'Tuesday',
+    time: '7:00 AM — 8:00 PM',
+    title: 'Primary Election Day — GOTV',
+    location: 'Various Locations Across Washington County',
+    address: 'Washington County, OR',
+    category: 'Election Day',
+    description:
+      'This is it. Show up. Vote. Bring a friend. Help us get every ballot turned in by 8:00 PM.',
+    longDescription:
+      'The May 19, 2026 primary election decides the future of Washington County. Low-turnout primaries are decided by who shows up — and we need every single supporter to make their voice heard.\n\nVolunteers will be stationed across Washington County at ballot drop-off locations, community hubs, and GOTV staging areas. Whether you can give one hour or the full day, we need you.\n\nMake sure your ballot is filled out, signed, and dropped off by 8:00 PM. If you have not received your ballot, contact the Washington County Elections Office immediately.',
+    featured: false,
+    agenda: [
+      { time: '7:00 AM', item: 'GOTV volunteer shifts begin' },
+      { time: '12:00 PM', item: 'Midday check-in at Campaign HQ' },
+      { time: '5:00 PM', item: 'Final push — last ballot drop-off reminders' },
+      { time: '8:00 PM', item: 'Polls close — ballots must be dropped off' },
+      { time: '8:30 PM', item: 'Election night watch party (location TBA)' },
+    ],
+  },
+]
+
+export default EVENTS
