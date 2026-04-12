@@ -34,7 +34,7 @@ const Navbar = () => {
               src="/images/logo.webp"
               alt="Jenny Kamprath for County Chair"
               fill
-              className="object-contain"
+              className="object-contain object-left"
               sizes="144px"
               priority
             />
