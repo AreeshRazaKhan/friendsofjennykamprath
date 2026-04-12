@@ -1,13 +1,14 @@
 import Link from 'next/link'
 import { Calendar, Clock, MapPin, ArrowRight } from 'lucide-react'
 
-import ALL_EVENTS from '@/constants/events'
+import { fetchGHLEvents } from '@/lib/ghl'
 
-const EVENTS = ALL_EVENTS.slice(0, 4)
+const Events = async () => {
+  const all = await fetchGHLEvents()
+  const EVENTS = all.slice(0, 4)
+  const [featured, ...upcoming] = EVENTS
 
-const Events = () => {
-  const featured = EVENTS.find((e) => e.featured)
-  const upcoming = EVENTS.filter((e) => !e.featured)
+  if (!featured) return null
 
   return (
     <section className="relative py-24 lg:py-32 bg-white overflow-hidden">
@@ -84,13 +85,13 @@ const Events = () => {
                   border border-white/[0.1]"
                 >
                   <span className="font-display font-black text-2xl text-white leading-none">
-                    {featured.day}
+                    {featured.date.day}
                   </span>
                   <span
                     className="font-body text-xs font-bold uppercase
                     tracking-[2px] text-patriot-red mt-1"
                   >
-                    {featured.month}
+                    {featured.date.month}
                   </span>
                 </div>
                 <div>
@@ -101,7 +102,7 @@ const Events = () => {
                     {featured.title}
                   </h3>
                   <p className="font-body text-sm text-white/40">
-                    {featured.weekday}
+                    {featured.type}
                   </p>
                 </div>
               </div>
@@ -115,18 +116,19 @@ const Events = () => {
                   <Clock className="w-4 h-4 text-patriot-red flex-shrink-0" />
                   <span className="font-body text-sm text-white/70">
                     {featured.time}
+                    {featured.endTime ? ` — ${featured.endTime}` : ''}
                   </span>
                 </div>
                 <div className="flex items-center gap-3">
                   <MapPin className="w-4 h-4 text-patriot-red flex-shrink-0" />
                   <span className="font-body text-sm text-white/70">
-                    {featured.location} — {featured.address}
+                    {featured.location}
                   </span>
                 </div>
               </div>
 
               <Link
-                href={`/events/${featured.slug}`}
+                href={`/events/${featured.id}`}
                 className="inline-flex items-center gap-3 font-body font-semibold
                   text-base text-white bg-patriot-red hover:bg-red-dark
                   px-8 py-4 rounded-lg transition-colors duration-200 group/btn"
@@ -144,7 +146,7 @@ const Events = () => {
           <div className="flex flex-col gap-0">
             {upcoming.map((event) => (
               <div
-                key={event.date}
+                key={event.id}
                 className="group flex gap-5 lg:gap-6 py-7
                   border-b border-warm-100 first:border-t
                   lg:first:border-t-0 hover:bg-warm-50/50
@@ -160,19 +162,19 @@ const Events = () => {
                     className="font-display font-black text-lg text-navy-900
                     leading-none"
                   >
-                    {event.day}
+                    {event.date.day}
                   </span>
                   <span
                     className="font-body text-[10px] font-bold uppercase
                     tracking-[2px] text-patriot-red mt-0.5"
                   >
-                    {event.month}
+                    {event.date.month}
                   </span>
                 </div>
 
                 {/* Info */}
                 <div className="min-w-0 flex-1">
-                  <Link href={`/events/${event.slug}`}>
+                  <Link href={`/events/${event.id}`}>
                     <h4
                       className="font-display font-bold text-lg text-navy-900
                       leading-[1.3] mb-1.5 group-hover:text-patriot-red

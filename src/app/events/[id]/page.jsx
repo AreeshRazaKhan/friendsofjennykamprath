@@ -5,15 +5,13 @@ import { Clock, MapPin, Calendar, ArrowLeft, ArrowRight, Share2 } from 'lucide-r
 import Navbar from '@/components/layout/navbar'
 import SiteFooter from '@/components/layout/site-footer'
 import RsvpForm from '@/components/events/rsvp-form'
-import EVENTS from '@/constants/events'
+import { fetchGHLEvent, fetchGHLEvents } from '@/lib/ghl'
 
-export const generateStaticParams = () => {
-  return EVENTS.map((event) => ({ slug: event.slug }))
-}
+export const revalidate = 60
 
 export const generateMetadata = async ({ params }) => {
-  const { slug } = await params
-  const event = EVENTS.find((e) => e.slug === slug)
+  const { id } = await params
+  const event = await fetchGHLEvent(id)
   if (!event) return { title: 'Event Not Found' }
 
   return {
@@ -23,15 +21,18 @@ export const generateMetadata = async ({ params }) => {
 }
 
 const EventDetailPage = async ({ params }) => {
-  const { slug } = await params
-  const event = EVENTS.find((e) => e.slug === slug)
+  const { id } = await params
+  const event = await fetchGHLEvent(id)
   if (!event) notFound()
 
-  const eventIdx = EVENTS.findIndex((e) => e.slug === slug)
-  const prevEvent = eventIdx > 0 ? EVENTS[eventIdx - 1] : null
-  const nextEvent = eventIdx < EVENTS.length - 1 ? EVENTS[eventIdx + 1] : null
+  const allEvents = await fetchGHLEvents()
+  const eventIdx = allEvents.findIndex((e) => e.id === id)
+  const prevEvent = eventIdx > 0 ? allEvents[eventIdx - 1] : null
+  const nextEvent =
+    eventIdx >= 0 && eventIdx < allEvents.length - 1 ? allEvents[eventIdx + 1] : null
 
-  const descriptionParagraphs = event.longDescription.split('\n\n')
+  const descriptionParagraphs = (event.description || '').split('\n\n').filter(Boolean)
+  const timeLabel = event.endTime ? `${event.time} — ${event.endTime}` : event.time
 
   return (
     <>
@@ -40,7 +41,6 @@ const EventDetailPage = async ({ params }) => {
 
         {/* Hero */}
         <section className="relative py-20 lg:py-28 bg-navy-900 overflow-hidden">
-          {/* Edge stripe */}
           <div
             className="absolute right-0 top-0 bottom-0 w-2 z-10"
             style={{
@@ -48,13 +48,11 @@ const EventDetailPage = async ({ params }) => {
                 'linear-gradient(180deg, #C41E3A 0%, #C41E3A 40%, #1B3A5C 40%, #1B3A5C 100%)',
             }}
           />
-          {/* Floating circles */}
           <div className="absolute -top-12 -right-12 w-48 h-48 rounded-full border border-white/[0.05]" />
           <div className="absolute bottom-16 left-[5%] w-32 h-32 rounded-full border border-white/[0.04]" />
           <div className="absolute top-1/2 right-[12%] w-20 h-20 rounded-full border border-white/[0.08]" />
 
           <div className="relative z-[5] mx-auto max-w-[1290px] px-6 lg:px-10">
-            {/* Breadcrumb */}
             <div className="flex items-center gap-2 mb-8">
               <Link
                 href="/events"
@@ -70,7 +68,7 @@ const EventDetailPage = async ({ params }) => {
               <div>
                 <span className="inline-block font-body text-[10px] font-bold uppercase
                   tracking-[2px] text-white bg-patriot-red px-3 py-1.5 rounded-full mb-6">
-                  {event.category}
+                  {event.type}
                 </span>
                 <h1 className="font-display font-black text-[clamp(2rem,4.5vw,3rem)] leading-[1.08] text-white mb-4">
                   {event.title}
@@ -80,17 +78,16 @@ const EventDetailPage = async ({ params }) => {
                 </p>
               </div>
 
-              {/* Date block */}
               <div className="flex-shrink-0 w-28 h-28 bg-white/[0.08] rounded-2xl
                 flex flex-col items-center justify-center border border-white/[0.1]">
                 <span className="font-display font-black text-4xl text-white leading-none">
-                  {event.day}
+                  {event.date.day}
                 </span>
                 <span className="font-body text-sm font-bold uppercase tracking-[2px] text-patriot-red mt-1">
-                  {event.month}
+                  {event.date.month}
                 </span>
                 <span className="font-body text-[10px] text-white/40 mt-0.5">
-                  {event.weekday}
+                  {event.date.year}
                 </span>
               </div>
             </div>
@@ -102,9 +99,7 @@ const EventDetailPage = async ({ params }) => {
           <div className="mx-auto max-w-[1290px] px-6 lg:px-10">
             <div className="grid grid-cols-1 lg:grid-cols-[1fr_380px] gap-12 lg:gap-20">
 
-              {/* Left — event content */}
               <div>
-                {/* Quick info bar */}
                 <div className="flex flex-wrap gap-6 pb-8 mb-8 border-b border-warm-100">
                   <div className="flex items-center gap-3">
                     <div className="w-10 h-10 rounded-lg bg-patriot-red/[0.08] flex items-center justify-center">
@@ -113,7 +108,10 @@ const EventDetailPage = async ({ params }) => {
                     <div>
                       <p className="font-body text-xs text-warm-400 uppercase tracking-[1px]">Date</p>
                       <p className="font-body text-sm font-semibold text-navy-900">
-                        {event.weekday}, {event.month} {event.day}, 2026
+                        {event.date.month} {event.date.day}, {event.date.year}
+                        {event.endDate && event.endDate.raw !== event.date.raw
+                          ? ` — ${event.endDate.month} ${event.endDate.day}, ${event.endDate.year}`
+                          : ''}
                       </p>
                     </div>
                   </div>
@@ -123,7 +121,7 @@ const EventDetailPage = async ({ params }) => {
                     </div>
                     <div>
                       <p className="font-body text-xs text-warm-400 uppercase tracking-[1px]">Time</p>
-                      <p className="font-body text-sm font-semibold text-navy-900">{event.time}</p>
+                      <p className="font-body text-sm font-semibold text-navy-900">{timeLabel}</p>
                     </div>
                   </div>
                   <div className="flex items-center gap-3">
@@ -137,7 +135,6 @@ const EventDetailPage = async ({ params }) => {
                   </div>
                 </div>
 
-                {/* Description */}
                 <div className="mb-12">
                   <h2 className="font-display font-bold text-xl text-navy-900 mb-6">
                     About This Event
@@ -150,31 +147,28 @@ const EventDetailPage = async ({ params }) => {
                     ))}
                   </div>
                 </div>
-
               </div>
 
-              {/* Right — sidebar */}
               <div className="lg:sticky lg:top-[100px] lg:self-start space-y-6">
-                {/* RSVP form */}
                 <RsvpForm
                   eventTitle={event.title}
-                  eventDate={event.date}
-                  eventTime={event.time}
-                  eventCategory={event.category}
+                  eventDate={event.date.raw}
+                  eventTime={timeLabel}
+                  eventCategory={event.type}
                 />
 
-                {/* Location card */}
                 <div className="bg-warm-50 rounded-2xl p-8 border border-warm-100">
                   <h3 className="font-display font-bold text-lg text-navy-900 mb-4">
                     Location
                   </h3>
                   <div className="space-y-2 font-body text-base text-warm-600">
                     <p className="font-semibold text-navy-900">{event.location}</p>
-                    <p>{event.address}</p>
+                    {event.address && event.address !== event.location && (
+                      <p>{event.address}</p>
+                    )}
                   </div>
                 </div>
 
-                {/* Share card */}
                 <div className="bg-warm-50 rounded-2xl p-8 border border-warm-100">
                   <h3 className="font-display font-bold text-lg text-navy-900 mb-4">
                     Spread the Word
@@ -195,69 +189,70 @@ const EventDetailPage = async ({ params }) => {
           </div>
         </section>
 
-        {/* Prev/Next navigation */}
-        <section className="py-12 bg-off-white border-t border-warm-100">
-          <div className="mx-auto max-w-[1290px] px-6 lg:px-10">
-            <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
-              {prevEvent ? (
-                <Link
-                  href={`/events/${prevEvent.slug}`}
-                  className="group flex items-center gap-4 p-6 bg-white rounded-xl
-                    border border-warm-100 hover:shadow-md hover:shadow-navy-900/[0.04]
-                    transition-all duration-200"
-                >
-                  <ArrowLeft className="w-5 h-5 text-warm-400 group-hover:text-patriot-red
-                    transition-colors flex-shrink-0" />
-                  <div className="min-w-0">
-                    <p className="font-body text-xs text-warm-400 uppercase tracking-[1px] mb-1">
-                      Previous Event
-                    </p>
-                    <p className="font-display font-bold text-base text-navy-900
-                      group-hover:text-patriot-red transition-colors truncate">
-                      {prevEvent.title}
-                    </p>
-                  </div>
-                </Link>
-              ) : (
-                <div />
-              )}
+        {(prevEvent || nextEvent) && (
+          <section className="py-12 bg-off-white border-t border-warm-100">
+            <div className="mx-auto max-w-[1290px] px-6 lg:px-10">
+              <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
+                {prevEvent ? (
+                  <Link
+                    href={`/events/${prevEvent.id}`}
+                    className="group flex items-center gap-4 p-6 bg-white rounded-xl
+                      border border-warm-100 hover:shadow-md hover:shadow-navy-900/[0.04]
+                      transition-all duration-200"
+                  >
+                    <ArrowLeft className="w-5 h-5 text-warm-400 group-hover:text-patriot-red
+                      transition-colors flex-shrink-0" />
+                    <div className="min-w-0">
+                      <p className="font-body text-xs text-warm-400 uppercase tracking-[1px] mb-1">
+                        Previous Event
+                      </p>
+                      <p className="font-display font-bold text-base text-navy-900
+                        group-hover:text-patriot-red transition-colors truncate">
+                        {prevEvent.title}
+                      </p>
+                    </div>
+                  </Link>
+                ) : (
+                  <div />
+                )}
 
-              {nextEvent ? (
-                <Link
-                  href={`/events/${nextEvent.slug}`}
-                  className="group flex items-center justify-end gap-4 p-6 bg-white rounded-xl
-                    border border-warm-100 hover:shadow-md hover:shadow-navy-900/[0.04]
-                    transition-all duration-200 text-right"
-                >
-                  <div className="min-w-0">
-                    <p className="font-body text-xs text-warm-400 uppercase tracking-[1px] mb-1">
-                      Next Event
-                    </p>
-                    <p className="font-display font-bold text-base text-navy-900
-                      group-hover:text-patriot-red transition-colors truncate">
-                      {nextEvent.title}
-                    </p>
-                  </div>
-                  <ArrowRight className="w-5 h-5 text-warm-400 group-hover:text-patriot-red
-                    transition-colors flex-shrink-0" />
-                </Link>
-              ) : (
-                <div />
-              )}
-            </div>
+                {nextEvent ? (
+                  <Link
+                    href={`/events/${nextEvent.id}`}
+                    className="group flex items-center justify-end gap-4 p-6 bg-white rounded-xl
+                      border border-warm-100 hover:shadow-md hover:shadow-navy-900/[0.04]
+                      transition-all duration-200 text-right"
+                  >
+                    <div className="min-w-0">
+                      <p className="font-body text-xs text-warm-400 uppercase tracking-[1px] mb-1">
+                        Next Event
+                      </p>
+                      <p className="font-display font-bold text-base text-navy-900
+                        group-hover:text-patriot-red transition-colors truncate">
+                        {nextEvent.title}
+                      </p>
+                    </div>
+                    <ArrowRight className="w-5 h-5 text-warm-400 group-hover:text-patriot-red
+                      transition-colors flex-shrink-0" />
+                  </Link>
+                ) : (
+                  <div />
+                )}
+              </div>
 
-            <div className="mt-8 text-center">
-              <Link
-                href="/events"
-                className="inline-flex items-center gap-3 font-body font-semibold
-                  text-sm text-navy-800 hover:text-patriot-red transition-colors duration-200"
-              >
-                <ArrowLeft className="w-4 h-4" />
-                Back to All Events
-              </Link>
+              <div className="mt-8 text-center">
+                <Link
+                  href="/events"
+                  className="inline-flex items-center gap-3 font-body font-semibold
+                    text-sm text-navy-800 hover:text-patriot-red transition-colors duration-200"
+                >
+                  <ArrowLeft className="w-4 h-4" />
+                  Back to All Events
+                </Link>
+              </div>
             </div>
-          </div>
-        </section>
+          </section>
+        )}
 
       </main>
       <SiteFooter />

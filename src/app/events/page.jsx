@@ -3,7 +3,9 @@ import { Clock, MapPin, ArrowRight } from 'lucide-react'
 
 import Navbar from '@/components/layout/navbar'
 import SiteFooter from '@/components/layout/site-footer'
-import EVENTS from '@/constants/events'
+import { fetchGHLEvents } from '@/lib/ghl'
+
+export const revalidate = 60
 
 export const metadata = {
   title: 'Events — Friends of Jenny Kamprath',
@@ -11,9 +13,9 @@ export const metadata = {
     'Upcoming campaign events for Jenny Kamprath for Washington County Chair. Town halls, rallies, volunteer opportunities, and more.',
 }
 
-const EventsPage = () => {
-  const featured = EVENTS.find((e) => e.featured)
-  const upcoming = EVENTS.filter((e) => !e.featured)
+const EventsPage = async () => {
+  const EVENTS = await fetchGHLEvents()
+  const [featured, ...upcoming] = EVENTS
 
   return (
     <>
@@ -68,7 +70,7 @@ const EventsPage = () => {
               </p>
 
               <Link
-                href={`/events/${featured.slug}`}
+                href={`/events/${featured.id}`}
                 className="block group"
               >
                 <div className="relative bg-navy-900 rounded-2xl overflow-hidden">
@@ -89,10 +91,10 @@ const EventsPage = () => {
                     <div className="flex-shrink-0 w-24 h-24 lg:w-28 lg:h-28 bg-white/[0.08] rounded-2xl
                       flex flex-col items-center justify-center border border-white/[0.1]">
                       <span className="font-display font-black text-3xl lg:text-4xl text-white leading-none">
-                        {featured.day}
+                        {featured.date.day}
                       </span>
                       <span className="font-body text-sm font-bold uppercase tracking-[2px] text-patriot-red mt-1">
-                        {featured.month}
+                        {featured.date.month}
                       </span>
                     </div>
 
@@ -100,7 +102,7 @@ const EventsPage = () => {
                     <div>
                       <span className="inline-block font-body text-[10px] font-bold uppercase
                         tracking-[2px] text-white bg-patriot-red px-3 py-1.5 rounded-full mb-4">
-                        {featured.category}
+                        {featured.type}
                       </span>
                       <h2 className="font-display font-bold text-2xl lg:text-3xl text-white leading-[1.2] mb-3
                         group-hover:text-patriot-red transition-colors duration-200">
@@ -112,7 +114,10 @@ const EventsPage = () => {
                       <div className="flex flex-wrap gap-x-6 gap-y-2">
                         <span className="flex items-center gap-2">
                           <Clock className="w-4 h-4 text-patriot-red" />
-                          <span className="font-body text-sm text-white/60">{featured.time}</span>
+                          <span className="font-body text-sm text-white/60">
+                            {featured.time}
+                            {featured.endTime ? ` — ${featured.endTime}` : ''}
+                          </span>
                         </span>
                         <span className="flex items-center gap-2">
                           <MapPin className="w-4 h-4 text-patriot-red" />
@@ -150,8 +155,8 @@ const EventsPage = () => {
             <div className="grid grid-cols-1 md:grid-cols-2 gap-6 lg:gap-8">
               {upcoming.map((event) => (
                 <Link
-                  key={event.slug}
-                  href={`/events/${event.slug}`}
+                  key={event.id}
+                  href={`/events/${event.id}`}
                   className="group relative bg-white border border-warm-100 rounded-2xl
                     p-8 overflow-hidden hover:shadow-xl hover:shadow-navy-900/[0.08]
                     hover:border-patriot-red/20 transition-all duration-300"
@@ -160,7 +165,7 @@ const EventsPage = () => {
                   <span className="inline-block font-body text-[10px] font-bold uppercase
                     tracking-[2px] text-patriot-red bg-patriot-red/[0.08] px-3 py-1.5
                     rounded-full mb-5">
-                    {event.category}
+                    {event.type}
                   </span>
 
                   {/* Date + title row */}
@@ -170,10 +175,10 @@ const EventsPage = () => {
                       group-hover:border-patriot-red/30 group-hover:bg-patriot-red/[0.04]
                       transition-all duration-200">
                       <span className="font-display font-black text-xl text-navy-900 leading-none">
-                        {event.day}
+                        {event.date.day}
                       </span>
                       <span className="font-body text-[10px] font-bold uppercase tracking-[2px] text-patriot-red mt-0.5">
-                        {event.month}
+                        {event.date.month}
                       </span>
                     </div>
                     <div className="min-w-0">
@@ -182,7 +187,7 @@ const EventsPage = () => {
                         {event.title}
                       </h3>
                       <p className="font-body text-sm text-warm-400">
-                        {event.weekday}
+                        {event.date.year}
                       </p>
                     </div>
                   </div>
@@ -195,7 +200,10 @@ const EventsPage = () => {
                   <div className="flex flex-wrap gap-x-5 gap-y-2 mb-6">
                     <span className="flex items-center gap-2">
                       <Clock className="w-3.5 h-3.5 text-warm-400" />
-                      <span className="font-body text-xs text-warm-400">{event.time}</span>
+                      <span className="font-body text-xs text-warm-400">
+                        {event.time}
+                        {event.endTime ? ` — ${event.endTime}` : ''}
+                      </span>
                     </span>
                     <span className="flex items-center gap-2">
                       <MapPin className="w-3.5 h-3.5 text-warm-400" />

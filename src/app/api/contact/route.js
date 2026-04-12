@@ -1,5 +1,5 @@
 const WEBHOOK_URL =
-  'https://services.leadconnectorhq.com/hooks/HK7KWJYbw33yisOBMGEO/webhook-trigger/cf2eced9-14ad-4109-ba4f-fd244858af10'
+  'https://services.leadconnectorhq.com/hooks/qGdzrYgvraCHvfner4DJ/webhook-trigger/X6yJU8L3iXBWeYnYs4Tu'
 
 export async function POST(request) {
   try {
