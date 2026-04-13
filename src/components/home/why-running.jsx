@@ -16,15 +16,15 @@ const WhyRunning = () => {
 
           {/* Left — visual block */}
           <div className="relative">
-            <div className="bg-navy-900 rounded-2xl aspect-[4/3] relative overflow-hidden">
+            <div className="bg-navy-900 rounded-2xl aspect-[4/5] relative overflow-hidden">
               <Image
-                src="/images/community.jpg"
-                alt="Community members gathering together"
+                src="/images/jenny-portrait.webp"
+                alt="Jenny Kamprath"
                 fill
-                className="object-cover"
+                className="object-cover object-top"
                 sizes="(max-width: 1024px) 100vw, 45vw"
               />
-              <div className="absolute inset-0 bg-navy-900/40" />
+              <div className="absolute inset-0 bg-navy-900/10" />
               {/* Edge stripe */}
               <div className="absolute right-0 top-0 bottom-0 w-2 z-[1]"
                 style={{
