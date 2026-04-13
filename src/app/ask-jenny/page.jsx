@@ -128,16 +128,14 @@ const AskJenny = () => {
           <div className="relative z-[5] mx-auto max-w-[1290px] px-6 lg:px-10">
             <div className="max-w-2xl">
               <p className="font-body text-xs font-bold uppercase tracking-[3px] text-patriot-red mb-6">
-                Your Voice Matters
+                Ask Jenny
               </p>
               <h1 className="font-display font-black text-[clamp(2.5rem,5vw,3.5rem)] leading-[1.08] text-white mb-6">
-                Ask Jenny{' '}
-                <span className="text-patriot-red">Directly.</span>
+                Your Voice Matters{' '}
+                <span className="text-patriot-red">— Ask Jenny.</span>
               </h1>
               <p className="font-body text-lg text-white/60 leading-relaxed max-w-xl">
-                Have a question, concern, or issue you want addressed? Jenny reads
-                every submission. This is your direct line — no staffers, no
-                runaround.
+                Have a question, concern, or idea? Jenny wants to hear from you.
               </p>
             </div>
           </div>
