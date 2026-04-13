@@ -70,12 +70,12 @@ const REGIONS = [
 ]
 
 const EXPERIENCE_OPTIONS = [
-  'None',
-  'Some Volunteering',
-  'Regular Volunteer',
-  'Campaign Staff',
-  'Campaign Management',
-  'Elected/Appointed Office',
+  'Yes, local (school board, county commissioner, etc.)',
+  'Yes, state level (House, Senate, State Assembly, etc.)',
+  'Yes, statewide (AG, Governor, etc.)',
+  'Yes, federal (Congressional)',
+  'Yes, federal (Presidential)',
+  'No',
 ]
 
 const AVAILABILITY_OPTIONS = [
@@ -604,14 +604,16 @@ const Volunteer = () => {
                       {submitting ? 'Submitting...' : 'Join the Team'}
                     </button>
 
-                    <div className="flex gap-4">
-                      <Link href="/privacy-policy" className="font-body text-xs text-warm-400 hover:text-navy-900 underline transition-colors">
-                        Privacy Policy
-                      </Link>
-                      <Link href="/terms-of-service" className="font-body text-xs text-warm-400 hover:text-navy-900 underline transition-colors">
+                    <p className="font-body text-xs text-warm-400">
+                      By submitting you agree to the{' '}
+                      <Link href="/terms-of-service" className="underline hover:text-navy-900 transition-colors">
                         Terms of Service
-                      </Link>
-                    </div>
+                      </Link>{' '}
+                      and{' '}
+                      <Link href="/privacy-policy" className="underline hover:text-navy-900 transition-colors">
+                        Privacy Policy
+                      </Link>.
+                    </p>
                   </form>
                 </div>
 
@@ -678,9 +680,9 @@ const Volunteer = () => {
                         className="block font-body text-sm text-patriot-red hover:underline">
                         jenny@jennykamprath.com
                       </a>
-                      <a href="tel:5035158576"
+                      <a href="tel:9713655668"
                         className="block font-body text-sm text-patriot-red hover:underline">
-                        (503) 515-8576
+                        (971) 365-5668
                       </a>
                     </div>
                   </div>

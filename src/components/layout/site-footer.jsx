@@ -112,10 +112,10 @@ const SiteFooter = () => {
                 jenny@jennykamprath.com
               </a>
               <a
-                href="tel:5035158576"
+                href="tel:9713655668"
                 className="hover:text-white transition-colors"
               >
-                (503) 515-8576
+                (971) 365-5668
               </a>
             </div>
           </div>

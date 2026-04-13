@@ -127,10 +127,10 @@ const Contact = () => {
                       <div className="font-body text-base text-warm-600">
                         <p className="font-semibold text-navy-900 mb-1">Phone</p>
                         <a
-                          href="tel:5035158576"
+                          href="tel:9713655668"
                           className="text-patriot-red hover:underline"
                         >
-                          (503) 515-8576
+                          (971) 365-5668
                         </a>
                       </div>
                     </div>
@@ -281,14 +281,16 @@ const Contact = () => {
                     {submitting ? 'Sending...' : 'Send Message'}
                   </button>
 
-                  <div className="flex gap-4 justify-center mt-2">
-                    <Link href="/privacy-policy" className="font-body text-xs text-warm-400 hover:text-navy-900 underline transition-colors">
-                      Privacy Policy
-                    </Link>
-                    <Link href="/terms-of-service" className="font-body text-xs text-warm-400 hover:text-navy-900 underline transition-colors">
+                  <p className="font-body text-xs text-warm-400 text-center mt-2">
+                    By submitting you agree to the{' '}
+                    <Link href="/terms-of-service" className="underline hover:text-navy-900 transition-colors">
                       Terms of Service
-                    </Link>
-                  </div>
+                    </Link>{' '}
+                    and{' '}
+                    <Link href="/privacy-policy" className="underline hover:text-navy-900 transition-colors">
+                      Privacy Policy
+                    </Link>.
+                  </p>
                 </form>
                 </div>
                 )}

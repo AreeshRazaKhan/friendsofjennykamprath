@@ -342,8 +342,8 @@ const TermsOfService = () => {
                 </p>
                 <p>
                   Phone:{' '}
-                  <a href="tel:5035158576" className="text-patriot-red hover:underline">
-                    (503) 515-8576
+                  <a href="tel:9713655668" className="text-patriot-red hover:underline">
+                    (971) 365-5668
                   </a>
                 </p>
               </div>

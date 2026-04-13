@@ -200,6 +200,17 @@ const RsvpForm = ({ eventTitle, eventDate, eventTime, eventCategory }) => {
           >
             {submitting ? 'Submitting...' : 'Confirm RSVP'}
           </button>
+
+          <p className="font-body text-xs text-white/50 text-center">
+            By submitting you agree to the{' '}
+            <a href="/terms-of-service" className="underline hover:text-white transition-colors">
+              Terms of Service
+            </a>{' '}
+            and{' '}
+            <a href="/privacy-policy" className="underline hover:text-white transition-colors">
+              Privacy Policy
+            </a>.
+          </p>
         </form>
       </div>
     </div>
