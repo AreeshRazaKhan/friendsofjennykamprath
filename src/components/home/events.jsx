@@ -107,7 +107,7 @@ const Events = async () => {
                 </div>
               </div>
 
-              <p className="font-body text-base text-white/60 leading-[1.7] mb-8">
+              <p className="font-body text-base text-white/60 leading-[1.7] mb-8 line-clamp-3">
                 {featured.description}
               </p>
 

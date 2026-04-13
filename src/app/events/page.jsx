@@ -14,7 +14,14 @@ export const metadata = {
 }
 
 const EventsPage = async () => {
-  const EVENTS = await fetchGHLEvents()
+  const ALL_EVENTS = await fetchGHLEvents()
+  const today = new Date()
+  today.setHours(0, 0, 0, 0)
+  const EVENTS = ALL_EVENTS.filter((event) => {
+    if (!event.date?.raw) return false
+    const eventDate = new Date(`${event.date.raw}T00:00:00`)
+    return eventDate >= today
+  })
   const [featured, ...upcoming] = EVENTS
 
   return (
@@ -108,7 +115,7 @@ const EventsPage = async () => {
                         group-hover:text-patriot-red transition-colors duration-200">
                         {featured.title}
                       </h2>
-                      <p className="font-body text-base text-white/50 leading-relaxed mb-4 max-w-xl">
+                      <p className="font-body text-base text-white/50 leading-relaxed mb-4 max-w-xl line-clamp-2">
                         {featured.description}
                       </p>
                       <div className="flex flex-wrap gap-x-6 gap-y-2">
@@ -192,7 +199,7 @@ const EventsPage = async () => {
                     </div>
                   </div>
 
-                  <p className="font-body text-base text-warm-600 leading-relaxed mb-5">
+                  <p className="font-body text-base text-warm-600 leading-relaxed mb-5 line-clamp-2">
                     {event.description}
                   </p>
 
