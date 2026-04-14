@@ -172,16 +172,6 @@ const Volunteer = () => {
 
         {/* Hero */}
         <section className="relative py-20 lg:py-28 bg-navy-900 overflow-hidden">
-          <Image
-            src="/images/volunteers.jpg"
-            alt=""
-            fill
-            className="object-cover"
-            sizes="100vw"
-            priority
-          />
-          <div className="absolute inset-0 bg-navy-900/80" />
-
           {/* Edge stripe */}
           <div
             className="absolute right-0 top-0 bottom-0 w-2 z-10"
@@ -193,6 +183,15 @@ const Volunteer = () => {
           {/* Floating circles */}
           <div className="absolute -top-16 -right-16 w-64 h-64 rounded-full border border-white/[0.05]" />
           <div className="absolute bottom-12 left-[8%] w-36 h-36 rounded-full border border-white/[0.04]" />
+
+          {/* Watermark */}
+          <div
+            className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2
+            font-display font-black text-[160px] text-white/[0.02] tracking-[10px]
+            whitespace-nowrap select-none pointer-events-none hidden lg:block"
+          >
+            VOLUNTEER
+          </div>
 
           <div className="relative z-[5] mx-auto max-w-[1290px] px-6 lg:px-10">
             <div className="max-w-2xl">

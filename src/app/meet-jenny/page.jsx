@@ -64,16 +64,6 @@ const MeetJenny = () => {
 
         {/* Hero */}
         <section className="relative py-24 lg:py-36 bg-navy-900 overflow-hidden">
-          <Image
-            src="/images/hero-bg.jpg"
-            alt=""
-            fill
-            className="object-cover"
-            sizes="100vw"
-            priority
-          />
-          <div className="absolute inset-0 bg-navy-900/80" />
-
           {/* Edge stripe */}
           <div
             className="absolute right-0 top-0 bottom-0 w-2 z-10"
