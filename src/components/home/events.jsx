@@ -5,7 +5,15 @@ import { fetchGHLEvents } from '@/lib/ghl'
 
 const Events = async () => {
   const all = await fetchGHLEvents()
-  const EVENTS = all.slice(0, 4)
+  const today = new Date()
+  today.setHours(0, 0, 0, 0)
+  const EVENTS = all
+    .filter((event) => {
+      if (!event.date?.raw) return false
+      const eventDate = new Date(`${event.date.raw}T00:00:00`)
+      return eventDate >= today
+    })
+    .slice(0, 4)
   const [featured, ...upcoming] = EVENTS
 
   if (!featured) return null
