@@ -177,6 +177,10 @@ const SiteFooter = () => {
         <div className="mt-6 text-center font-body text-xs text-white/20">
           &copy; 2026 Friends of Jenny Kamprath. All rights reserved.
         </div>
+
+        <div className="mt-2 text-center font-body text-xs text-white/20">
+          Powered by Operation 1776
+        </div>
       </div>
     </footer>
   )
