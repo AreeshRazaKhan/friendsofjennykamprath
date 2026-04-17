@@ -15,13 +15,6 @@ const Hero = () => {
       />
       <div className="absolute inset-0 bg-navy-900/80" />
 
-      {/* Edge stripe */}
-      <div className="absolute right-0 top-0 bottom-0 w-2 z-10"
-        style={{
-          background: 'linear-gradient(180deg, #C41E3A 0%, #C41E3A 40%, #1B3A5C 40%, #1B3A5C 100%)',
-        }}
-      />
-
       {/* Floating circle accents */}
       <div className="absolute -top-20 -right-20 w-[400px] h-[400px] rounded-full
         border border-white/[0.06]" />

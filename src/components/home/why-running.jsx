@@ -25,12 +25,6 @@ const WhyRunning = () => {
                 sizes="(max-width: 1024px) 100vw, 45vw"
               />
               <div className="absolute inset-0 bg-navy-900/10" />
-              {/* Edge stripe */}
-              <div className="absolute right-0 top-0 bottom-0 w-2 z-[1]"
-                style={{
-                  background: 'linear-gradient(180deg, #C41E3A 0%, #C41E3A 40%, #1B3A5C 40%, #1B3A5C 100%)',
-                }}
-              />
               {/* Floating circles inside */}
               <div className="absolute -bottom-12 -left-12 w-40 h-40 rounded-full
                 border border-white/[0.08] z-[1]" />

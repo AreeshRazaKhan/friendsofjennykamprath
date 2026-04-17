@@ -172,14 +172,6 @@ const Volunteer = () => {
 
         {/* Hero */}
         <section className="relative py-20 lg:py-28 bg-navy-900 overflow-hidden">
-          {/* Edge stripe */}
-          <div
-            className="absolute right-0 top-0 bottom-0 w-2 z-10"
-            style={{
-              background:
-                'linear-gradient(180deg, #C41E3A 0%, #C41E3A 40%, #1B3A5C 40%, #1B3A5C 100%)',
-            }}
-          />
           {/* Floating circles */}
           <div className="absolute -top-16 -right-16 w-64 h-64 rounded-full border border-white/[0.05]" />
           <div className="absolute bottom-12 left-[8%] w-36 h-36 rounded-full border border-white/[0.04]" />
@@ -621,13 +613,6 @@ const Volunteer = () => {
                   {/* Info card */}
                   <div className="bg-navy-900 rounded-2xl p-8 relative overflow-hidden">
                     <div className="absolute -top-8 -right-8 w-24 h-24 rounded-full border border-white/[0.06]" />
-                    <div
-                      className="absolute right-0 top-0 bottom-0 w-1.5"
-                      style={{
-                        background:
-                          'linear-gradient(180deg, #C41E3A 0%, #C41E3A 40%, #1B3A5C 40%, #1B3A5C 100%)',
-                      }}
-                    />
 
                     <div className="relative z-[1]">
                       <h3 className="font-display font-bold text-xl text-white mb-4">

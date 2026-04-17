@@ -58,14 +58,6 @@ const Events = async () => {
               className="relative bg-navy-900 rounded-2xl p-8 lg:p-10
               overflow-hidden group"
             >
-              {/* Edge stripe */}
-              <div
-                className="absolute right-0 top-0 bottom-0 w-2"
-                style={{
-                  background:
-                    'linear-gradient(180deg, #C41E3A 0%, #C41E3A 40%, #1B3A5C 40%, #1B3A5C 100%)',
-                }}
-              />
               {/* Floating circles */}
               <div
                 className="absolute -top-10 -right-10 w-32 h-32 rounded-full

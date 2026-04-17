@@ -9,13 +9,6 @@ const DAY_ONE_ACTIONS = [
 const DayOne = () => {
   return (
     <section className="relative py-24 lg:py-32 bg-navy-900 overflow-hidden">
-      {/* Edge stripe */}
-      <div className="absolute right-0 top-0 bottom-0 w-2 z-10"
-        style={{
-          background: 'linear-gradient(180deg, #C41E3A 0%, #C41E3A 40%, #1B3A5C 40%, #1B3A5C 100%)',
-        }}
-      />
-
       {/* Floating circles */}
       <div className="absolute top-16 left-[10%] w-48 h-48 rounded-full
         border border-white/[0.04]" />

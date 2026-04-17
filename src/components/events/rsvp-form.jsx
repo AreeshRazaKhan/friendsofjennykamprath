@@ -10,13 +10,16 @@ const RsvpForm = ({ eventTitle, eventDate, eventTime, eventCategory }) => {
     lastName: '',
     email: '',
     phone: '',
+    smsConsent: false,
+    promoConsent: false,
   })
   const [submitting, setSubmitting] = useState(false)
   const [submitted, setSubmitted] = useState(false)
   const [error, setError] = useState('')
 
   const handleChange = (field) => (e) => {
-    setFormData((prev) => ({ ...prev, [field]: e.target.value }))
+    const value = e.target.type === 'checkbox' ? e.target.checked : e.target.value
+    setFormData((prev) => ({ ...prev, [field]: value }))
     setError('')
   }
 
@@ -41,7 +44,12 @@ const RsvpForm = ({ eventTitle, eventDate, eventTime, eventCategory }) => {
         method: 'POST',
         headers: { 'Content-Type': 'application/json' },
         body: JSON.stringify({
-          ...formData,
+          firstName: formData.firstName,
+          lastName: formData.lastName,
+          email: formData.email,
+          phone: formData.phone,
+          sms_updates: formData.smsConsent ? 'Yes' : 'No',
+          sms_promo: formData.promoConsent ? 'Yes' : 'No',
           eventName: eventTitle,
           eventDate: eventDate,
           eventTime: eventTime,
@@ -66,13 +74,6 @@ const RsvpForm = ({ eventTitle, eventDate, eventTime, eventCategory }) => {
     return (
       <div className="bg-navy-900 rounded-2xl p-8 relative overflow-hidden">
         <div className="absolute -top-8 -right-8 w-24 h-24 rounded-full border border-white/[0.06]" />
-        <div
-          className="absolute right-0 top-0 bottom-0 w-1.5"
-          style={{
-            background:
-              'linear-gradient(180deg, #C41E3A 0%, #C41E3A 40%, #1B3A5C 40%, #1B3A5C 100%)',
-          }}
-        />
         <div className="relative z-[1] text-center py-4">
           <div className="w-14 h-14 rounded-full bg-patriot-red/20 flex items-center
             justify-center mx-auto mb-4">
@@ -95,13 +96,6 @@ const RsvpForm = ({ eventTitle, eventDate, eventTime, eventCategory }) => {
   return (
     <div className="bg-navy-900 rounded-2xl p-8 relative overflow-hidden">
       <div className="absolute -top-8 -right-8 w-24 h-24 rounded-full border border-white/[0.06]" />
-      <div
-        className="absolute right-0 top-0 bottom-0 w-1.5"
-        style={{
-          background:
-            'linear-gradient(180deg, #C41E3A 0%, #C41E3A 40%, #1B3A5C 40%, #1B3A5C 100%)',
-        }}
-      />
 
       <div className="relative z-[1]">
         <h3 className="font-display font-bold text-xl text-white mb-2">
@@ -188,6 +182,38 @@ const RsvpForm = ({ eventTitle, eventDate, eventTime, eventCategory }) => {
                 transition-colors"
               placeholder="(503) 555-1234"
             />
+          </div>
+
+          <div className="space-y-2.5 pt-1">
+            <label className="flex gap-2.5 items-start cursor-pointer">
+              <input
+                type="checkbox"
+                checked={formData.smsConsent}
+                onChange={handleChange('smsConsent')}
+                className="mt-0.5 flex-shrink-0 accent-patriot-red"
+              />
+              <span className="font-body text-[11px] text-white/50 leading-relaxed">
+                I agree to receive SMS updates from Friends of Jenny Kamprath
+                regarding campaign updates, event reminders, and volunteer
+                coordination. Message frequency varies. Message &amp; data
+                rates may apply. Reply STOP to unsubscribe or HELP for help.
+              </span>
+            </label>
+
+            <label className="flex gap-2.5 items-start cursor-pointer">
+              <input
+                type="checkbox"
+                checked={formData.promoConsent}
+                onChange={handleChange('promoConsent')}
+                className="mt-0.5 flex-shrink-0 accent-patriot-red"
+              />
+              <span className="font-body text-[11px] text-white/50 leading-relaxed">
+                I agree to receive promotional SMS messages from Friends of
+                Jenny Kamprath, including fundraising requests and donation
+                drives. Message frequency varies. Message &amp; data rates
+                may apply. Reply STOP to unsubscribe or HELP for help.
+              </span>
+            </label>
           </div>
 
           <button

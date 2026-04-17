@@ -6,8 +6,6 @@ import WhyRunning from '@/components/home/why-running'
 import Priorities from '@/components/home/priorities'
 import DayOne from '@/components/home/day-one'
 import PoweredByPeople from '@/components/home/powered-by-people'
-import Testimonials from '@/components/home/testimonials'
-import Endorsements from '@/components/home/endorsements'
 import Events from '@/components/home/events'
 import CountdownPledge from '@/components/home/countdown-pledge'
 import SiteFooter from '@/components/layout/site-footer'
@@ -22,8 +20,6 @@ export default function Home() {
         <Priorities />
         <DayOne />
         <PoweredByPeople />
-        <Testimonials />
-        <Endorsements />
         <Events />
         <CountdownPledge />
       </main>

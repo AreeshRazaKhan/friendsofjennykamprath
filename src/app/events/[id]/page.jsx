@@ -41,13 +41,6 @@ const EventDetailPage = async ({ params }) => {
 
         {/* Hero */}
         <section className="relative py-20 lg:py-28 bg-navy-900 overflow-hidden">
-          <div
-            className="absolute right-0 top-0 bottom-0 w-2 z-10"
-            style={{
-              background:
-                'linear-gradient(180deg, #C41E3A 0%, #C41E3A 40%, #1B3A5C 40%, #1B3A5C 100%)',
-            }}
-          />
           <div className="absolute -top-12 -right-12 w-48 h-48 rounded-full border border-white/[0.05]" />
           <div className="absolute bottom-16 left-[5%] w-32 h-32 rounded-full border border-white/[0.04]" />
           <div className="absolute top-1/2 right-[12%] w-20 h-20 rounded-full border border-white/[0.08]" />

@@ -1,5 +1,5 @@
 import Link from 'next/link'
-import { Clock, MapPin, ArrowRight } from 'lucide-react'
+import { Clock, MapPin, ArrowRight, CalendarClock, BellRing } from 'lucide-react'
 
 import Navbar from '@/components/layout/navbar'
 import SiteFooter from '@/components/layout/site-footer'
@@ -31,14 +31,6 @@ const EventsPage = async () => {
 
         {/* Hero */}
         <section className="relative py-20 lg:py-28 bg-navy-900 overflow-hidden">
-          {/* Edge stripe */}
-          <div
-            className="absolute right-0 top-0 bottom-0 w-2 z-10"
-            style={{
-              background:
-                'linear-gradient(180deg, #C41E3A 0%, #C41E3A 40%, #1B3A5C 40%, #1B3A5C 100%)',
-            }}
-          />
           {/* Floating circles */}
           <div className="absolute -top-16 -right-16 w-64 h-64 rounded-full border border-white/[0.05]" />
           <div className="absolute bottom-12 left-[8%] w-36 h-36 rounded-full border border-white/[0.04]" />
@@ -68,6 +60,79 @@ const EventsPage = async () => {
           </div>
         </section>
 
+        {/* Empty state — no upcoming events */}
+        {EVENTS.length === 0 && (
+          <section className="py-20 lg:py-28 bg-off-white">
+            <div className="mx-auto max-w-[1290px] px-6 lg:px-10">
+              <div className="relative bg-white border border-warm-100 rounded-3xl
+                px-8 py-16 lg:px-16 lg:py-24 overflow-hidden text-center">
+                {/* Decorative floating circles */}
+                <div className="absolute -top-20 -right-20 w-64 h-64 rounded-full
+                  border border-patriot-red/[0.06] pointer-events-none" />
+                <div className="absolute -bottom-16 -left-16 w-52 h-52 rounded-full
+                  border border-navy-900/[0.04] pointer-events-none" />
+                <div className="absolute top-1/2 left-[10%] w-20 h-20 rounded-full
+                  border border-patriot-red/[0.08] pointer-events-none hidden lg:block" />
+
+                {/* Watermark */}
+                <div
+                  className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2
+                  font-display font-black text-[140px] text-warm-100/50 tracking-[8px]
+                  whitespace-nowrap select-none pointer-events-none hidden lg:block"
+                >
+                  SOON
+                </div>
+
+                <div className="relative z-[1] max-w-2xl mx-auto">
+                  <div className="inline-flex items-center justify-center w-20 h-20
+                    rounded-2xl bg-patriot-red/[0.08] border border-patriot-red/[0.15]
+                    mb-8">
+                    <CalendarClock className="w-9 h-9 text-patriot-red" />
+                  </div>
+
+                  <p className="font-body text-xs font-bold uppercase tracking-[3px]
+                    text-patriot-red mb-4">
+                    Stay Tuned
+                  </p>
+                  <h2 className="font-display font-extrabold text-[clamp(2rem,4vw,2.75rem)]
+                    leading-[1.15] text-navy-900 mb-5">
+                    No Upcoming Events Yet
+                  </h2>
+                  <p className="font-body text-lg text-warm-600 leading-[1.7] mb-10
+                    max-w-xl mx-auto">
+                    We&apos;re busy lining up the next round of town halls, rallies,
+                    and community meetups. Check back soon — or get involved now and
+                    be the first to know when new dates drop.
+                  </p>
+
+                  <div className="flex flex-col sm:flex-row gap-3 justify-center items-center">
+                    <Link
+                      href="/volunteer"
+                      className="inline-flex items-center gap-3 font-body font-semibold
+                        text-base text-white bg-patriot-red hover:bg-red-dark
+                        px-8 py-4 rounded-lg transition-colors duration-200 group/btn"
+                    >
+                      <BellRing className="w-4 h-4" />
+                      Get Notified — Volunteer
+                      <ArrowRight className="w-4 h-4 transition-transform
+                        group-hover/btn:translate-x-1" />
+                    </Link>
+                    <Link
+                      href="/contact"
+                      className="inline-flex items-center gap-3 font-body font-semibold
+                        text-base text-navy-800 border-2 border-navy-800
+                        hover:bg-navy-900 hover:text-white px-8 py-4 rounded-lg
+                        transition-all duration-200"
+                    >
+                      Contact the Team
+                    </Link>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </section>
+        )}
+
         {/* Featured event */}
         {featured && (
           <section className="py-16 lg:py-20 bg-off-white">
@@ -81,14 +146,6 @@ const EventsPage = async () => {
                 className="block group"
               >
                 <div className="relative bg-navy-900 rounded-2xl overflow-hidden">
-                  {/* Edge stripe */}
-                  <div
-                    className="absolute right-0 top-0 bottom-0 w-2 z-[1]"
-                    style={{
-                      background:
-                        'linear-gradient(180deg, #C41E3A 0%, #C41E3A 40%, #1B3A5C 40%, #1B3A5C 100%)',
-                    }}
-                  />
                   {/* Floating circles */}
                   <div className="absolute -top-12 -right-12 w-40 h-40 rounded-full border border-white/[0.06]" />
                   <div className="absolute -bottom-10 -left-10 w-32 h-32 rounded-full border border-white/[0.04]" />
@@ -147,6 +204,7 @@ const EventsPage = async () => {
         )}
 
         {/* All events grid */}
+        {EVENTS.length > 0 && (
         <section className="py-16 lg:py-24 bg-white">
           <div className="mx-auto max-w-[1290px] px-6 lg:px-10">
             <div className="max-w-2xl mb-12">
@@ -230,6 +288,7 @@ const EventsPage = async () => {
 
           </div>
         </section>
+        )}
 
       </main>
       <SiteFooter />

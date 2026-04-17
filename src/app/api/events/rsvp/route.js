@@ -6,6 +6,7 @@ export async function POST(request) {
     const body = await request.json()
     const {
       firstName, lastName, email, phone,
+      sms_updates, sms_promo,
       eventName, eventDate, eventTime, eventCategory,
     } = body
 
@@ -19,6 +20,8 @@ export async function POST(request) {
       lastName: lastName?.trim() || '',
       email: email.trim(),
       phone: phone?.trim() || '',
+      sms_updates: sms_updates === 'Yes' ? 'Yes' : 'No',
+      sms_promo: sms_promo === 'Yes' ? 'Yes' : 'No',
       eventName: eventName || '',
       eventDate: eventDate || '',
       eventTime: eventTime || '',

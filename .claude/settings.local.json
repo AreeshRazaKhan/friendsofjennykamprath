@@ -79,7 +79,13 @@
       "Bash(node run.js \"C:\\\\Users\\\\Dev\\\\AppData\\\\Local\\\\Temp\\\\playwright-test-content-audit.js\")",
       "Bash(taskkill:*)",
       "Bash(node:*)",
-      "Bash(git commit -m ' *)"
+      "Bash(git commit -m ' *)",
+      "Bash(npx next *)",
+      "Bash(cp \"C:/Users/Dev/Downloads/Image-2.jpg.jpeg\" \"C:/Users/Dev/Documents/GitHub/friendsofjennykamprath/public/images/jenny-portrait.jpg\")",
+      "Bash(cp \"C:/Users/Dev/Downloads/Image-10.jpg.jpeg\" \"C:/Users/Dev/Documents/GitHub/friendsofjennykamprath/public/images/volunteers.jpg\")",
+      "Bash(cp \"C:/Users/Dev/Downloads/Image-5.jpg.jpeg\" \"C:/Users/Dev/Documents/GitHub/friendsofjennykamprath/public/images/community.jpg\")",
+      "Bash(cp \"C:/Users/Dev/Downloads/Image-7.jpg.jpeg\" \"C:/Users/Dev/Documents/GitHub/friendsofjennykamprath/public/images/neighborhood.jpg\")",
+      "Bash(git checkout *)"
     ]
   }
 }

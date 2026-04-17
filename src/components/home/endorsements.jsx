@@ -65,15 +65,10 @@ const Endorsements = () => {
                     relative overflow-hidden flex items-center justify-center">
                     <Image
                       src="/images/neighborhood.jpg"
-                      alt="Suburban neighborhood in Washington County"
+                      alt="Supporters gathered at a Washington County campaign event"
                       fill
                       className="object-cover opacity-40"
                       sizes="33vw"
-                    />
-                    <div className="absolute right-0 top-0 bottom-0 w-1.5 z-[1]"
-                      style={{
-                        background: 'linear-gradient(180deg, #C41E3A 0%, #C41E3A 40%, #1B3A5C 40%, #1B3A5C 100%)',
-                      }}
                     />
                     <div className="absolute -bottom-6 -left-6 w-20 h-20 rounded-full
                       border border-white/[0.08] z-[1]" />

@@ -64,15 +64,6 @@ const MeetJenny = () => {
 
         {/* Hero */}
         <section className="relative py-24 lg:py-36 bg-navy-900 overflow-hidden">
-          {/* Edge stripe */}
-          <div
-            className="absolute right-0 top-0 bottom-0 w-2 z-10"
-            style={{
-              background:
-                'linear-gradient(180deg, #C41E3A 0%, #C41E3A 40%, #1B3A5C 40%, #1B3A5C 100%)',
-            }}
-          />
-
           {/* Floating circles */}
           <div className="absolute -top-16 -right-16 w-72 h-72 rounded-full border border-white/[0.05]" />
           <div className="absolute bottom-20 left-[10%] w-40 h-40 rounded-full border border-white/[0.04]" />
@@ -135,11 +126,6 @@ const MeetJenny = () => {
                     sizes="(max-width: 1024px) 100vw, 45vw"
                   />
                   <div className="absolute inset-0 bg-navy-900/30" />
-                  <div className="absolute right-0 top-0 bottom-0 w-2 z-[1]"
-                    style={{
-                      background: 'linear-gradient(180deg, #C41E3A 0%, #C41E3A 40%, #1B3A5C 40%, #1B3A5C 100%)',
-                    }}
-                  />
                 </div>
               </div>
               <div>
@@ -190,7 +176,7 @@ const MeetJenny = () => {
                 <div className="bg-navy-900 rounded-2xl aspect-[4/3] relative overflow-hidden">
                   <Image
                     src="/images/neighborhood.jpg"
-                    alt="Washington County neighborhood"
+                    alt="Supporters gathered at a Washington County campaign event"
                     fill
                     className="object-cover"
                     sizes="(max-width: 1024px) 100vw, 45vw"
@@ -241,14 +227,6 @@ const MeetJenny = () => {
 
         {/* Core Values */}
         <section className="relative py-24 lg:py-32 bg-navy-900 overflow-hidden">
-          {/* Edge stripe */}
-          <div
-            className="absolute right-0 top-0 bottom-0 w-2 z-10"
-            style={{
-              background:
-                'linear-gradient(180deg, #C41E3A 0%, #C41E3A 40%, #1B3A5C 40%, #1B3A5C 100%)',
-            }}
-          />
           {/* Floating circles */}
           <div className="absolute top-16 left-[8%] w-48 h-48 rounded-full border border-white/[0.04]" />
           <div className="absolute -bottom-20 right-[15%] w-64 h-64 rounded-full border border-white/[0.03]" />
