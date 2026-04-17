@@ -172,7 +172,15 @@ const SiteFooter = () => {
         </div>
 
         <div className="mt-2 text-center font-body text-xs text-white/20">
-          Powered by Operation 1776
+          Powered by{' '}
+          <a
+            href="https://op1776.com/"
+            target="_blank"
+            rel="noopener noreferrer"
+            className="hover:text-white/60 transition-colors"
+          >
+            Operation 1776
+          </a>
         </div>
       </div>
     </footer>
