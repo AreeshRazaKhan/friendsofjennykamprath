@@ -6,7 +6,7 @@ const Hero = () => {
     <section className="relative min-h-screen bg-navy-900 overflow-hidden pt-[72px]">
       {/* Background image with overlay */}
       <Image
-        src="/images/hero-bg.webp"
+        src="/images/hero-bg.avif"
         alt="Washington State Capitol in Olympia at sunset"
         fill
         priority
