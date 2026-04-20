@@ -636,20 +636,6 @@ const Volunteer = () => {
                     </div>
                   </div>
 
-                  {/* Quote card */}
-                  <div className="bg-warm-50 rounded-2xl p-8 border border-warm-100">
-                    <span className="font-display font-black text-5xl text-patriot-red/10 leading-none block mb-2">
-                      &ldquo;
-                    </span>
-                    <p className="font-body text-base text-warm-600 leading-relaxed italic mb-4">
-                      I had never volunteered for a campaign before. The team made
-                      it easy and honestly — it felt great knowing I was making a
-                      real difference in my own neighborhood.
-                    </p>
-                    <p className="font-body text-sm font-semibold text-navy-900">
-                      — Sarah M., Beaverton
-                    </p>
-                  </div>
 
                   {/* Contact card */}
                   <div className="bg-warm-50 rounded-2xl p-8 border border-warm-100">

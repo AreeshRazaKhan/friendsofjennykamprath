@@ -7,13 +7,13 @@ const Hero = () => {
       {/* Background image with overlay */}
       <Image
         src="/images/hero-bg.webp"
-        alt="U.S. Capitol at dusk"
+        alt="Oregon State Capitol in Salem with flowers in bloom"
         fill
         priority
         className="object-cover object-top"
         sizes="100vw"
       />
-      <div className="absolute inset-0 bg-navy-900/80" />
+      <div className="absolute inset-0 bg-navy-900/90" />
 
       {/* Floating circle accents */}
       <div className="absolute -top-20 -right-20 w-[400px] h-[400px] rounded-full

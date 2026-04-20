@@ -85,7 +85,9 @@
       "Bash(cp \"C:/Users/Dev/Downloads/Image-10.jpg.jpeg\" \"C:/Users/Dev/Documents/GitHub/friendsofjennykamprath/public/images/volunteers.jpg\")",
       "Bash(cp \"C:/Users/Dev/Downloads/Image-5.jpg.jpeg\" \"C:/Users/Dev/Documents/GitHub/friendsofjennykamprath/public/images/community.jpg\")",
       "Bash(cp \"C:/Users/Dev/Downloads/Image-7.jpg.jpeg\" \"C:/Users/Dev/Documents/GitHub/friendsofjennykamprath/public/images/neighborhood.jpg\")",
-      "Bash(git checkout *)"
+      "Bash(git checkout *)",
+      "Bash(git commit *)",
+      "Bash(tasklist //FI \"PID eq 4160\")"
     ]
   }
 }
