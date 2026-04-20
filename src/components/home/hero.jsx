@@ -7,7 +7,7 @@ const Hero = () => {
       {/* Background image with overlay */}
       <Image
         src="/images/hero-bg.webp"
-        alt="Oregon State Capitol in Salem with flowers in bloom"
+        alt="Washington State Capitol in Olympia at sunset"
         fill
         priority
         className="object-cover object-top"
