@@ -6,11 +6,11 @@ const Hero = () => {
     <section className="relative min-h-screen bg-navy-900 overflow-hidden pt-[72px]">
       {/* Background image with overlay */}
       <Image
-        src="/images/hero-bg.avif"
-        alt="Washington State Capitol in Olympia at sunset"
+        src="/images/hero-bg-hillsboro.jpg"
+        alt="Hillsboro Civic Center"
         fill
         priority
-        className="object-cover object-top"
+        className="object-cover object-center"
         sizes="100vw"
       />
       <div className="absolute inset-0 bg-navy-900/90" />
