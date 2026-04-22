@@ -143,7 +143,7 @@ const EndorsementsPage = async () => {
                         className="object-cover"
                         sizes="(max-width: 640px) 50vw, (max-width: 1024px) 33vw, 25vw"
                       />
-                      <div aria-hidden="true" className="absolute inset-0 bg-white/20" />
+                      <div aria-hidden="true" className="absolute inset-0 bg-navy-900/40" />
                     </div>
                     {/* Name */}
                     <div className="px-4 py-5 text-center flex-1 flex items-center justify-center">
