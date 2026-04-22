@@ -76,14 +76,28 @@ const MeetJenny = () => {
           </div>
 
           <div className="relative z-[5] mx-auto max-w-[1290px] px-6 lg:px-10">
-            <div className="max-w-2xl">
-              <p className="font-body text-xs font-bold uppercase tracking-[3px] text-patriot-red mb-6">
+            <div className="max-w-3xl">
+              <div className="w-16 h-[3px] bg-patriot-red mb-8" />
+
+              {/* Candidate identity — primary page H1 */}
+              <h1 className="font-display font-black leading-[0.95] tracking-tight
+                text-[clamp(3rem,7vw,5.5rem)] mb-4">
+                <span className="text-patriot-red">JENNY</span>{' '}
+                <span className="text-white">KAMPRATH</span>
+              </h1>
+              <p className="font-body font-semibold uppercase tracking-[3px]
+                text-[clamp(1rem,1.5vw,1.25rem)] text-white mb-10">
+                For Washington County Chair
+              </p>
+
+              {/* Page tagline (H2) */}
+              <p className="font-body text-xs font-bold uppercase tracking-[3px] text-patriot-red mb-4">
                 About the Candidate
               </p>
-              <h1 className="font-display font-black text-[clamp(2.5rem,5vw,3.5rem)] leading-[1.08] text-white mb-6">
+              <h2 className="font-display font-extrabold text-[clamp(1.75rem,3.5vw,2.5rem)] leading-[1.1] text-white mb-6">
                 Leadership with a{' '}
                 <span className="text-patriot-red">Fresh Perspective.</span>
-              </h1>
+              </h2>
               <p className="font-body text-lg text-white/70 leading-relaxed max-w-xl">
                 Jenny Kamprath is in the trenches every day — working in sales,
                 talking with Oregon business owners big and small, and hearing

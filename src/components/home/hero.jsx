@@ -48,18 +48,26 @@ const Hero = () => {
         <div className="flex-[0_0_55%] py-20 lg:py-0 lg:pr-16">
           <div className="w-16 h-[3px] bg-patriot-red mb-8" />
 
-          <p className="font-body text-xs font-bold uppercase tracking-[3px] text-patriot-red mb-6">
+          {/* Candidate identity — primary page H1 */}
+          <h1 className="font-display font-black leading-[0.95] tracking-tight
+            text-[clamp(3rem,7vw,5.5rem)] mb-4">
+            <span className="text-patriot-red">JENNY</span>{' '}
+            <span className="text-white">KAMPRATH</span>
+          </h1>
+          <p className="font-body font-semibold uppercase tracking-[3px]
+            text-[clamp(1rem,1.5vw,1.25rem)] text-white mb-10">
             For Washington County Chair
           </p>
 
-          <h1 className="font-display font-black text-[clamp(2.5rem,5vw,3.5rem)]
-            leading-[1.08] text-white mb-6">
+          {/* Campaign tagline (H2) */}
+          <h2 className="font-display font-extrabold text-[clamp(1.75rem,3.5vw,2.5rem)]
+            leading-[1.1] text-white mb-6">
             Stop the Spending.{' '}
             <span className="block mt-1">
               Take Back{' '}
               <span className="text-patriot-red">Washington County.</span>
             </span>
-          </h1>
+          </h2>
 
           <p className="font-body text-lg leading-relaxed text-white/70 max-w-xl mb-10">
             Jenny Kamprath — in the trenches every day, working in sales and
