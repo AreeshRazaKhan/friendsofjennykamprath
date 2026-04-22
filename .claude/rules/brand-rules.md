@@ -32,6 +32,34 @@
 - Gold: `#C9A84C`
 - Sky: `#4A90D9`
 
+### Campaign Sign (Print / Signage Only)
+The official yard-sign palette is **separate from the web palette**.
+Yard signs use more saturated colors for outdoor readability and print
+reproduction; never substitute these values into web components.
+
+**Blue background gradient** (diagonal radial — darker at corners,
+brightest at center):
+- Corner: `RGB(0, 0, 4)` — `#000004` (near-black navy)
+- Middle: `RGB(0, 104, 227)` — `#0068E3` (bright royal blue)
+
+**"Jenny" wordmark** (the large red "Jenny" on the sign):
+- `CMYK(0, 95, 100, 0)` ≈ `RGB(255, 13, 0)` ≈ `#FF0D00`
+- Same value is used for the sign's red border frame.
+
+**Other sign elements:**
+- "VOTE", "Kamprath", "Washington County Commissioner At-Large",
+  URL, and PAC number: white `#FFFFFF`
+- Checkbox icon: white box with green checkmark
+
+**When to use this palette:**
+- Yard signs, posters, flyers, mailers, and other print collateral
+- Digital renders of the sign (mock-ups, thumbnails, social previews
+  that reproduce the sign)
+
+**When NOT to use:**
+- Website UI — keep using Navy 900 `#0D1B2A` for dark sections and
+  Patriot Red `#C41E3A` for CTAs / wordmark.
+
 ## Typography
 - **Display font**: Playfair Display (serif) — Headlines, hero text, card titles
 - **Body font**: Montserrat (sans-serif) — Body text, nav, buttons, labels
