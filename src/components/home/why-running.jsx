@@ -56,12 +56,6 @@ const WhyRunning = () => {
               Why I&#39;m Running
             </h2>
 
-            <p className="font-body text-lg leading-[1.7] text-warm-600 mb-8 max-w-lg">
-              I am not an entrenched incumbent or politician. I am not running
-              to protect the status quo. I am running to represent the
-              overlooked taxpayers of Washington County.
-            </p>
-
             <p className="font-body text-lg leading-[1.7] text-warm-600 mb-10 max-w-lg">
               County leadership has treated taxpayers like a bottomless piggy
               bank — taxes go up every year while they claim there is never

@@ -99,32 +99,14 @@ const MeetJenny = () => {
                 <span className="text-patriot-red">Fresh Perspective.</span>
               </h2>
               <p className="font-body text-lg text-white/70 leading-relaxed max-w-xl">
-                Jenny Kamprath is in the trenches every day — working in sales,
-                talking with Oregon business owners big and small, and hearing
-                first-hand how today&apos;s policies are making it harder to
-                stay in business. Not a career politician, she is running to
-                represent the overlooked taxpayers of Washington County.
+                A working Oregonian running to bring fiscal accountability and
+                common-sense leadership to Washington County — read on for the
+                full story.
               </p>
             </div>
           </div>
         </section>
 
-        {/* Featured quote */}
-        <section className="py-16 lg:py-20 bg-off-white">
-          <div className="mx-auto max-w-[1290px] px-6 lg:px-10">
-            <div className="lg:ml-[10%] max-w-3xl">
-              <div className="w-16 h-[3px] bg-patriot-red mb-8" />
-              <blockquote className="font-display font-bold text-[clamp(1.5rem,3vw,2rem)] leading-[1.3] text-navy-900 mb-6">
-                &quot;I promise a new vision, transparency, no new taxes, and
-                leadership that will fight for the rights of taxpayers.
-                It&apos;s time to take our county government back.&quot;
-              </blockquote>
-              <p className="font-body text-base text-warm-400">
-                — Jenny Kamprath
-              </p>
-            </div>
-          </div>
-        </section>
 
         {/* Bio sections */}
         <section className="py-24 lg:py-32 bg-white overflow-hidden">
@@ -152,18 +134,17 @@ const MeetJenny = () => {
                   A Fresh Perspective
                 </h2>
                 <p className="font-body text-lg text-warm-600 leading-[1.7] mb-4">
-                  Jenny Kamprath is not an entrenched incumbent or a career
-                  politician. She is not running to protect the status quo.
-                  She is in the trenches every day — working in sales, talking
-                  with Oregon business owners big and small, and hearing
-                  first-hand how policies out of Salem and the county are
-                  making it harder to stay in business. She is a working
-                  Oregonian who decided to stop complaining and start running.
+                  Most county decisions happen in rooms where no one has
+                  recently sat across from the small-business owner trying to
+                  make payroll, or the homeowner watching utility bills climb
+                  year after year. Jenny does — every week, as part of her
+                  work — and that&apos;s the perspective she&apos;ll bring to
+                  county government.
                 </p>
                 <p className="font-body text-lg text-warm-600 leading-[1.7]">
-                  She offers leadership with a fresh perspective, free of old
-                  allegiances or obligations — focused entirely on solving
-                  problems and getting things done.
+                  No old allegiances. No obligations to the people who benefit
+                  from the status quo. Just the willingness to ask hard
+                  questions and push back when the answers don&apos;t add up.
                 </p>
               </div>
             </div>
@@ -243,25 +224,6 @@ const MeetJenny = () => {
           </div>
         </section>
 
-        {/* Pull quote — deserves a leader */}
-        <section className="relative py-20 lg:py-28 bg-off-white overflow-hidden">
-          <div className="absolute -top-20 -left-20 w-72 h-72 rounded-full
-            border border-navy-900/[0.04]" />
-          <div className="absolute -bottom-24 -right-16 w-80 h-80 rounded-full
-            bg-patriot-red/[0.03]" />
-          <div className="relative z-[1] mx-auto max-w-[1290px] px-6 lg:px-10">
-            <div className="lg:ml-[12%] max-w-4xl">
-              <div className="w-16 h-[3px] bg-patriot-red mb-8" />
-              <blockquote className="font-display font-bold
-                text-[clamp(1.75rem,3.5vw,2.5rem)] leading-[1.25] text-navy-900">
-                Washington County deserves a leader who will
-                <span className="text-red-dark">
-                  {' '}listen and act, and deliver real change.
-                </span>
-              </blockquote>
-            </div>
-          </div>
-        </section>
 
         {/* Core Values */}
         <section className="relative py-24 lg:py-32 bg-navy-900 overflow-hidden">

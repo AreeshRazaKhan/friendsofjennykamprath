@@ -61,20 +61,13 @@ const Hero = () => {
 
           {/* Campaign tagline (H2) */}
           <h2 className="font-display font-extrabold text-[clamp(1.75rem,3.5vw,2.5rem)]
-            leading-[1.1] text-white mb-6">
+            leading-[1.1] text-white mb-10">
             Stop the Spending.{' '}
             <span className="block mt-1">
               Take Back{' '}
               <span className="text-patriot-red">Washington County.</span>
             </span>
           </h2>
-
-          <p className="font-body text-lg leading-relaxed text-white/70 max-w-xl mb-10">
-            Jenny Kamprath — in the trenches every day, working in sales and
-            talking with Oregon business owners big and small. Not a career
-            politician. Running to stop overspending, cut red tape, and fight
-            for taxpayers.
-          </p>
 
           <div className="flex flex-wrap gap-4">
             <Link
