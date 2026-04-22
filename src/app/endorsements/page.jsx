@@ -14,12 +14,6 @@ export const metadata = {
     'Community members, leaders, and organizations across Washington County who endorse Jenny Kamprath for County Chair.',
 }
 
-const getInitials = (title) => {
-  if (!title) return ''
-  const parts = title.trim().split(/\s+/)
-  return (parts[0]?.[0] ?? '') + (parts.length > 1 ? parts[parts.length - 1][0] : '')
-}
-
 const EndorsementsPage = async () => {
   const ENDORSEMENTS = await fetchGHLEndorsements()
 
@@ -139,27 +133,20 @@ const EndorsementsPage = async () => {
                       hover:shadow-lg hover:shadow-navy-900/[0.06]
                       hover:border-patriot-red/20 transition-all duration-300"
                   >
-                    {endorser.photo ? (
-                      <div className="relative flex-shrink-0 w-14 h-14 rounded-full
-                        overflow-hidden bg-navy-900">
-                        <Image
-                          src={endorser.photo}
-                          alt={endorser.title}
-                          fill
-                          unoptimized
-                          className="object-cover"
-                          sizes="56px"
-                        />
-                      </div>
-                    ) : (
-                      <div aria-hidden="true" className="flex-shrink-0 w-14 h-14 rounded-full bg-navy-900
-                        flex items-center justify-center border border-white/[0.1]">
-                        <span className="font-display font-black text-lg text-white
-                          tracking-[1px]">
-                          {getInitials(endorser.title)}
-                        </span>
-                      </div>
-                    )}
+                    <div className="relative flex-shrink-0 w-14 h-14 rounded-full
+                      overflow-hidden bg-navy-900">
+                      <Image
+                        src={endorser.photo || '/images/flag-avatar.webp'}
+                        alt={endorser.photo ? endorser.title : ''}
+                        fill
+                        unoptimized={!!endorser.photo}
+                        className="object-cover"
+                        sizes="56px"
+                      />
+                      {!endorser.photo && (
+                        <div aria-hidden="true" className="absolute inset-0 bg-white/10" />
+                      )}
+                    </div>
                     <h3 className="font-display font-bold text-lg text-navy-900
                       leading-[1.3]">
                       {endorser.title}

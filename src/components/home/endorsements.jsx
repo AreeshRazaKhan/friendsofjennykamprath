@@ -4,12 +4,6 @@ import { ArrowRight } from 'lucide-react'
 
 import { fetchGHLEndorsements } from '@/lib/ghl'
 
-const getInitials = (title) => {
-  if (!title) return ''
-  const parts = title.trim().split(/\s+/)
-  return (parts[0]?.[0] ?? '') + (parts.length > 1 ? parts[parts.length - 1][0] : '')
-}
-
 const Endorsements = async () => {
   const ALL = await fetchGHLEndorsements()
   if (ALL.length === 0) return null
@@ -47,27 +41,20 @@ const Endorsements = async () => {
               className="relative bg-white border border-warm-100 rounded-2xl
                 p-6 flex items-center gap-4"
             >
-              {endorser.photo ? (
-                <div className="relative flex-shrink-0 w-14 h-14 rounded-full
-                  overflow-hidden bg-navy-900">
-                  <Image
-                    src={endorser.photo}
-                    alt={endorser.title}
-                    fill
-                    unoptimized
-                    className="object-cover"
-                    sizes="56px"
-                  />
-                </div>
-              ) : (
-                <div aria-hidden="true" className="flex-shrink-0 w-14 h-14 rounded-full bg-navy-900
-                  flex items-center justify-center border border-white/[0.1]">
-                  <span className="font-display font-black text-lg text-white
-                    tracking-[1px]">
-                    {getInitials(endorser.title)}
-                  </span>
-                </div>
-              )}
+              <div className="relative flex-shrink-0 w-14 h-14 rounded-full
+                overflow-hidden bg-navy-900">
+                <Image
+                  src={endorser.photo || '/images/flag-avatar.webp'}
+                  alt={endorser.photo ? endorser.title : ''}
+                  fill
+                  unoptimized={!!endorser.photo}
+                  className="object-cover"
+                  sizes="56px"
+                />
+                {!endorser.photo && (
+                  <div aria-hidden="true" className="absolute inset-0 bg-white/10" />
+                )}
+              </div>
               <h3 className="font-display font-bold text-lg text-navy-900
                 leading-[1.3]">
                 {endorser.title}
