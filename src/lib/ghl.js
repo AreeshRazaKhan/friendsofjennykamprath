@@ -131,9 +131,13 @@ export const fetchGHLEvents = async () => {
 const normalizeEndorsement = (record) => {
   const props = record?.properties ?? {}
 
-  // Current GHL custom-object schema: `title` (endorser name/label) and
-  // `image` (photo). Older field names are accepted as fallbacks.
-  const title = props.title ?? props.endorser_name ?? props.endorser_title ?? ''
+  // GHL custom-object schema: `endorsement` holds the endorser's name/label;
+  // `image` holds the photo. Older/alternate field names accepted as fallbacks.
+  const title = props.endorsement
+    ?? props.title
+    ?? props.endorser_name
+    ?? props.endorser_title
+    ?? ''
 
   const rawImage = props.image ?? props.endorser_photo
   let photo = ''
