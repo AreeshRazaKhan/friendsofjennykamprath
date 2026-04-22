@@ -155,19 +155,19 @@ const MeetJenny = () => {
                   Real-World Experience
                 </p>
                 <h2 className="font-display font-extrabold text-[clamp(1.8rem,3.5vw,2.25rem)] leading-[1.15] text-navy-900 mb-6">
-                  Business Owner &amp; Entrepreneur
+                  In the Trenches With Real Businesses
                 </h2>
                 <p className="font-body text-lg text-warm-600 leading-[1.7] mb-4">
-                  Jenny&apos;s career in sales and small business taught her that
-                  nearly every aspect of life involves communication, trust, and
-                  the ability to bring people together. She has the ability to
-                  effectively engage with businesses and individuals from all
-                  walks of life and to cut through the noise to negotiate results.
+                  Jenny works in sales and talks with businesses of every size,
+                  every day. She hears first-hand how hard it is to stay in
+                  business in this state and county — the kind of perspective
+                  most county leaders never hear, because they are not in those
+                  conversations.
                 </p>
                 <p className="font-body text-lg text-warm-600 leading-[1.7]">
-                  That practical, real-world business experience is exactly what
-                  Washington County needs — a leader who knows how to solve
-                  problems, not create more bureaucracy.
+                  That daily, real-world experience is exactly what Washington
+                  County needs — a leader who knows how to solve problems, not
+                  create more bureaucracy.
                 </p>
               </div>
               <div className="relative">
