@@ -11,31 +11,6 @@ const headers = {
 const EVENTS_SCHEMA_KEY = 'custom_objects.events'
 const ENDORSEMENTS_SCHEMA_KEY = 'custom_objects.endorsements'
 
-const ENDORSER_TYPE_LABELS = {
-  individual: 'Individual',
-  community_leader: 'Community Leader',
-  organization: 'Organization',
-  business_owner: 'Business Owner',
-  elected_official: 'Elected Official',
-  faith_leader: 'Faith Leader',
-  other: 'Other',
-}
-
-const parseBooleanish = (value) => {
-  if (value === true) return true
-  if (typeof value === 'string') {
-    const v = value.trim().toLowerCase()
-    return v === 'yes' || v === 'true' || v === '1'
-  }
-  return false
-}
-
-const parseSortOrder = (value) => {
-  if (typeof value === 'number') return value
-  const n = Number.parseInt(value, 10)
-  return Number.isFinite(n) ? n : 999
-}
-
 const MONTHS = ['Jan', 'Feb', 'Mar', 'Apr', 'May', 'Jun', 'Jul', 'Aug', 'Sep', 'Oct', 'Nov', 'Dec']
 
 const TIME_LABELS = {
@@ -155,20 +130,23 @@ export const fetchGHLEvents = async () => {
 
 const normalizeEndorsement = (record) => {
   const props = record?.properties ?? {}
-  const typeSlug = props.endorser_type ?? ''
-  const photo = Array.isArray(props.endorser_photo) && props.endorser_photo[0]?.url
-    ? props.endorser_photo[0].url
-    : ''
+
+  // Current GHL custom-object schema: `title` (endorser name/label) and
+  // `image` (photo). Older field names are accepted as fallbacks.
+  const title = props.title ?? props.endorser_name ?? props.endorser_title ?? ''
+
+  const rawImage = props.image ?? props.endorser_photo
+  let photo = ''
+  if (Array.isArray(rawImage) && rawImage[0]?.url) {
+    photo = rawImage[0].url
+  } else if (typeof rawImage === 'string' && rawImage.startsWith('http')) {
+    photo = rawImage
+  }
 
   return {
     id: record?.id ?? '',
-    name: props.endorser_name ?? '',
-    title: props.endorser_title ?? '',
-    quote: props.endorser_quote ?? '',
+    title,
     photo,
-    type: ENDORSER_TYPE_LABELS[typeSlug] ?? typeSlug ?? '',
-    featured: parseBooleanish(props.endorser_featured),
-    sortOrder: parseSortOrder(props.endorser_sort_order),
     source: 'ghl',
   }
 }
@@ -206,12 +184,8 @@ export const fetchGHLEndorsements = async () => {
 
     return records
       .map(normalizeEndorsement)
-      .filter((e) => e.name)
-      .sort((a, b) => {
-        if (a.featured !== b.featured) return a.featured ? -1 : 1
-        if (a.sortOrder !== b.sortOrder) return a.sortOrder - b.sortOrder
-        return a.name.localeCompare(b.name)
-      })
+      .filter((e) => e.title)
+      .sort((a, b) => a.title.localeCompare(b.title))
   } catch (error) {
     console.error('[GHL Endorsements]:', error)
     return []

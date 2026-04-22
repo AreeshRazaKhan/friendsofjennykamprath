@@ -1,6 +1,6 @@
 import Image from 'next/image'
 import Link from 'next/link'
-import { ArrowRight, Quote, Sparkles } from 'lucide-react'
+import { ArrowRight, Sparkles } from 'lucide-react'
 
 import Navbar from '@/components/layout/navbar'
 import SiteFooter from '@/components/layout/site-footer'
@@ -14,9 +14,9 @@ export const metadata = {
     'Community members, leaders, and organizations across Washington County who endorse Jenny Kamprath for County Chair.',
 }
 
-const getInitials = (name) => {
-  if (!name) return ''
-  const parts = name.trim().split(/\s+/)
+const getInitials = (title) => {
+  if (!title) return ''
+  const parts = title.trim().split(/\s+/)
   return (parts[0]?.[0] ?? '') + (parts.length > 1 ? parts[parts.length - 1][0] : '')
 }
 
@@ -130,76 +130,40 @@ const EndorsementsPage = async () => {
         {ENDORSEMENTS.length > 0 && (
           <section className="py-16 lg:py-24 bg-off-white">
             <div className="mx-auto max-w-[1290px] px-6 lg:px-10">
-              <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 lg:gap-8">
+              <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4 lg:gap-6">
                 {ENDORSEMENTS.map((endorser) => (
                   <article
                     key={endorser.id}
                     className="relative bg-white border border-warm-100 rounded-2xl
-                      p-8 overflow-hidden hover:shadow-xl hover:shadow-navy-900/[0.06]
-                      hover:border-patriot-red/20 transition-all duration-300 flex flex-col"
+                      p-6 flex items-center gap-4
+                      hover:shadow-lg hover:shadow-navy-900/[0.06]
+                      hover:border-patriot-red/20 transition-all duration-300"
                   >
-                    {endorser.featured && (
-                      <span className="absolute top-4 right-4 inline-flex items-center gap-1.5
-                        font-body text-[10px] font-bold uppercase tracking-[1.5px]
-                        text-red-dark bg-patriot-red/[0.08] px-2.5 py-1 rounded-full">
-                        <Sparkles className="w-3 h-3" />
-                        Featured
-                      </span>
-                    )}
-
-                    <div className="flex items-center gap-4 mb-5">
-                      {endorser.photo ? (
-                        <div className="relative flex-shrink-0 w-16 h-16 rounded-full
-                          overflow-hidden bg-navy-900">
-                          <Image
-                            src={endorser.photo}
-                            alt={endorser.name}
-                            fill
-                            unoptimized
-                            className="object-cover"
-                            sizes="64px"
-                          />
-                        </div>
-                      ) : (
-                        <div className="flex-shrink-0 w-16 h-16 rounded-full bg-navy-900
-                          flex items-center justify-center border border-white/[0.1]">
-                          <span className="font-display font-black text-xl text-white
-                            tracking-[1px]">
-                            {getInitials(endorser.name)}
-                          </span>
-                        </div>
-                      )}
-                      <div className="min-w-0">
-                        <h3 className="font-display font-bold text-lg text-navy-900
-                          leading-[1.25] mb-0.5">
-                          {endorser.name}
-                        </h3>
-                        {endorser.title && (
-                          <p className="font-body text-sm text-warm-600 leading-snug">
-                            {endorser.title}
-                          </p>
-                        )}
+                    {endorser.photo ? (
+                      <div className="relative flex-shrink-0 w-14 h-14 rounded-full
+                        overflow-hidden bg-navy-900">
+                        <Image
+                          src={endorser.photo}
+                          alt={endorser.title}
+                          fill
+                          unoptimized
+                          className="object-cover"
+                          sizes="56px"
+                        />
                       </div>
-                    </div>
-
-                    {endorser.type && (
-                      <span className="inline-block self-start font-body text-[10px]
-                        font-bold uppercase tracking-[2px] text-red-dark
-                        bg-patriot-red/[0.08] px-3 py-1 rounded-full mb-5">
-                        {endorser.type}
-                      </span>
-                    )}
-
-                    {endorser.quote && (
-                      <div className="relative">
-                        <Quote className="absolute -top-1 -left-1 w-5 h-5
-                          text-red-dark/20" />
-                        <p className="font-body text-base text-warm-600 leading-[1.7]
-                          pl-6 italic">
-                          {endorser.quote}
-                        </p>
+                    ) : (
+                      <div aria-hidden="true" className="flex-shrink-0 w-14 h-14 rounded-full bg-navy-900
+                        flex items-center justify-center border border-white/[0.1]">
+                        <span className="font-display font-black text-lg text-white
+                          tracking-[1px]">
+                          {getInitials(endorser.title)}
+                        </span>
                       </div>
                     )}
+                    <h3 className="font-display font-bold text-lg text-navy-900
+                      leading-[1.3]">
+                      {endorser.title}
+                    </h3>
                   </article>
                 ))}
               </div>
