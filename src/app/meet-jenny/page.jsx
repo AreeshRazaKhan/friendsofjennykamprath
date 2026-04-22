@@ -134,17 +134,16 @@ const MeetJenny = () => {
                   A Fresh Perspective
                 </h2>
                 <p className="font-body text-lg text-warm-600 leading-[1.7] mb-4">
-                  Most county decisions happen in rooms where no one has
-                  recently sat across from the small-business owner trying to
-                  make payroll, or the homeowner watching utility bills climb
-                  year after year. Jenny does — every week, as part of her
-                  work — and that&apos;s the perspective she&apos;ll bring to
-                  county government.
+                  County decisions are made in rooms far from the Oregon
+                  business owners and working families Jenny talks with every
+                  day through her sales work. She hears directly what the
+                  people affected by those decisions are dealing with — and
+                  that&apos;s the perspective she&apos;ll bring to county
+                  government.
                 </p>
                 <p className="font-body text-lg text-warm-600 leading-[1.7]">
-                  No old allegiances. No obligations to the people who benefit
-                  from the status quo. Just the willingness to ask hard
-                  questions and push back when the answers don&apos;t add up.
+                  No old allegiances. No obligations. Just a focus on solving
+                  problems and getting things done.
                 </p>
               </div>
             </div>
