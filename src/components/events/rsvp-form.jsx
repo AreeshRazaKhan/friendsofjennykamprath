@@ -193,7 +193,7 @@ const RsvpForm = ({ eventTitle, eventDate, eventTime, eventCategory }) => {
                 rounded-lg px-3 py-2.5 text-white placeholder:text-white/30
                 font-body text-sm focus:outline-none focus:border-patriot-red
                 transition-colors"
-              placeholder="(503) 555-1234"
+              placeholder="+1 (503) 555-1234"
             />
           </div>
 

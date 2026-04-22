@@ -235,7 +235,7 @@ const Contact = () => {
                         setFormData((prev) => ({ ...prev, phone: formatPhoneInput(e.target.value) }))
                         setError('')
                       }}
-                      placeholder="(503) 555-0123"
+                      placeholder="+1 (503) 555-0123"
                       className="w-full bg-white border border-warm-100 rounded-lg px-4 py-3 text-navy-900 font-body text-base focus:outline-none focus:border-patriot-red transition-colors"
                     />
                   </div>

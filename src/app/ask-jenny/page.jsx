@@ -263,7 +263,7 @@ const AskJenny = () => {
                             setFormData((prev) => ({ ...prev, phone: formatPhoneInput(e.target.value) }))
                             setError('')
                           }}
-                          placeholder="(503) 555-0123"
+                          placeholder="+1 (503) 555-0123"
                           className="w-full bg-white border-b-2 border-warm-200 px-0 py-3
                             text-navy-900 font-body text-base focus:outline-none
                             focus:border-patriot-red transition-colors placeholder:text-warm-200"
