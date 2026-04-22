@@ -79,7 +79,7 @@ const Contact = () => {
       <main className="pt-[72px]">
         <section className="py-20 lg:py-28 bg-off-white">
           <div className="mx-auto max-w-[1290px] px-6 lg:px-10">
-            <p className="font-body text-xs font-bold uppercase tracking-[3px] text-patriot-red mb-4">
+            <p className="font-body text-xs font-bold uppercase tracking-[3px] text-red-dark mb-4">
               Get in Touch
             </p>
             <h1 className="font-display font-extrabold text-[clamp(2rem,4vw,2.625rem)] leading-[1.15] text-navy-900 mb-4">
@@ -105,7 +105,7 @@ const Contact = () => {
                   <div className="space-y-5">
                     <div className="flex gap-4 items-start">
                       <div className="w-10 h-10 rounded-lg bg-patriot-red/[0.08] flex items-center justify-center flex-shrink-0">
-                        <MapPin className="w-5 h-5 text-patriot-red" />
+                        <MapPin className="w-5 h-5 text-red-dark" />
                       </div>
                       <div className="font-body text-base text-warm-600">
                         <p className="font-semibold text-navy-900 mb-1">Mailing Address</p>
@@ -116,13 +116,13 @@ const Contact = () => {
 
                     <div className="flex gap-4 items-start">
                       <div className="w-10 h-10 rounded-lg bg-patriot-red/[0.08] flex items-center justify-center flex-shrink-0">
-                        <Mail className="w-5 h-5 text-patriot-red" />
+                        <Mail className="w-5 h-5 text-red-dark" />
                       </div>
                       <div className="font-body text-base text-warm-600">
                         <p className="font-semibold text-navy-900 mb-1">Email</p>
                         <a
                           href="mailto:jenny@jennykamprath.com"
-                          className="text-patriot-red hover:underline"
+                          className="text-red-dark hover:underline"
                         >
                           jenny@jennykamprath.com
                         </a>
@@ -131,13 +131,13 @@ const Contact = () => {
 
                     <div className="flex gap-4 items-start">
                       <div className="w-10 h-10 rounded-lg bg-patriot-red/[0.08] flex items-center justify-center flex-shrink-0">
-                        <Phone className="w-5 h-5 text-patriot-red" />
+                        <Phone className="w-5 h-5 text-red-dark" />
                       </div>
                       <div className="font-body text-base text-warm-600">
                         <p className="font-semibold text-navy-900 mb-1">Phone</p>
                         <a
                           href="tel:9713655668"
-                          className="text-patriot-red hover:underline"
+                          className="text-red-dark hover:underline"
                         >
                           (971) 365-5668
                         </a>
@@ -160,7 +160,7 @@ const Contact = () => {
                   <div className="text-center py-8">
                     <div className="w-16 h-16 rounded-full bg-patriot-red/10 flex items-center
                       justify-center mx-auto mb-4">
-                      <svg className="w-8 h-8 text-patriot-red" fill="none" viewBox="0 0 24 24"
+                      <svg className="w-8 h-8 text-red-dark" fill="none" viewBox="0 0 24 24"
                         stroke="currentColor" strokeWidth={2.5}>
                         <path strokeLinecap="round" strokeLinejoin="round" d="M5 13l4 4L19 7" />
                       </svg>
@@ -180,7 +180,7 @@ const Contact = () => {
 
                 {error && (
                   <div className="bg-patriot-red/10 border border-patriot-red/20 rounded-lg px-4 py-3 mb-4">
-                    <p className="font-body text-sm text-patriot-red">{error}</p>
+                    <p className="font-body text-sm text-red-dark">{error}</p>
                   </div>
                 )}
 
@@ -297,8 +297,8 @@ const Contact = () => {
                   <button
                     type="submit"
                     disabled={submitting}
-                    className="w-full font-body font-semibold text-base text-white bg-patriot-red
-                      hover:bg-red-dark disabled:opacity-60 disabled:cursor-not-allowed
+                    className="w-full font-body font-semibold text-base text-white bg-red-dark
+                      hover:bg-red-hover disabled:opacity-60 disabled:cursor-not-allowed
                       py-4 rounded-lg transition-colors duration-200 mt-2"
                   >
                     {submitting ? 'Sending...' : 'Send Message'}

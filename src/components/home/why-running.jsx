@@ -5,7 +5,7 @@ const WhyRunning = () => {
   return (
     <section className="relative py-24 lg:py-32 bg-off-white overflow-hidden">
       {/* Watermark */}
-      <div className="absolute top-1/2 right-0 -translate-y-1/2 translate-x-[20%]
+      <div aria-hidden="true" className="absolute top-1/2 right-0 -translate-y-1/2 translate-x-[20%]
         font-display font-black text-[140px] text-navy-900/[0.03] tracking-[8px]
         whitespace-nowrap select-none pointer-events-none hidden lg:block rotate-90">
         WHY
@@ -33,7 +33,7 @@ const WhyRunning = () => {
             </div>
 
             {/* Offset accent card */}
-            <div className="absolute -bottom-6 right-2 sm:-right-4 lg:-right-8 bg-patriot-red
+            <div className="absolute -bottom-6 right-2 sm:-right-4 lg:-right-8 bg-red-dark
               text-white rounded-xl px-5 py-3 sm:px-6 sm:py-4 shadow-xl z-[2]">
               <p className="font-body text-xs font-bold uppercase tracking-[2px] mb-1">
                 Washington County
@@ -47,7 +47,7 @@ const WhyRunning = () => {
           {/* Right — content (55%) */}
           <div>
             <p className="font-body text-xs font-bold uppercase tracking-[3px]
-              text-patriot-red mb-4">
+              text-red-dark mb-4">
               The Mission
             </p>
 

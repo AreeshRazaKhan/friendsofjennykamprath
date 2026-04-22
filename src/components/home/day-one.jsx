@@ -16,7 +16,7 @@ const DayOne = () => {
         border border-white/[0.03]" />
 
       {/* Watermark */}
-      <div className="absolute bottom-8 left-10 font-display font-black
+      <div aria-hidden="true" className="absolute bottom-8 left-10 font-display font-black
         text-[160px] text-white/[0.02] tracking-[10px] select-none
         pointer-events-none hidden xl:block">
         DAY ONE
@@ -40,7 +40,7 @@ const DayOne = () => {
               What Jenny Will Do on Day One
             </h2>
 
-            <p className="font-body text-lg text-white/50 leading-relaxed">
+            <p className="font-body text-lg text-white/70 leading-relaxed">
               No more waiting. No more empty promises.
               Concrete actions from the very first day in office.
             </p>
@@ -58,7 +58,7 @@ const DayOne = () => {
                 <span className="flex-shrink-0 w-12 h-12 rounded-xl
                   bg-white/[0.06] flex items-center justify-center
                   font-display font-bold text-lg text-patriot-red
-                  group-hover:bg-patriot-red group-hover:text-white
+                  group-hover:bg-red-dark group-hover:text-white
                   transition-all duration-300">
                   {String(idx + 1).padStart(2, '0')}
                 </span>

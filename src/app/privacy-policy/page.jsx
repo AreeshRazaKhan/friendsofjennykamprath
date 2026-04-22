@@ -16,7 +16,7 @@ const PrivacyPolicy = () => {
       <main className="pt-[72px]">
         <section className="py-20 lg:py-28 bg-off-white">
           <div className="mx-auto max-w-[800px] px-6 lg:px-10">
-            <p className="font-body text-xs font-bold uppercase tracking-[3px] text-patriot-red mb-4">
+            <p className="font-body text-xs font-bold uppercase tracking-[3px] text-red-dark mb-4">
               Legal
             </p>
             <h1 className="font-display font-extrabold text-[clamp(2rem,4vw,2.625rem)] leading-[1.15] text-navy-900 mb-4">
@@ -256,11 +256,11 @@ const PrivacyPolicy = () => {
               <p className="mb-4">
                 You may request deletion of your phone number and SMS consent data
                 at any time by contacting us at{' '}
-                <a href="mailto:jenny@jennykamprath.com" className="text-patriot-red hover:underline">
+                <a href="mailto:jenny@jennykamprath.com" className="text-red-dark hover:underline">
                   jenny@jennykamprath.com
                 </a>{' '}
                 or calling{' '}
-                <a href="tel:9713655668" className="text-patriot-red hover:underline">
+                <a href="tel:9713655668" className="text-red-dark hover:underline">
                   (971) 365-5668
                 </a>. We will process your request within 10 business days.
               </p>
@@ -272,7 +272,7 @@ const PrivacyPolicy = () => {
                 You can opt out of SMS messages at any time by replying{' '}
                 <strong>STOP</strong> to any message you receive from us. You may
                 also opt out by contacting us directly at{' '}
-                <a href="mailto:jenny@jennykamprath.com" className="text-patriot-red hover:underline">
+                <a href="mailto:jenny@jennykamprath.com" className="text-red-dark hover:underline">
                   jenny@jennykamprath.com
                 </a>. Opt-out requests are processed within 10 business days.
               </p>
@@ -439,20 +439,20 @@ const PrivacyPolicy = () => {
                 <p>PO Box 122, Beaverton, OR 97075</p>
                 <p>
                   Email:{' '}
-                  <a href="mailto:jenny@jennykamprath.com" className="text-patriot-red hover:underline">
+                  <a href="mailto:jenny@jennykamprath.com" className="text-red-dark hover:underline">
                     jenny@jennykamprath.com
                   </a>
                 </p>
                 <p>
                   Phone:{' '}
-                  <a href="tel:9713655668" className="text-patriot-red hover:underline">
+                  <a href="tel:9713655668" className="text-red-dark hover:underline">
                     (971) 365-5668
                   </a>
                 </p>
               </div>
               <p className="mt-4">
                 See also our{' '}
-                <Link href="/terms-of-service" className="text-patriot-red hover:underline">
+                <Link href="/terms-of-service" className="text-red-dark hover:underline">
                   Terms of Service
                 </Link>.
               </p>

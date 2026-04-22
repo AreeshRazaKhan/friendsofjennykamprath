@@ -35,7 +35,7 @@ const Priorities = () => {
   return (
     <section className="relative py-24 lg:py-32 bg-white overflow-hidden">
       {/* Watermark */}
-      <div className="absolute top-12 left-1/2 -translate-x-1/2
+      <div aria-hidden="true" className="absolute top-12 left-1/2 -translate-x-1/2
         font-display font-black text-[120px] text-warm-100/80 tracking-[8px]
         whitespace-nowrap select-none pointer-events-none hidden lg:block">
         PRIORITIES
@@ -45,7 +45,7 @@ const Priorities = () => {
         {/* Section header — off-center */}
         <div className="max-w-2xl mb-16 lg:mb-20">
           <p className="font-body text-xs font-bold uppercase tracking-[3px]
-            text-patriot-red mb-4">
+            text-red-dark mb-4">
             Platform
           </p>
           <h2 className="font-display font-extrabold text-[clamp(2rem,4vw,2.625rem)]
@@ -65,10 +65,10 @@ const Priorities = () => {
                 ${idx === 0 ? 'lg:row-span-1' : ''}`}
             >
               {/* Number watermark */}
-              <span className="absolute top-4 right-6 font-display font-black
+              <span aria-hidden="true" className="absolute top-4 right-6 font-display font-black
                 text-[100px] leading-none text-warm-100/60 select-none
                 pointer-events-none transition-colors duration-300
-                group-hover:text-patriot-red/10">
+                group-hover:text-red-dark/10">
                 {priority.number}
               </span>
 

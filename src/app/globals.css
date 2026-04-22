@@ -5,20 +5,22 @@
 
 @theme inline {
   /* ─── BRAND COLORS ─── */
-  --color-navy-900: #0D1B2A;
-  --color-navy-800: #1A2744;
-  --color-navy-700: #1B3A5C;
-  --color-navy-600: #264D73;
+  --color-navy-900: #000004;
+  --color-navy-800: #001A3E;
+  --color-navy-700: #003680;
+  --color-navy-600: #0055BF;
+  --color-sign-blue: #0068E3;
 
-  --color-patriot-red: #C41E3A;
-  --color-red-dark: #9E1830;
-  --color-red-light: #E8546A;
+  --color-patriot-red: #FF0D00;
+  --color-red-dark: #D80B00;
+  --color-red-hover: #9E0800;
+  --color-red-light: #FF5C50;
 
   --color-off-white: #F8F9FA;
   --color-warm-50: #F5F3F0;
   --color-warm-100: #E8E4DF;
   --color-warm-200: #D4CEC6;
-  --color-warm-400: #9C958C;
+  --color-warm-400: #6E665F;
   --color-warm-600: #6B6560;
   --color-warm-800: #3A3632;
 
@@ -48,7 +50,19 @@
   }
 
   ::selection {
-    background: #C41E3A;
+    background: #FF0D00;
     color: white;
+  }
+}
+
+@layer utilities {
+  /* Radial sign gradient — navy corners, sign-blue center */
+  .bg-sign-gradient {
+    background: radial-gradient(
+      ellipse at center,
+      var(--color-sign-blue) 0%,
+      var(--color-navy-700) 50%,
+      var(--color-navy-900) 90%
+    );
   }
 }

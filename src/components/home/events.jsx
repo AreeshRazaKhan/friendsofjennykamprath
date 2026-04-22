@@ -21,7 +21,7 @@ const Events = async () => {
   return (
     <section className="relative py-24 lg:py-32 bg-white overflow-hidden">
       {/* Watermark */}
-      <div
+      <div aria-hidden="true"
         className="absolute top-16 left-1/2 -translate-x-1/2
         font-display font-black text-[120px] text-warm-100/70 tracking-[8px]
         whitespace-nowrap select-none pointer-events-none hidden lg:block"
@@ -34,7 +34,7 @@ const Events = async () => {
         <div className="max-w-2xl mb-16 lg:mb-20">
           <p
             className="font-body text-xs font-bold uppercase tracking-[3px]
-            text-patriot-red mb-4"
+            text-red-dark mb-4"
           >
             Get Involved
           </p>
@@ -71,7 +71,7 @@ const Events = async () => {
               {/* Featured badge */}
               <span
                 className="inline-block font-body text-[10px] font-bold uppercase
-                tracking-[2px] text-white bg-patriot-red px-3 py-1.5
+                tracking-[2px] text-white bg-red-dark px-3 py-1.5
                 rounded-full mb-8"
               >
                 Featured Event
@@ -101,13 +101,13 @@ const Events = async () => {
                   >
                     {featured.title}
                   </h3>
-                  <p className="font-body text-sm text-white/40">
+                  <p className="font-body text-sm text-white/70">
                     {featured.type}
                   </p>
                 </div>
               </div>
 
-              <p className="font-body text-base text-white/60 leading-[1.7] mb-8 line-clamp-3">
+              <p className="font-body text-base text-white/70 leading-[1.7] mb-8 line-clamp-3">
                 {featured.description}
               </p>
 
@@ -130,7 +130,7 @@ const Events = async () => {
               <Link
                 href={`/events/${featured.id}`}
                 className="inline-flex items-center gap-3 font-body font-semibold
-                  text-base text-white bg-patriot-red hover:bg-red-dark
+                  text-base text-white bg-red-dark hover:bg-red-hover
                   px-8 py-4 rounded-lg transition-colors duration-200 group/btn"
               >
                 View Details
@@ -166,7 +166,7 @@ const Events = async () => {
                   </span>
                   <span
                     className="font-body text-[10px] font-bold uppercase
-                    tracking-[2px] text-patriot-red mt-0.5"
+                    tracking-[2px] text-red-dark mt-0.5"
                   >
                     {event.date.month}
                   </span>
@@ -177,7 +177,7 @@ const Events = async () => {
                   <Link href={`/events/${event.id}`}>
                     <h4
                       className="font-display font-bold text-lg text-navy-900
-                      leading-[1.3] mb-1.5 group-hover:text-patriot-red
+                      leading-[1.3] mb-1.5 group-hover:text-red-dark
                       transition-colors duration-200"
                     >
                       {event.title}

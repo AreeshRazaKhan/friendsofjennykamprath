@@ -87,7 +87,7 @@ const RsvpForm = ({ eventTitle, eventDate, eventTime, eventCategory }) => {
         <div className="relative z-[1] text-center py-4">
           <div className="w-14 h-14 rounded-full bg-patriot-red/20 flex items-center
             justify-center mx-auto mb-4">
-            <svg className="w-7 h-7 text-patriot-red" fill="none" viewBox="0 0 24 24"
+            <svg className="w-7 h-7 text-red-dark" fill="none" viewBox="0 0 24 24"
               stroke="currentColor" strokeWidth={2.5}>
               <path strokeLinecap="round" strokeLinejoin="round" d="M5 13l4 4L19 7" />
             </svg>
@@ -95,7 +95,7 @@ const RsvpForm = ({ eventTitle, eventDate, eventTime, eventCategory }) => {
           <h3 className="font-display font-bold text-xl text-white mb-2">
             You&apos;re In!
           </h3>
-          <p className="font-body text-sm text-white/50 leading-relaxed">
+          <p className="font-body text-sm text-white/70 leading-relaxed">
             Thanks for RSVPing, {formData.firstName}! We&apos;ll see you at the event.
           </p>
         </div>
@@ -111,7 +111,7 @@ const RsvpForm = ({ eventTitle, eventDate, eventTime, eventCategory }) => {
         <h3 className="font-display font-bold text-xl text-white mb-2">
           RSVP for This Event
         </h3>
-        <p className="font-body text-sm text-white/50 mb-6">
+        <p className="font-body text-sm text-white/70 mb-6">
           Free and open to the public. Let us know you&apos;re coming.
         </p>
 
@@ -126,7 +126,7 @@ const RsvpForm = ({ eventTitle, eventDate, eventTime, eventCategory }) => {
           <div className="grid grid-cols-2 gap-3">
             <div>
               <label className="block font-body text-[10px] font-medium uppercase
-                tracking-[1px] text-white/40 mb-1.5">
+                tracking-[1px] text-white/70 mb-1.5">
                 First Name *
               </label>
               <input
@@ -143,7 +143,7 @@ const RsvpForm = ({ eventTitle, eventDate, eventTime, eventCategory }) => {
             </div>
             <div>
               <label className="block font-body text-[10px] font-medium uppercase
-                tracking-[1px] text-white/40 mb-1.5">
+                tracking-[1px] text-white/70 mb-1.5">
                 Last Name
               </label>
               <input
@@ -161,7 +161,7 @@ const RsvpForm = ({ eventTitle, eventDate, eventTime, eventCategory }) => {
 
           <div>
             <label className="block font-body text-[10px] font-medium uppercase
-              tracking-[1px] text-white/40 mb-1.5">
+              tracking-[1px] text-white/70 mb-1.5">
               Email *
             </label>
             <input
@@ -179,7 +179,7 @@ const RsvpForm = ({ eventTitle, eventDate, eventTime, eventCategory }) => {
 
           <div>
             <label className="block font-body text-[10px] font-medium uppercase
-              tracking-[1px] text-white/40 mb-1.5">
+              tracking-[1px] text-white/70 mb-1.5">
               Contact Number
             </label>
             <input
@@ -199,7 +199,7 @@ const RsvpForm = ({ eventTitle, eventDate, eventTime, eventCategory }) => {
 
           <div className="space-y-2.5 pt-1">
             {!hasPhone && (
-              <p className="font-body text-[11px] text-white/40 italic">
+              <p className="font-body text-[11px] text-white/70 italic">
                 Enter a phone number above to opt in to SMS messages.
               </p>
             )}
@@ -213,7 +213,7 @@ const RsvpForm = ({ eventTitle, eventDate, eventTime, eventCategory }) => {
                 required={hasPhone}
                 className="mt-0.5 flex-shrink-0 accent-patriot-red disabled:opacity-40 disabled:cursor-not-allowed"
               />
-              <span className={`font-body text-[11px] leading-relaxed ${hasPhone ? 'text-white/50' : 'text-white/25'}`}>
+              <span className={`font-body text-[11px] leading-relaxed ${hasPhone ? 'text-white/70' : 'text-white/25'}`}>
                 I agree to receive SMS updates from Friends of Jenny Kamprath
                 regarding campaign updates, event reminders, and volunteer
                 coordination. Message frequency varies. Message &amp; data
@@ -230,7 +230,7 @@ const RsvpForm = ({ eventTitle, eventDate, eventTime, eventCategory }) => {
                 required={hasPhone}
                 className="mt-0.5 flex-shrink-0 accent-patriot-red disabled:opacity-40 disabled:cursor-not-allowed"
               />
-              <span className={`font-body text-[11px] leading-relaxed ${hasPhone ? 'text-white/50' : 'text-white/25'}`}>
+              <span className={`font-body text-[11px] leading-relaxed ${hasPhone ? 'text-white/70' : 'text-white/25'}`}>
                 I agree to receive promotional SMS messages from Friends of
                 Jenny Kamprath, including fundraising requests and donation
                 drives. Message frequency varies. Message &amp; data rates
@@ -243,14 +243,14 @@ const RsvpForm = ({ eventTitle, eventDate, eventTime, eventCategory }) => {
             type="submit"
             disabled={submitting}
             className="w-full font-body font-semibold text-sm text-white
-              bg-patriot-red hover:bg-red-dark disabled:opacity-60
+              bg-red-dark hover:bg-red-hover disabled:opacity-60
               disabled:cursor-not-allowed py-3.5 rounded-lg
               transition-colors duration-200 mt-1"
           >
             {submitting ? 'Submitting...' : 'Confirm RSVP'}
           </button>
 
-          <p className="font-body text-xs text-white/50 text-center">
+          <p className="font-body text-xs text-white/70 text-center">
             By submitting you agree to the{' '}
             <a href="/terms-of-service" className="underline hover:text-white transition-colors">
               Terms of Service

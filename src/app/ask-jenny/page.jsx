@@ -106,13 +106,13 @@ const AskJenny = () => {
       <main className="pt-[72px]">
 
         {/* Hero */}
-        <section className="relative py-20 lg:py-28 bg-navy-900 overflow-hidden">
+        <section className="relative py-20 lg:py-28 bg-sign-gradient overflow-hidden">
           {/* Floating circles */}
           <div className="absolute -top-16 -right-16 w-64 h-64 rounded-full border border-white/[0.05]" />
           <div className="absolute bottom-12 left-[8%] w-36 h-36 rounded-full border border-white/[0.04]" />
 
           {/* Watermark */}
-          <div
+          <div aria-hidden="true"
             className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2
             font-display font-black text-[140px] text-white/[0.02] tracking-[8px]
             whitespace-nowrap select-none pointer-events-none hidden lg:block"
@@ -129,7 +129,7 @@ const AskJenny = () => {
                 Your Voice Matters{' '}
                 <span className="text-patriot-red">— Ask Jenny.</span>
               </h1>
-              <p className="font-body text-lg text-white/60 leading-relaxed max-w-xl">
+              <p className="font-body text-lg text-white/70 leading-relaxed max-w-xl">
                 Have a question, concern, or idea? Jenny wants to hear from you.
               </p>
             </div>
@@ -139,7 +139,7 @@ const AskJenny = () => {
         {/* Popular topics */}
         <section className="py-16 lg:py-20 bg-off-white">
           <div className="mx-auto max-w-[1290px] px-6 lg:px-10">
-            <p className="font-body text-xs font-bold uppercase tracking-[3px] text-patriot-red mb-6">
+            <p className="font-body text-xs font-bold uppercase tracking-[3px] text-red-dark mb-6">
               Common Topics
             </p>
             <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
@@ -152,7 +152,7 @@ const AskJenny = () => {
                   >
                     <div className="w-10 h-10 rounded-lg bg-patriot-red/[0.08] flex items-center
                       justify-center mb-4">
-                      <Icon className="w-5 h-5 text-patriot-red" />
+                      <Icon className="w-5 h-5 text-red-dark" />
                     </div>
                     <h3 className="font-display font-bold text-base text-navy-900 mb-2">
                       {topic.title}
@@ -175,7 +175,7 @@ const AskJenny = () => {
               <div className="max-w-2xl mx-auto text-center py-16">
                 <div className="w-20 h-20 rounded-full bg-patriot-red/10 flex items-center
                   justify-center mx-auto mb-6">
-                  <MessageCircle className="w-10 h-10 text-patriot-red" />
+                  <MessageCircle className="w-10 h-10 text-red-dark" />
                 </div>
                 <h2 className="font-display font-bold text-3xl text-navy-900 mb-4">
                   Message Received!
@@ -188,7 +188,7 @@ const AskJenny = () => {
                 <Link
                   href="/"
                   className="inline-flex items-center gap-3 font-body font-semibold
-                    text-base text-white bg-patriot-red hover:bg-red-dark
+                    text-base text-white bg-red-dark hover:bg-red-hover
                     px-10 py-4 rounded-lg transition-colors duration-200"
                 >
                   Back to Home
@@ -213,7 +213,7 @@ const AskJenny = () => {
 
                   {error && (
                     <div className="bg-patriot-red/10 border border-patriot-red/20 rounded-lg px-4 py-3 mb-6">
-                      <p className="font-body text-sm text-patriot-red">{error}</p>
+                      <p className="font-body text-sm text-red-dark">{error}</p>
                     </div>
                   )}
 
@@ -390,7 +390,7 @@ const AskJenny = () => {
                       type="submit"
                       disabled={submitting}
                       className="w-full sm:w-auto font-body font-semibold text-base text-white
-                        bg-patriot-red hover:bg-red-dark disabled:opacity-60
+                        bg-red-dark hover:bg-red-hover disabled:opacity-60
                         disabled:cursor-not-allowed px-12 py-4 rounded-lg
                         transition-colors duration-200"
                     >
@@ -429,7 +429,7 @@ const AskJenny = () => {
                         ].map((item) => (
                           <li key={item} className="flex gap-3 items-start">
                             <span className="mt-1.5 flex-shrink-0 w-1.5 h-1.5 rounded-full bg-patriot-red" />
-                            <span className="font-body text-sm text-white/60 leading-relaxed">
+                            <span className="font-body text-sm text-white/70 leading-relaxed">
                               {item}
                             </span>
                           </li>
@@ -440,7 +440,7 @@ const AskJenny = () => {
 
                   {/* Quote card */}
                   <div className="bg-warm-50 rounded-2xl p-8 border border-warm-100">
-                    <span className="font-display font-black text-5xl text-patriot-red/10 leading-none block mb-2">
+                    <span className="font-display font-black text-5xl text-red-dark/10 leading-none block mb-2">
                       &ldquo;
                     </span>
                     <p className="font-body text-base text-warm-600 leading-relaxed italic mb-4">
@@ -460,11 +460,11 @@ const AskJenny = () => {
                     </h3>
                     <div className="space-y-2">
                       <a href="mailto:jenny@jennykamprath.com"
-                        className="block font-body text-sm text-patriot-red hover:underline">
+                        className="block font-body text-sm text-red-dark hover:underline">
                         jenny@jennykamprath.com
                       </a>
                       <a href="tel:9713655668"
-                        className="block font-body text-sm text-patriot-red hover:underline">
+                        className="block font-body text-sm text-red-dark hover:underline">
                         (971) 365-5668
                       </a>
                     </div>

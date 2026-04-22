@@ -29,7 +29,7 @@ const PoweredByPeople = () => {
           <h2 className="font-display font-black text-[clamp(2.2rem,5vw,3.5rem)]
             leading-[1.08] text-navy-900 mb-8">
             Powered by the People.{' '}
-            <span className="text-patriot-red">Not Political Insiders.</span>
+            <span className="text-red-dark">Not Political Insiders.</span>
           </h2>
 
           <blockquote className="font-display font-bold text-[clamp(1.5rem,2.5vw,1.875rem)]
@@ -38,7 +38,7 @@ const PoweredByPeople = () => {
             approaches, we can&rsquo;t expect different results. It&rsquo;s
             time to bring a new perspective and accountability to county
             leadership.{' '}
-            <span className="text-patriot-red">
+            <span className="text-red-dark">
               Washington County deserves a leader who will listen and act, and
               deliver real change.
             </span>

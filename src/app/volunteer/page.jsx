@@ -180,13 +180,13 @@ const Volunteer = () => {
       <main className="pt-[72px]">
 
         {/* Hero */}
-        <section className="relative py-20 lg:py-28 bg-navy-900 overflow-hidden">
+        <section className="relative py-20 lg:py-28 bg-sign-gradient overflow-hidden">
           {/* Floating circles */}
           <div className="absolute -top-16 -right-16 w-64 h-64 rounded-full border border-white/[0.05]" />
           <div className="absolute bottom-12 left-[8%] w-36 h-36 rounded-full border border-white/[0.04]" />
 
           {/* Watermark */}
-          <div
+          <div aria-hidden="true"
             className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2
             font-display font-black text-[160px] text-white/[0.02] tracking-[10px]
             whitespace-nowrap select-none pointer-events-none hidden lg:block"
@@ -203,7 +203,7 @@ const Volunteer = () => {
                 Volunteer for{' '}
                 <span className="text-patriot-red">Jenny.</span>
               </h1>
-              <p className="font-body text-lg text-white/60 leading-relaxed max-w-xl">
+              <p className="font-body text-lg text-white/70 leading-relaxed max-w-xl">
                 This campaign is powered by neighbors, not political insiders.
                 Every door knocked, every call made, and every conversation had
                 brings us one step closer to accountable government.
@@ -234,7 +234,7 @@ const Volunteer = () => {
                 },
               ].map((item) => (
                 <div key={item.number} className="flex gap-5">
-                  <span className="font-display font-black text-4xl text-patriot-red/15 leading-none flex-shrink-0">
+                  <span aria-hidden="true" className="font-display font-black text-4xl text-red-dark/15 leading-none flex-shrink-0">
                     {item.number}
                   </span>
                   <div>
@@ -259,7 +259,7 @@ const Volunteer = () => {
               <div className="max-w-2xl mx-auto text-center py-16">
                 <div className="w-20 h-20 rounded-full bg-patriot-red/10 flex items-center
                   justify-center mx-auto mb-6">
-                  <svg className="w-10 h-10 text-patriot-red" fill="none" viewBox="0 0 24 24"
+                  <svg className="w-10 h-10 text-red-dark" fill="none" viewBox="0 0 24 24"
                     stroke="currentColor" strokeWidth={2.5}>
                     <path strokeLinecap="round" strokeLinejoin="round" d="M5 13l4 4L19 7" />
                   </svg>
@@ -275,7 +275,7 @@ const Volunteer = () => {
                 <Link
                   href="/events"
                   className="inline-flex items-center gap-3 font-body font-semibold
-                    text-base text-white bg-patriot-red hover:bg-red-dark
+                    text-base text-white bg-red-dark hover:bg-red-hover
                     px-10 py-4 rounded-lg transition-colors duration-200"
                 >
                   View Upcoming Events
@@ -300,7 +300,7 @@ const Volunteer = () => {
 
                   {error && (
                     <div className="bg-patriot-red/10 border border-patriot-red/20 rounded-lg px-4 py-3 mb-6">
-                      <p className="font-body text-sm text-patriot-red">{error}</p>
+                      <p className="font-body text-sm text-red-dark">{error}</p>
                     </div>
                   )}
 
@@ -491,12 +491,12 @@ const Volunteer = () => {
                                   : 'border-warm-100 hover:border-warm-200 text-warm-600'
                                 }`}
                             >
-                              <Icon className={`w-4 h-4 flex-shrink-0 ${isSelected ? 'text-patriot-red' : 'text-warm-400'}`} />
+                              <Icon className={`w-4 h-4 flex-shrink-0 ${isSelected ? 'text-red-dark' : 'text-warm-400'}`} />
                               <span className="font-body text-sm font-medium">
                                 {option.label}
                               </span>
                               {isSelected && (
-                                <svg className="w-4 h-4 text-patriot-red ml-auto flex-shrink-0"
+                                <svg className="w-4 h-4 text-red-dark ml-auto flex-shrink-0"
                                   fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={2.5}>
                                   <path strokeLinecap="round" strokeLinejoin="round" d="M5 13l4 4L19 7" />
                                 </svg>
@@ -610,7 +610,7 @@ const Volunteer = () => {
                       type="submit"
                       disabled={submitting}
                       className="w-full sm:w-auto font-body font-semibold text-base text-white
-                        bg-patriot-red hover:bg-red-dark disabled:opacity-60
+                        bg-red-dark hover:bg-red-hover disabled:opacity-60
                         disabled:cursor-not-allowed px-12 py-4 rounded-lg
                         transition-colors duration-200"
                     >
@@ -649,7 +649,7 @@ const Volunteer = () => {
                         ].map((item) => (
                           <li key={item} className="flex gap-3 items-start">
                             <span className="mt-1.5 flex-shrink-0 w-1.5 h-1.5 rounded-full bg-patriot-red" />
-                            <span className="font-body text-sm text-white/60 leading-relaxed">
+                            <span className="font-body text-sm text-white/70 leading-relaxed">
                               {item}
                             </span>
                           </li>
@@ -669,11 +669,11 @@ const Volunteer = () => {
                     </p>
                     <div className="space-y-2">
                       <a href="mailto:jenny@jennykamprath.com"
-                        className="block font-body text-sm text-patriot-red hover:underline">
+                        className="block font-body text-sm text-red-dark hover:underline">
                         jenny@jennykamprath.com
                       </a>
                       <a href="tel:9713655668"
-                        className="block font-body text-sm text-patriot-red hover:underline">
+                        className="block font-body text-sm text-red-dark hover:underline">
                         (971) 365-5668
                       </a>
                     </div>

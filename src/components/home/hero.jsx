@@ -13,7 +13,13 @@ const Hero = () => {
         className="object-cover object-center"
         sizes="100vw"
       />
-      <div className="absolute inset-0 bg-navy-900/90" />
+      <div
+        className="absolute inset-0"
+        style={{
+          background:
+            'radial-gradient(ellipse at center, rgba(0,104,227,0.82) 0%, rgba(0,54,128,0.90) 45%, rgba(0,0,4,0.95) 90%)',
+        }}
+      />
 
       {/* Floating circle accents */}
       <div className="absolute -top-20 -right-20 w-[400px] h-[400px] rounded-full
@@ -26,7 +32,9 @@ const Hero = () => {
         border border-white/[0.05]" />
 
       {/* Watermark */}
-      <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2
+      <div
+        aria-hidden="true"
+        className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2
         font-display font-black text-[180px] text-white/[0.02] tracking-[12px]
         whitespace-nowrap select-none pointer-events-none hidden lg:block">
         KAMPRATH
@@ -64,7 +72,7 @@ const Hero = () => {
             <Link
               href="https://secure.anedot.com/b2002057-9fe3-4cb5-8e5a-93539cdc75d4/b2002057-9fe3-4cb5-8e5a-93539cdc75d4" target="_blank" rel="noopener noreferrer"
               className="inline-flex items-center justify-center font-body font-semibold
-                text-base text-white bg-patriot-red hover:bg-red-dark
+                text-base text-white bg-red-dark hover:bg-red-hover
                 px-10 py-4 rounded-lg transition-colors duration-200"
             >
               Donate
@@ -108,7 +116,7 @@ const Hero = () => {
               ))}
             </ul>
 
-            <p className="font-body text-sm text-white/40 leading-relaxed mb-8 relative z-[1]">
+            <p className="font-body text-sm text-white/70 leading-relaxed mb-8 relative z-[1]">
               I promise a new vision, transparency, no new taxes, and
               leadership that will fight for the rights of taxpayers.
               It&apos;s time to take our county government back.
@@ -119,7 +127,7 @@ const Hero = () => {
               target="_blank"
               rel="noopener noreferrer"
               className="block w-full text-center font-body font-semibold text-base
-                text-white bg-patriot-red hover:bg-red-dark py-4 rounded-lg
+                text-white bg-red-dark hover:bg-red-hover py-4 rounded-lg
                 transition-colors duration-200 relative z-[1]"
             >
               Donate to the Campaign

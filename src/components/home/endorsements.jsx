@@ -27,7 +27,7 @@ const Endorsements = async () => {
       <div className="relative z-[1] mx-auto max-w-[1290px] px-6 lg:px-10">
         <div className="max-w-2xl mb-16">
           <p className="font-body text-xs font-bold uppercase tracking-[3px]
-            text-patriot-red mb-4">
+            text-red-dark mb-4">
             Endorsements
           </p>
           <h2 className="font-display font-extrabold text-[clamp(2rem,4vw,2.625rem)]
@@ -84,7 +84,7 @@ const Endorsements = async () => {
 
               {endorser.type && (
                 <span className="inline-block self-start font-body text-[10px]
-                  font-bold uppercase tracking-[2px] text-patriot-red
+                  font-bold uppercase tracking-[2px] text-red-dark
                   bg-patriot-red/[0.08] px-3 py-1 rounded-full mb-4">
                   {endorser.type}
                 </span>
@@ -93,7 +93,7 @@ const Endorsements = async () => {
               {endorser.quote && (
                 <div className="relative">
                   <Quote className="absolute -top-1 -left-1 w-5 h-5
-                    text-patriot-red/20" />
+                    text-red-dark/20" />
                   <p className="font-body text-base text-warm-600 leading-relaxed
                     pl-6">
                     &ldquo;{endorser.quote}&rdquo;
@@ -108,7 +108,7 @@ const Endorsements = async () => {
           <Link
             href="/endorsements"
             className="inline-flex items-center gap-2 font-body font-semibold
-              text-base text-patriot-red hover:gap-3 transition-all duration-200"
+              text-base text-red-dark hover:gap-3 transition-all duration-200"
           >
             See all endorsements
             <ArrowRight className="w-4 h-4" />

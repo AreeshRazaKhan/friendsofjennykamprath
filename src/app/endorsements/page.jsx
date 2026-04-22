@@ -29,13 +29,13 @@ const EndorsementsPage = async () => {
       <main className="pt-[72px]">
 
         {/* Hero */}
-        <section className="relative py-20 lg:py-28 bg-navy-900 overflow-hidden">
+        <section className="relative py-20 lg:py-28 bg-sign-gradient overflow-hidden">
           <div className="absolute -top-16 -right-16 w-64 h-64 rounded-full
             border border-white/[0.05]" />
           <div className="absolute bottom-12 left-[8%] w-36 h-36 rounded-full
             border border-white/[0.04]" />
 
-          <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2
+          <div aria-hidden="true" className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2
             font-display font-black text-[160px] text-white/[0.02] tracking-[10px]
             whitespace-nowrap select-none pointer-events-none hidden lg:block">
             ENDORSED
@@ -51,7 +51,7 @@ const EndorsementsPage = async () => {
                 leading-[1.08] text-white mb-6">
                 Endorsed by Washington County
               </h1>
-              <p className="font-body text-lg text-white/60 leading-relaxed max-w-xl">
+              <p className="font-body text-lg text-white/70 leading-relaxed max-w-xl">
                 Real neighbors, real business owners, real leaders — backing Jenny
                 because they know she&apos;ll fight for fiscal responsibility, safe
                 neighborhoods, and a county government that listens.
@@ -71,7 +71,7 @@ const EndorsementsPage = async () => {
                 <div className="absolute -bottom-16 -left-16 w-52 h-52 rounded-full
                   border border-navy-900/[0.04] pointer-events-none" />
 
-                <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2
+                <div aria-hidden="true" className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2
                   font-display font-black text-[140px] text-warm-100/50 tracking-[8px]
                   whitespace-nowrap select-none pointer-events-none hidden lg:block">
                   SOON
@@ -81,11 +81,11 @@ const EndorsementsPage = async () => {
                   <div className="inline-flex items-center justify-center w-20 h-20
                     rounded-2xl bg-patriot-red/[0.08] border border-patriot-red/[0.15]
                     mb-8">
-                    <Sparkles className="w-9 h-9 text-patriot-red" />
+                    <Sparkles className="w-9 h-9 text-red-dark" />
                   </div>
 
                   <p className="font-body text-xs font-bold uppercase tracking-[3px]
-                    text-patriot-red mb-4">
+                    text-red-dark mb-4">
                     Coming Soon
                   </p>
                   <h2 className="font-display font-extrabold
@@ -103,7 +103,7 @@ const EndorsementsPage = async () => {
                     <Link
                       href="/contact"
                       className="inline-flex items-center gap-3 font-body font-semibold
-                        text-base text-white bg-patriot-red hover:bg-red-dark
+                        text-base text-white bg-red-dark hover:bg-red-hover
                         px-8 py-4 rounded-lg transition-colors duration-200 group/btn"
                     >
                       Endorse Jenny
@@ -141,7 +141,7 @@ const EndorsementsPage = async () => {
                     {endorser.featured && (
                       <span className="absolute top-4 right-4 inline-flex items-center gap-1.5
                         font-body text-[10px] font-bold uppercase tracking-[1.5px]
-                        text-patriot-red bg-patriot-red/[0.08] px-2.5 py-1 rounded-full">
+                        text-red-dark bg-patriot-red/[0.08] px-2.5 py-1 rounded-full">
                         <Sparkles className="w-3 h-3" />
                         Featured
                       </span>
@@ -184,7 +184,7 @@ const EndorsementsPage = async () => {
 
                     {endorser.type && (
                       <span className="inline-block self-start font-body text-[10px]
-                        font-bold uppercase tracking-[2px] text-patriot-red
+                        font-bold uppercase tracking-[2px] text-red-dark
                         bg-patriot-red/[0.08] px-3 py-1 rounded-full mb-5">
                         {endorser.type}
                       </span>
@@ -193,7 +193,7 @@ const EndorsementsPage = async () => {
                     {endorser.quote && (
                       <div className="relative">
                         <Quote className="absolute -top-1 -left-1 w-5 h-5
-                          text-patriot-red/20" />
+                          text-red-dark/20" />
                         <p className="font-body text-base text-warm-600 leading-[1.7]
                           pl-6 italic">
                           {endorser.quote}
@@ -208,7 +208,7 @@ const EndorsementsPage = async () => {
         )}
 
         {/* CTA */}
-        <section className="relative py-24 lg:py-32 bg-patriot-red overflow-hidden">
+        <section className="relative py-24 lg:py-32 bg-red-dark overflow-hidden">
           <Image
             src="/images/flag.jpg"
             alt=""
@@ -240,7 +240,7 @@ const EndorsementsPage = async () => {
                 <Link
                   href="/contact"
                   className="inline-flex items-center gap-3 font-body font-semibold
-                    text-base text-patriot-red bg-white hover:bg-off-white
+                    text-base text-red-dark bg-white hover:bg-off-white
                     px-10 py-4 rounded-lg transition-colors duration-200 group/btn"
                 >
                   Endorse Jenny

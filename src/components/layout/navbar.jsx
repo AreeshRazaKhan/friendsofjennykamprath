@@ -50,7 +50,7 @@ const Navbar = () => {
                 className={`font-body text-[13px] font-medium uppercase tracking-[1px]
                   transition-colors duration-200
                   ${isActive(link.href)
-                    ? 'text-patriot-red font-semibold'
+                    ? 'text-red-dark font-semibold'
                     : 'text-navy-800/60 hover:text-navy-900'
                   }`}
               >
@@ -68,8 +68,8 @@ const Navbar = () => {
               </Link>
               <Link
                 href="https://secure.anedot.com/b2002057-9fe3-4cb5-8e5a-93539cdc75d4/b2002057-9fe3-4cb5-8e5a-93539cdc75d4" target="_blank" rel="noopener noreferrer"
-                className="font-body text-[13px] font-semibold text-white bg-patriot-red
-                  hover:bg-red-dark px-6 py-2.5 rounded-lg transition-colors duration-200"
+                className="font-body text-[13px] font-semibold text-white bg-red-dark
+                  hover:bg-red-hover px-6 py-2.5 rounded-lg transition-colors duration-200"
               >
                 Donate
               </Link>
@@ -101,7 +101,7 @@ const Navbar = () => {
                 className={`font-body text-sm font-medium uppercase tracking-[1px]
                   py-3 transition-colors
                   ${isActive(link.href)
-                    ? 'text-patriot-red font-semibold'
+                    ? 'text-red-dark font-semibold'
                     : 'text-navy-800/60 hover:text-navy-900'
                   }`}
               >
@@ -118,8 +118,8 @@ const Navbar = () => {
               </Link>
               <Link
                 href="https://secure.anedot.com/b2002057-9fe3-4cb5-8e5a-93539cdc75d4/b2002057-9fe3-4cb5-8e5a-93539cdc75d4" target="_blank" rel="noopener noreferrer"
-                className="font-body text-sm font-semibold text-white bg-patriot-red
-                  px-5 py-2.5 rounded-lg text-center flex-1"
+                className="font-body text-sm font-semibold text-white bg-red-dark
+                  hover:bg-red-hover px-5 py-2.5 rounded-lg text-center flex-1"
               >
                 Donate
               </Link>

@@ -16,7 +16,7 @@ const TermsOfService = () => {
       <main className="pt-[72px]">
         <section className="py-20 lg:py-28 bg-off-white">
           <div className="mx-auto max-w-[800px] px-6 lg:px-10">
-            <p className="font-body text-xs font-bold uppercase tracking-[3px] text-patriot-red mb-4">
+            <p className="font-body text-xs font-bold uppercase tracking-[3px] text-red-dark mb-4">
               Legal
             </p>
             <h1 className="font-display font-extrabold text-[clamp(2rem,4vw,2.625rem)] leading-[1.15] text-navy-900 mb-4">
@@ -189,7 +189,7 @@ const TermsOfService = () => {
               </h3>
               <p className="mb-4">
                 For assistance, reply <strong>HELP</strong>, or contact us at{' '}
-                <a href="mailto:jenny@jennykamprath.com" className="text-patriot-red hover:underline">
+                <a href="mailto:jenny@jennykamprath.com" className="text-red-dark hover:underline">
                   jenny@jennykamprath.com
                 </a>.
               </p>
@@ -232,7 +232,7 @@ const TermsOfService = () => {
               </h2>
               <p>
                 Your use of our services is also governed by our{' '}
-                <Link href="/privacy-policy" className="text-patriot-red hover:underline">
+                <Link href="/privacy-policy" className="text-red-dark hover:underline">
                   Privacy Policy
                 </Link>, which describes how we collect, use, and protect your
                 information.
@@ -336,13 +336,13 @@ const TermsOfService = () => {
                 <p>PO Box 122, Beaverton, OR 97075</p>
                 <p>
                   Email:{' '}
-                  <a href="mailto:jenny@jennykamprath.com" className="text-patriot-red hover:underline">
+                  <a href="mailto:jenny@jennykamprath.com" className="text-red-dark hover:underline">
                     jenny@jennykamprath.com
                   </a>
                 </p>
                 <p>
                   Phone:{' '}
-                  <a href="tel:9713655668" className="text-patriot-red hover:underline">
+                  <a href="tel:9713655668" className="text-red-dark hover:underline">
                     (971) 365-5668
                   </a>
                 </p>

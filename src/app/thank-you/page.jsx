@@ -76,7 +76,7 @@ const ThankYou = () => {
                   className="mb-5 inline-flex h-10 w-10 items-center justify-center rounded-lg
                   bg-patriot-red/[0.08]"
                 >
-                  <Mail className="h-5 w-5 text-patriot-red" />
+                  <Mail className="h-5 w-5 text-red-dark" />
                 </div>
                 <h2 className="font-display font-bold text-2xl text-navy-900 mb-3">
                   Check your inbox
@@ -89,7 +89,7 @@ const ThankYou = () => {
                 <Link
                   href="/"
                   className="inline-flex items-center gap-2 font-body font-semibold text-base
-                    text-white bg-patriot-red hover:bg-red-dark py-3 px-6 rounded-lg
+                    text-white bg-red-dark hover:bg-red-hover py-3 px-6 rounded-lg
                     transition-colors duration-200"
                 >
                   Back to Home
@@ -98,7 +98,7 @@ const ThankYou = () => {
               </div>
 
               <div className="rounded-2xl border border-warm-100 bg-warm-50 p-8 lg:p-10">
-                <p className="font-body text-xs font-bold uppercase tracking-[2px] text-patriot-red mb-3">
+                <p className="font-body text-xs font-bold uppercase tracking-[2px] text-red-dark mb-3">
                   Keep Going
                 </p>
                 <h3 className="font-display font-bold text-xl text-navy-900 mb-4">
@@ -113,7 +113,7 @@ const ThankYou = () => {
                     href="/volunteer"
                     className="inline-flex items-center justify-between gap-2 font-body font-semibold
                       text-sm text-navy-900 bg-white border border-warm-100 hover:border-patriot-red
-                      hover:text-patriot-red py-3 px-5 rounded-lg transition-colors duration-200"
+                      hover:text-red-dark py-3 px-5 rounded-lg transition-colors duration-200"
                   >
                     Volunteer with us
                     <ArrowRight className="h-4 w-4" />
@@ -122,7 +122,7 @@ const ThankYou = () => {
                     href="/events"
                     className="inline-flex items-center justify-between gap-2 font-body font-semibold
                       text-sm text-navy-900 bg-white border border-warm-100 hover:border-patriot-red
-                      hover:text-patriot-red py-3 px-5 rounded-lg transition-colors duration-200"
+                      hover:text-red-dark py-3 px-5 rounded-lg transition-colors duration-200"
                   >
                     See upcoming events
                     <ArrowRight className="h-4 w-4" />

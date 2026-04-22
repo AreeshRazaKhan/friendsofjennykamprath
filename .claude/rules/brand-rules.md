@@ -9,13 +9,16 @@
 ## Color System
 
 ### Primary
-- Navy 900: `#0D1B2A` — Hero backgrounds, headers, primary text
-- Navy 800: `#1A2744` — Logo text, headings, dark sections
-- Navy 700: `#1B3A5C` — Secondary dark, accent backgrounds
-- Navy 600: `#264D73` — Decorative dark accents
-- Patriot Red: `#C41E3A` — CTAs, logo accent, highlights, links
-- Red Dark: `#9E1830` — Hover states, pressed buttons
-- Red Light: `#E8546A` — Decorative accents on dark backgrounds
+Anchored to the official campaign sign palette — web and sign use the
+same colors for cross-media consistency.
+- Navy 900: `#000004` — Hero backgrounds, headers, primary text (sign gradient corner)
+- Navy 800: `#001A3E` — Logo text, headings, dark sections
+- Navy 700: `#003680` — Secondary dark, accent backgrounds
+- Navy 600: `#0055BF` — Decorative dark accents
+- Sign Blue: `#0068E3` — Gradient middle stop, brand accent blue
+- Patriot Red: `#FF0D00` — CTAs, logo accent, highlights, links (CMYK 0/95/100/0)
+- Red Dark: `#D80B00` — Hover states, pressed buttons
+- Red Light: `#FF5C50` — Decorative accents on dark backgrounds
 
 ### Neutral
 - White: `#FFFFFF`
@@ -32,33 +35,23 @@
 - Gold: `#C9A84C`
 - Sky: `#4A90D9`
 
-### Campaign Sign (Print / Signage Only)
-The official yard-sign palette is **separate from the web palette**.
-Yard signs use more saturated colors for outdoor readability and print
-reproduction; never substitute these values into web components.
+### Campaign Sign Gradient
+The official yard-sign uses a diagonal radial blue gradient built from
+the Primary palette. The same gradient is eligible for re-use on web
+hero sections / dark splash backgrounds so print and digital share one
+identity.
 
-**Blue background gradient** (diagonal radial — darker at corners,
-brightest at center):
-- Corner: `RGB(0, 0, 4)` — `#000004` (near-black navy)
-- Middle: `RGB(0, 104, 227)` — `#0068E3` (bright royal blue)
+- Corner stop: Navy 900 (`#000004`)
+- Middle stop: Sign Blue (`#0068E3`)
+- Direction: radial / diagonal, darker at corners, brightest at center
 
-**"Jenny" wordmark** (the large red "Jenny" on the sign):
-- `CMYK(0, 95, 100, 0)` ≈ `RGB(255, 13, 0)` ≈ `#FF0D00`
-- Same value is used for the sign's red border frame.
-
-**Other sign elements:**
-- "VOTE", "Kamprath", "Washington County Commissioner At-Large",
-  URL, and PAC number: white `#FFFFFF`
+**Sign-specific elements:**
+- "Jenny" wordmark and sign border frame: Patriot Red (`#FF0D00`,
+  CMYK 0/95/100/0) — the same value used for web CTAs and logo accents
+- "VOTE", "Kamprath", office title, URL, PAC number: white `#FFFFFF`
 - Checkbox icon: white box with green checkmark
 
-**When to use this palette:**
-- Yard signs, posters, flyers, mailers, and other print collateral
-- Digital renders of the sign (mock-ups, thumbnails, social previews
-  that reproduce the sign)
-
-**When NOT to use:**
-- Website UI — keep using Navy 900 `#0D1B2A` for dark sections and
-  Patriot Red `#C41E3A` for CTAs / wordmark.
+Reference asset: official yard-sign PDF supplied by the campaign.
 
 ## Typography
 - **Display font**: Playfair Display (serif) — Headlines, hero text, card titles

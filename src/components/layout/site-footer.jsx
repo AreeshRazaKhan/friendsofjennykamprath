@@ -45,7 +45,7 @@ const SiteFooter = () => {
                 target="_blank"
                 rel="noopener noreferrer"
                 className="w-10 h-10 rounded-lg bg-white/[0.06] flex items-center
-                  justify-center text-white/50 hover:text-white hover:bg-white/[0.12]
+                  justify-center text-white/70 hover:text-white hover:bg-white/[0.12]
                   transition-all duration-200"
                 aria-label="Facebook"
               >
@@ -58,7 +58,7 @@ const SiteFooter = () => {
                 target="_blank"
                 rel="noopener noreferrer"
                 className="w-10 h-10 rounded-lg bg-white/[0.06] flex items-center
-                  justify-center text-white/50 hover:text-white hover:bg-white/[0.12]
+                  justify-center text-white/70 hover:text-white hover:bg-white/[0.12]
                   transition-all duration-200"
                 aria-label="LinkedIn"
               >
@@ -72,7 +72,7 @@ const SiteFooter = () => {
           {/* Column 2 — Navigation */}
           <div>
             <h3 className="font-body text-xs font-bold uppercase tracking-[2px]
-              text-white/40 mb-6">
+              text-white/70 mb-6">
               Navigation
             </h3>
             <nav className="flex flex-col gap-3">
@@ -92,7 +92,7 @@ const SiteFooter = () => {
           {/* Column 3 — Contact */}
           <div>
             <h3 className="font-body text-xs font-bold uppercase tracking-[2px]
-              text-white/40 mb-6">
+              text-white/70 mb-6">
               Contact Us
             </h3>
             <div className="flex flex-col gap-3 font-body text-sm text-white/55">
@@ -116,7 +116,7 @@ const SiteFooter = () => {
           {/* Column 4 — Take Action */}
           <div>
             <h3 className="font-body text-xs font-bold uppercase tracking-[2px]
-              text-white/40 mb-6">
+              text-white/70 mb-6">
               Take Action
             </h3>
             <p className="font-body text-sm text-white/55 leading-relaxed mb-6">
@@ -137,7 +137,7 @@ const SiteFooter = () => {
                 target="_blank"
                 rel="noopener noreferrer"
                 className="w-full text-center font-body font-semibold text-sm
-                  text-white bg-patriot-red hover:bg-red-dark py-3 rounded-lg
+                  text-white bg-red-dark hover:bg-red-hover py-3 rounded-lg
                   transition-colors duration-200"
               >
                 Donate
@@ -149,8 +149,8 @@ const SiteFooter = () => {
         {/* Bottom bar */}
         <div className="pt-8 flex flex-col lg:flex-row justify-between items-start
           lg:items-center gap-4">
-          <div className="font-body text-xs text-white/30 leading-relaxed max-w-2xl">
-            <p className="font-semibold text-white/40 mb-1">
+          <div className="font-body text-xs text-white/70 leading-relaxed max-w-2xl">
+            <p className="font-semibold text-white mb-1">
               Paid For By Friends of Jenny Kamprath
             </p>
             <p>
@@ -160,24 +160,24 @@ const SiteFooter = () => {
               exceed $100.
             </p>
           </div>
-          <div className="flex gap-4 font-body text-xs text-white/30 flex-shrink-0">
-            <Link href="/privacy-policy" className="hover:text-white/60 transition-colors">Privacy Policy</Link>
+          <div className="flex gap-4 font-body text-xs text-white/70 flex-shrink-0">
+            <Link href="/privacy-policy" className="hover:text-white transition-colors">Privacy Policy</Link>
             <span>|</span>
-            <Link href="/terms-of-service" className="hover:text-white/60 transition-colors">Terms of Service</Link>
+            <Link href="/terms-of-service" className="hover:text-white transition-colors">Terms of Service</Link>
           </div>
         </div>
 
-        <div className="mt-6 text-center font-body text-xs text-white/20">
+        <div className="mt-6 text-center font-body text-xs text-white/70">
           &copy; 2026 Friends of Jenny Kamprath. All rights reserved.
         </div>
 
-        <div className="mt-2 text-center font-body text-xs text-white/20">
+        <div className="mt-2 text-center font-body text-xs text-white/70">
           Powered by{' '}
           <a
             href="https://op1776.com/"
             target="_blank"
             rel="noopener noreferrer"
-            className="hover:text-white/60 transition-colors"
+            className="hover:text-white transition-colors"
           >
             Operation 1776
           </a>

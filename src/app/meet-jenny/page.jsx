@@ -63,13 +63,13 @@ const MeetJenny = () => {
       <main className="pt-[72px]">
 
         {/* Hero */}
-        <section className="relative py-24 lg:py-36 bg-navy-900 overflow-hidden">
+        <section className="relative py-24 lg:py-36 bg-sign-gradient overflow-hidden">
           {/* Floating circles */}
           <div className="absolute -top-16 -right-16 w-72 h-72 rounded-full border border-white/[0.05]" />
           <div className="absolute bottom-20 left-[10%] w-40 h-40 rounded-full border border-white/[0.04]" />
 
           {/* Watermark */}
-          <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2
+          <div aria-hidden="true" className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2
             font-display font-black text-[160px] text-white/[0.02] tracking-[10px]
             whitespace-nowrap select-none pointer-events-none hidden lg:block">
             KAMPRATH
@@ -84,7 +84,7 @@ const MeetJenny = () => {
                 Leadership with a{' '}
                 <span className="text-patriot-red">Fresh Perspective.</span>
               </h1>
-              <p className="font-body text-lg text-white/60 leading-relaxed max-w-xl">
+              <p className="font-body text-lg text-white/70 leading-relaxed max-w-xl">
                 Jenny Kamprath is in the trenches every day — working in sales,
                 talking with Oregon business owners big and small, and hearing
                 first-hand how today&apos;s policies are making it harder to
@@ -131,7 +131,7 @@ const MeetJenny = () => {
                 </div>
               </div>
               <div>
-                <p className="font-body text-xs font-bold uppercase tracking-[3px] text-patriot-red mb-4">
+                <p className="font-body text-xs font-bold uppercase tracking-[3px] text-red-dark mb-4">
                   Not a Politician
                 </p>
                 <h2 className="font-display font-extrabold text-[clamp(1.8rem,3.5vw,2.25rem)] leading-[1.15] text-navy-900 mb-6">
@@ -157,7 +157,7 @@ const MeetJenny = () => {
             {/* Section 2 — Business & Budget Experience */}
             <div className="grid grid-cols-1 lg:grid-cols-[55%_1fr] gap-12 lg:gap-20 items-center mb-20 lg:mb-28">
               <div>
-                <p className="font-body text-xs font-bold uppercase tracking-[3px] text-patriot-red mb-4">
+                <p className="font-body text-xs font-bold uppercase tracking-[3px] text-red-dark mb-4">
                   Real-World Experience
                 </p>
                 <h2 className="font-display font-extrabold text-[clamp(1.8rem,3.5vw,2.25rem)] leading-[1.15] text-navy-900 mb-6">
@@ -205,7 +205,7 @@ const MeetJenny = () => {
                 </div>
               </div>
               <div>
-                <p className="font-body text-xs font-bold uppercase tracking-[3px] text-patriot-red mb-4">
+                <p className="font-body text-xs font-bold uppercase tracking-[3px] text-red-dark mb-4">
                   Standing Up for Neighbors
                 </p>
                 <h2 className="font-display font-extrabold text-[clamp(1.8rem,3.5vw,2.25rem)] leading-[1.15] text-navy-900 mb-6">
@@ -241,7 +241,7 @@ const MeetJenny = () => {
               <blockquote className="font-display font-bold
                 text-[clamp(1.75rem,3.5vw,2.5rem)] leading-[1.25] text-navy-900">
                 Washington County deserves a leader who will
-                <span className="text-patriot-red">
+                <span className="text-red-dark">
                   {' '}listen and act, and deliver real change.
                 </span>
               </blockquote>
@@ -256,7 +256,7 @@ const MeetJenny = () => {
           <div className="absolute -bottom-20 right-[15%] w-64 h-64 rounded-full border border-white/[0.03]" />
 
           {/* Watermark */}
-          <div className="absolute bottom-10 left-10 font-display font-black text-[140px]
+          <div aria-hidden="true" className="absolute bottom-10 left-10 font-display font-black text-[140px]
             text-white/[0.02] tracking-[8px] select-none pointer-events-none hidden xl:block">
             VALUES
           </div>
@@ -279,16 +279,16 @@ const MeetJenny = () => {
                   className="relative bg-white/[0.05] border border-white/[0.08] rounded-2xl
                     p-8 lg:p-10 group hover:bg-white/[0.08] transition-colors duration-300"
                 >
-                  <span className="absolute top-4 right-6 font-display font-black text-[80px]
+                  <span aria-hidden="true" className="absolute top-4 right-6 font-display font-black text-[80px]
                     leading-none text-white/[0.04] select-none pointer-events-none
-                    group-hover:text-patriot-red/10 transition-colors duration-300">
+                    group-hover:text-red-dark/10 transition-colors duration-300">
                     {value.number}
                   </span>
                   <div className="w-10 h-1.5 bg-patriot-red rounded-full mb-6" />
                   <h3 className="font-display font-bold text-xl text-white mb-4 relative z-[1]">
                     {value.title}
                   </h3>
-                  <p className="font-body text-base text-white/50 leading-relaxed relative z-[1]">
+                  <p className="font-body text-base text-white/70 leading-relaxed relative z-[1]">
                     {value.text}
                   </p>
                 </div>
@@ -304,7 +304,7 @@ const MeetJenny = () => {
 
               {/* Left — heading */}
               <div className="lg:sticky lg:top-40 lg:self-start">
-                <p className="font-body text-xs font-bold uppercase tracking-[3px] text-patriot-red mb-4">
+                <p className="font-body text-xs font-bold uppercase tracking-[3px] text-red-dark mb-4">
                   The Journey
                 </p>
                 <h2 className="font-display font-extrabold text-[clamp(2rem,4vw,2.625rem)] leading-[1.15] text-navy-900 mb-6">
@@ -327,7 +327,7 @@ const MeetJenny = () => {
                   >
                     <span className="flex-shrink-0 w-12 h-12 rounded-xl bg-off-white
                       flex items-center justify-center font-display font-bold text-lg
-                      text-patriot-red group-hover:bg-patriot-red group-hover:text-white
+                      text-red-dark group-hover:bg-red-dark group-hover:text-white
                       transition-all duration-300 border border-warm-100
                       group-hover:border-patriot-red">
                       {String(idx + 1).padStart(2, '0')}
@@ -349,7 +349,7 @@ const MeetJenny = () => {
         </section>
 
         {/* CTA Section */}
-        <section className="relative py-24 lg:py-32 bg-patriot-red overflow-hidden">
+        <section className="relative py-24 lg:py-32 bg-red-dark overflow-hidden">
           <Image
             src="/images/flag.jpg"
             alt=""
@@ -379,7 +379,7 @@ const MeetJenny = () => {
                 <Link
                   href="/volunteer"
                   className="inline-flex items-center gap-3 font-body font-semibold
-                    text-base text-patriot-red bg-white hover:bg-off-white
+                    text-base text-red-dark bg-white hover:bg-off-white
                     px-10 py-4 rounded-lg transition-colors duration-200 group/btn"
                 >
                   Volunteer

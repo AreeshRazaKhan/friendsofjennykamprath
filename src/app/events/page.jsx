@@ -30,13 +30,13 @@ const EventsPage = async () => {
       <main className="pt-[72px]">
 
         {/* Hero */}
-        <section className="relative py-20 lg:py-28 bg-navy-900 overflow-hidden">
+        <section className="relative py-20 lg:py-28 bg-sign-gradient overflow-hidden">
           {/* Floating circles */}
           <div className="absolute -top-16 -right-16 w-64 h-64 rounded-full border border-white/[0.05]" />
           <div className="absolute bottom-12 left-[8%] w-36 h-36 rounded-full border border-white/[0.04]" />
 
           {/* Watermark */}
-          <div
+          <div aria-hidden="true"
             className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2
             font-display font-black text-[160px] text-white/[0.02] tracking-[10px]
             whitespace-nowrap select-none pointer-events-none hidden lg:block"
@@ -52,7 +52,7 @@ const EventsPage = async () => {
               <h1 className="font-display font-black text-[clamp(2.5rem,5vw,3.5rem)] leading-[1.08] text-white mb-6">
                 Upcoming Events
               </h1>
-              <p className="font-body text-lg text-white/60 leading-relaxed max-w-xl">
+              <p className="font-body text-lg text-white/70 leading-relaxed max-w-xl">
                 Every event is open to the public. No invitations, no gatekeepers,
                 no staged photo ops — just real conversations with real people.
               </p>
@@ -75,7 +75,7 @@ const EventsPage = async () => {
                   border border-patriot-red/[0.08] pointer-events-none hidden lg:block" />
 
                 {/* Watermark */}
-                <div
+                <div aria-hidden="true"
                   className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2
                   font-display font-black text-[140px] text-warm-100/50 tracking-[8px]
                   whitespace-nowrap select-none pointer-events-none hidden lg:block"
@@ -87,11 +87,11 @@ const EventsPage = async () => {
                   <div className="inline-flex items-center justify-center w-20 h-20
                     rounded-2xl bg-patriot-red/[0.08] border border-patriot-red/[0.15]
                     mb-8">
-                    <CalendarClock className="w-9 h-9 text-patriot-red" />
+                    <CalendarClock className="w-9 h-9 text-red-dark" />
                   </div>
 
                   <p className="font-body text-xs font-bold uppercase tracking-[3px]
-                    text-patriot-red mb-4">
+                    text-red-dark mb-4">
                     Stay Tuned
                   </p>
                   <h2 className="font-display font-extrabold text-[clamp(2rem,4vw,2.75rem)]
@@ -109,7 +109,7 @@ const EventsPage = async () => {
                     <Link
                       href="/volunteer"
                       className="inline-flex items-center gap-3 font-body font-semibold
-                        text-base text-white bg-patriot-red hover:bg-red-dark
+                        text-base text-white bg-red-dark hover:bg-red-hover
                         px-8 py-4 rounded-lg transition-colors duration-200 group/btn"
                     >
                       <BellRing className="w-4 h-4" />
@@ -137,7 +137,7 @@ const EventsPage = async () => {
         {featured && (
           <section className="py-16 lg:py-20 bg-off-white">
             <div className="mx-auto max-w-[1290px] px-6 lg:px-10">
-              <p className="font-body text-xs font-bold uppercase tracking-[3px] text-patriot-red mb-8">
+              <p className="font-body text-xs font-bold uppercase tracking-[3px] text-red-dark mb-8">
                 Featured Event
               </p>
 
@@ -165,36 +165,36 @@ const EventsPage = async () => {
                     {/* Info */}
                     <div>
                       <span className="inline-block font-body text-[10px] font-bold uppercase
-                        tracking-[2px] text-white bg-patriot-red px-3 py-1.5 rounded-full mb-4">
+                        tracking-[2px] text-white bg-red-dark px-3 py-1.5 rounded-full mb-4">
                         {featured.type}
                       </span>
                       <h2 className="font-display font-bold text-2xl lg:text-3xl text-white leading-[1.2] mb-3
-                        group-hover:text-patriot-red transition-colors duration-200">
+                        group-hover:text-red-dark transition-colors duration-200">
                         {featured.title}
                       </h2>
-                      <p className="font-body text-base text-white/50 leading-relaxed mb-4 max-w-xl line-clamp-2">
+                      <p className="font-body text-base text-white/70 leading-relaxed mb-4 max-w-xl line-clamp-2">
                         {featured.description}
                       </p>
                       <div className="flex flex-wrap gap-x-6 gap-y-2">
                         <span className="flex items-center gap-2">
-                          <Clock className="w-4 h-4 text-patriot-red" />
-                          <span className="font-body text-sm text-white/60">
+                          <Clock className="w-4 h-4 text-red-dark" />
+                          <span className="font-body text-sm text-white/70">
                             {featured.time}
                             {featured.endTime ? ` — ${featured.endTime}` : ''}
                           </span>
                         </span>
                         <span className="flex items-center gap-2">
-                          <MapPin className="w-4 h-4 text-patriot-red" />
-                          <span className="font-body text-sm text-white/60">{featured.location}</span>
+                          <MapPin className="w-4 h-4 text-red-dark" />
+                          <span className="font-body text-sm text-white/70">{featured.location}</span>
                         </span>
                       </div>
                     </div>
 
                     {/* Arrow */}
                     <div className="hidden lg:flex items-center justify-center w-14 h-14 rounded-full
-                      bg-white/[0.06] border border-white/[0.1] group-hover:bg-patriot-red
-                      group-hover:border-patriot-red transition-all duration-300">
-                      <ArrowRight className="w-5 h-5 text-white/50 group-hover:text-white transition-colors" />
+                      bg-white/[0.06] border border-white/[0.1] group-hover:bg-red-dark
+                      group-hover:border-red-dark transition-all duration-300">
+                      <ArrowRight className="w-5 h-5 text-white/70 group-hover:text-white transition-colors" />
                     </div>
                   </div>
                 </div>
@@ -228,7 +228,7 @@ const EventsPage = async () => {
                 >
                   {/* Category badge */}
                   <span className="inline-block font-body text-[10px] font-bold uppercase
-                    tracking-[2px] text-patriot-red bg-patriot-red/[0.08] px-3 py-1.5
+                    tracking-[2px] text-red-dark bg-patriot-red/[0.08] px-3 py-1.5
                     rounded-full mb-5">
                     {event.type}
                   </span>
@@ -242,13 +242,13 @@ const EventsPage = async () => {
                       <span className="font-display font-black text-xl text-navy-900 leading-none">
                         {event.date.day}
                       </span>
-                      <span className="font-body text-[10px] font-bold uppercase tracking-[2px] text-patriot-red mt-0.5">
+                      <span className="font-body text-[10px] font-bold uppercase tracking-[2px] text-red-dark mt-0.5">
                         {event.date.month}
                       </span>
                     </div>
                     <div className="min-w-0">
                       <h3 className="font-display font-bold text-xl text-navy-900 leading-[1.3] mb-1
-                        group-hover:text-patriot-red transition-colors duration-200">
+                        group-hover:text-red-dark transition-colors duration-200">
                         {event.title}
                       </h3>
                       <p className="font-body text-sm text-warm-400">
@@ -278,7 +278,7 @@ const EventsPage = async () => {
 
                   {/* View details — stronger CTA */}
                   <span className="inline-flex items-center gap-2 font-body font-semibold
-                    text-sm text-patriot-red group-hover:gap-3 transition-all duration-200">
+                    text-sm text-red-dark group-hover:gap-3 transition-all duration-200">
                     View Details
                     <ArrowRight className="w-4 h-4" />
                   </span>

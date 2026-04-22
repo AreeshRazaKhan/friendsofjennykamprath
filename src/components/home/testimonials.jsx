@@ -20,7 +20,7 @@ const Testimonials = () => {
   return (
     <section className="relative py-24 lg:py-32 bg-white overflow-hidden">
       {/* Watermark */}
-      <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2
+      <div aria-hidden="true" className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2
         font-display font-black text-[120px] text-warm-100/70 tracking-[8px]
         whitespace-nowrap select-none pointer-events-none hidden lg:block">
         VOICES
@@ -30,7 +30,7 @@ const Testimonials = () => {
         {/* Header — right-aligned for asymmetry */}
         <div className="lg:text-right lg:ml-auto max-w-xl mb-16">
           <p className="font-body text-xs font-bold uppercase tracking-[3px]
-            text-patriot-red mb-4">
+            text-red-dark mb-4">
             Community Voices
           </p>
           <h2 className="font-display font-extrabold text-[clamp(2rem,4vw,2.625rem)]
@@ -50,7 +50,7 @@ const Testimonials = () => {
             >
               {/* Quote mark */}
               <span className="absolute top-6 right-8 font-display font-black
-                text-[80px] leading-none text-patriot-red/[0.08] select-none">
+                text-[80px] leading-none text-red-dark/[0.08] select-none">
                 &#34;
               </span>
 

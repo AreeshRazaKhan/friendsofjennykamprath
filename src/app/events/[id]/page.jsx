@@ -40,7 +40,7 @@ const EventDetailPage = async ({ params }) => {
       <main className="pt-[72px]">
 
         {/* Hero */}
-        <section className="relative py-20 lg:py-28 bg-navy-900 overflow-hidden">
+        <section className="relative py-20 lg:py-28 bg-sign-gradient overflow-hidden">
           <div className="absolute -top-12 -right-12 w-48 h-48 rounded-full border border-white/[0.05]" />
           <div className="absolute bottom-16 left-[5%] w-32 h-32 rounded-full border border-white/[0.04]" />
           <div className="absolute top-1/2 right-[12%] w-20 h-20 rounded-full border border-white/[0.08]" />
@@ -49,24 +49,24 @@ const EventDetailPage = async ({ params }) => {
             <div className="flex items-center gap-2 mb-8">
               <Link
                 href="/events"
-                className="font-body text-sm text-white/40 hover:text-white transition-colors"
+                className="font-body text-sm text-white/70 hover:text-white transition-colors"
               >
                 Events
               </Link>
               <span className="font-body text-sm text-white/20">/</span>
-              <span className="font-body text-sm text-white/60">{event.title}</span>
+              <span className="font-body text-sm text-white/70">{event.title}</span>
             </div>
 
             <div className="grid grid-cols-1 lg:grid-cols-[1fr_auto] gap-10 items-end">
               <div>
                 <span className="inline-block font-body text-[10px] font-bold uppercase
-                  tracking-[2px] text-white bg-patriot-red px-3 py-1.5 rounded-full mb-6">
+                  tracking-[2px] text-white bg-red-dark px-3 py-1.5 rounded-full mb-6">
                   {event.type}
                 </span>
                 <h1 className="font-display font-black text-[clamp(2rem,4.5vw,3rem)] leading-[1.08] text-white mb-4">
                   {event.title}
                 </h1>
-                <p className="font-body text-lg text-white/50 leading-relaxed max-w-2xl">
+                <p className="font-body text-lg text-white/70 leading-relaxed max-w-2xl">
                   {event.description}
                 </p>
               </div>
@@ -79,7 +79,7 @@ const EventDetailPage = async ({ params }) => {
                 <span className="font-body text-sm font-bold uppercase tracking-[2px] text-patriot-red mt-1">
                   {event.date.month}
                 </span>
-                <span className="font-body text-[10px] text-white/40 mt-0.5">
+                <span className="font-body text-[10px] text-white/70 mt-0.5">
                   {event.date.year}
                 </span>
               </div>
@@ -96,7 +96,7 @@ const EventDetailPage = async ({ params }) => {
                 <div className="flex flex-wrap gap-6 pb-8 mb-8 border-b border-warm-100">
                   <div className="flex items-center gap-3">
                     <div className="w-10 h-10 rounded-lg bg-patriot-red/[0.08] flex items-center justify-center">
-                      <Calendar className="w-5 h-5 text-patriot-red" />
+                      <Calendar className="w-5 h-5 text-red-dark" />
                     </div>
                     <div>
                       <p className="font-body text-xs text-warm-400 uppercase tracking-[1px]">Date</p>
@@ -110,7 +110,7 @@ const EventDetailPage = async ({ params }) => {
                   </div>
                   <div className="flex items-center gap-3">
                     <div className="w-10 h-10 rounded-lg bg-patriot-red/[0.08] flex items-center justify-center">
-                      <Clock className="w-5 h-5 text-patriot-red" />
+                      <Clock className="w-5 h-5 text-red-dark" />
                     </div>
                     <div>
                       <p className="font-body text-xs text-warm-400 uppercase tracking-[1px]">Time</p>
@@ -119,7 +119,7 @@ const EventDetailPage = async ({ params }) => {
                   </div>
                   <div className="flex items-center gap-3">
                     <div className="w-10 h-10 rounded-lg bg-patriot-red/[0.08] flex items-center justify-center">
-                      <MapPin className="w-5 h-5 text-patriot-red" />
+                      <MapPin className="w-5 h-5 text-red-dark" />
                     </div>
                     <div>
                       <p className="font-body text-xs text-warm-400 uppercase tracking-[1px]">Location</p>
@@ -193,14 +193,14 @@ const EventDetailPage = async ({ params }) => {
                       border border-warm-100 hover:shadow-md hover:shadow-navy-900/[0.04]
                       transition-all duration-200"
                   >
-                    <ArrowLeft className="w-5 h-5 text-warm-400 group-hover:text-patriot-red
+                    <ArrowLeft className="w-5 h-5 text-warm-400 group-hover:text-red-dark
                       transition-colors flex-shrink-0" />
                     <div className="min-w-0">
                       <p className="font-body text-xs text-warm-400 uppercase tracking-[1px] mb-1">
                         Previous Event
                       </p>
                       <p className="font-display font-bold text-base text-navy-900
-                        group-hover:text-patriot-red transition-colors truncate">
+                        group-hover:text-red-dark transition-colors truncate">
                         {prevEvent.title}
                       </p>
                     </div>
@@ -221,11 +221,11 @@ const EventDetailPage = async ({ params }) => {
                         Next Event
                       </p>
                       <p className="font-display font-bold text-base text-navy-900
-                        group-hover:text-patriot-red transition-colors truncate">
+                        group-hover:text-red-dark transition-colors truncate">
                         {nextEvent.title}
                       </p>
                     </div>
-                    <ArrowRight className="w-5 h-5 text-warm-400 group-hover:text-patriot-red
+                    <ArrowRight className="w-5 h-5 text-warm-400 group-hover:text-red-dark
                       transition-colors flex-shrink-0" />
                   </Link>
                 ) : (
@@ -237,7 +237,7 @@ const EventDetailPage = async ({ params }) => {
                 <Link
                   href="/events"
                   className="inline-flex items-center gap-3 font-body font-semibold
-                    text-sm text-navy-800 hover:text-patriot-red transition-colors duration-200"
+                    text-sm text-navy-800 hover:text-red-dark transition-colors duration-200"
                 >
                   <ArrowLeft className="w-4 h-4" />
                   Back to All Events

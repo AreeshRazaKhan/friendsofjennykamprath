@@ -33,7 +33,7 @@ const CountdownPledge = () => {
   }, [])
 
   return (
-    <section className="relative py-24 lg:py-32 bg-patriot-red overflow-hidden">
+    <section className="relative py-24 lg:py-32 bg-red-dark overflow-hidden">
       {/* Background flag image */}
       <Image
         src="/images/flag.jpg"
@@ -53,7 +53,7 @@ const CountdownPledge = () => {
       <div className="relative z-[1] mx-auto max-w-[1290px] px-6 lg:px-10">
         <div className="max-w-3xl mx-auto text-center">
           <p className="font-body text-xs font-bold uppercase tracking-[3px]
-            text-white/60 mb-4">
+            text-white/70 mb-4">
             Mark Your Calendar
           </p>
 
@@ -78,7 +78,7 @@ const CountdownPledge = () => {
                     {String(unit.value).padStart(2, '0')}
                   </span>
                 </div>
-                <span className="font-body text-[10px] sm:text-xs font-medium text-white/50
+                <span className="font-body text-[10px] sm:text-xs font-medium text-white/70
                   mt-2 uppercase tracking-[1px]">
                   {unit.label}
                 </span>
