@@ -128,27 +128,29 @@ const EndorsementsPage = async () => {
                 {ENDORSEMENTS.map((endorser) => (
                   <article
                     key={endorser.id}
-                    className="relative bg-white border border-warm-100 rounded-2xl
-                      overflow-hidden flex flex-col
-                      hover:shadow-lg hover:shadow-navy-900/[0.06]
-                      hover:border-patriot-red/20 transition-all duration-300"
+                    className="group relative aspect-[4/5] rounded-2xl overflow-hidden
+                      border border-warm-100 bg-navy-900
+                      shadow-[0_4px_12px_rgba(0,0,0,0.06)]
+                      hover:shadow-[0_14px_32px_rgba(0,0,0,0.18)]
+                      hover:-translate-y-1 hover:border-patriot-red/40
+                      transition-all duration-300"
                   >
-                    {/* Flag / photo background */}
-                    <div className="relative aspect-square w-full">
-                      <Image
-                        src={endorser.photo || '/images/flag-avatar.webp'}
-                        alt=""
-                        fill
-                        unoptimized={!!endorser.photo}
-                        className="object-cover"
-                        sizes="(max-width: 640px) 50vw, (max-width: 1024px) 33vw, 25vw"
-                      />
-                      <div aria-hidden="true" className="absolute inset-0 bg-navy-900/40" />
-                    </div>
-                    {/* Name */}
-                    <div className="px-4 py-5 text-center flex-1 flex items-center justify-center">
-                      <h3 className="font-display font-bold text-base text-red-dark
-                        leading-[1.25]">
+                    <Image
+                      src={endorser.photo || '/images/flag-avatar.webp'}
+                      alt=""
+                      fill
+                      unoptimized={!!endorser.photo}
+                      className="object-cover transition-transform duration-500 group-hover:scale-105"
+                      sizes="(max-width: 640px) 50vw, (max-width: 1024px) 33vw, 25vw"
+                    />
+                    <div aria-hidden="true"
+                      className="absolute inset-0 bg-gradient-to-t
+                        from-navy-900 via-navy-900/75 to-navy-900/30" />
+                    <div aria-hidden="true"
+                      className="absolute top-0 inset-x-0 h-[3px] bg-patriot-red" />
+                    <div className="absolute inset-x-0 bottom-0 px-4 py-5">
+                      <h3 className="font-display font-bold text-base lg:text-lg text-white
+                        leading-[1.2] text-center line-clamp-3">
                         {endorser.title}
                       </h3>
                     </div>
