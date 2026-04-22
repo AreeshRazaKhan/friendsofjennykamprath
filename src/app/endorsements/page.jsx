@@ -124,33 +124,34 @@ const EndorsementsPage = async () => {
         {ENDORSEMENTS.length > 0 && (
           <section className="py-16 lg:py-24 bg-off-white">
             <div className="mx-auto max-w-[1290px] px-6 lg:px-10">
-              <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4 lg:gap-6">
+              <div className="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-4 gap-4 lg:gap-6">
                 {ENDORSEMENTS.map((endorser) => (
                   <article
                     key={endorser.id}
                     className="relative bg-white border border-warm-100 rounded-2xl
-                      p-6 flex items-center gap-4
+                      overflow-hidden flex flex-col
                       hover:shadow-lg hover:shadow-navy-900/[0.06]
                       hover:border-patriot-red/20 transition-all duration-300"
                   >
-                    <div className="relative flex-shrink-0 w-14 h-14 rounded-full
-                      overflow-hidden bg-navy-900">
+                    {/* Flag / photo background */}
+                    <div className="relative aspect-square w-full">
                       <Image
                         src={endorser.photo || '/images/flag-avatar.webp'}
-                        alt={endorser.photo ? endorser.title : ''}
+                        alt=""
                         fill
                         unoptimized={!!endorser.photo}
                         className="object-cover"
-                        sizes="56px"
+                        sizes="(max-width: 640px) 50vw, (max-width: 1024px) 33vw, 25vw"
                       />
-                      {!endorser.photo && (
-                        <div aria-hidden="true" className="absolute inset-0 bg-white/10" />
-                      )}
+                      <div aria-hidden="true" className="absolute inset-0 bg-white/20" />
                     </div>
-                    <h3 className="font-display font-bold text-lg text-navy-900
-                      leading-[1.3]">
-                      {endorser.title}
-                    </h3>
+                    {/* Name */}
+                    <div className="px-4 py-5 text-center flex-1 flex items-center justify-center">
+                      <h3 className="font-display font-bold text-base text-red-dark
+                        leading-[1.25]">
+                        {endorser.title}
+                      </h3>
+                    </div>
                   </article>
                 ))}
               </div>
