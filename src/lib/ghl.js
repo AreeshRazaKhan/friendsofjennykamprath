@@ -9,6 +9,32 @@ const headers = {
 }
 
 const EVENTS_SCHEMA_KEY = 'custom_objects.events'
+const ENDORSEMENTS_SCHEMA_KEY = 'custom_objects.endorsements'
+
+const ENDORSER_TYPE_LABELS = {
+  individual: 'Individual',
+  community_leader: 'Community Leader',
+  organization: 'Organization',
+  business_owner: 'Business Owner',
+  elected_official: 'Elected Official',
+  faith_leader: 'Faith Leader',
+  other: 'Other',
+}
+
+const parseBooleanish = (value) => {
+  if (value === true) return true
+  if (typeof value === 'string') {
+    const v = value.trim().toLowerCase()
+    return v === 'yes' || v === 'true' || v === '1'
+  }
+  return false
+}
+
+const parseSortOrder = (value) => {
+  if (typeof value === 'number') return value
+  const n = Number.parseInt(value, 10)
+  return Number.isFinite(n) ? n : 999
+}
 
 const MONTHS = ['Jan', 'Feb', 'Mar', 'Apr', 'May', 'Jun', 'Jul', 'Aug', 'Sep', 'Oct', 'Nov', 'Dec']
 
@@ -123,6 +149,71 @@ export const fetchGHLEvents = async () => {
       })
   } catch (error) {
     console.error('[GHL Events]:', error)
+    return []
+  }
+}
+
+const normalizeEndorsement = (record) => {
+  const props = record?.properties ?? {}
+  const typeSlug = props.endorser_type ?? ''
+  const photo = Array.isArray(props.endorser_photo) && props.endorser_photo[0]?.url
+    ? props.endorser_photo[0].url
+    : ''
+
+  return {
+    id: record?.id ?? '',
+    name: props.endorser_name ?? '',
+    title: props.endorser_title ?? '',
+    quote: props.endorser_quote ?? '',
+    photo,
+    type: ENDORSER_TYPE_LABELS[typeSlug] ?? typeSlug ?? '',
+    featured: parseBooleanish(props.endorser_featured),
+    sortOrder: parseSortOrder(props.endorser_sort_order),
+    source: 'ghl',
+  }
+}
+
+export const fetchGHLEndorsements = async () => {
+  try {
+    const res = await fetch(
+      `${GHL_BASE_URL}/objects/${ENDORSEMENTS_SCHEMA_KEY}/records/search`,
+      {
+        method: 'POST',
+        headers: { ...headers, 'Content-Type': 'application/json' },
+        body: JSON.stringify({
+          locationId: GHL_LOCATION_ID,
+          page: 1,
+          pageLimit: 100,
+          query: '',
+          searchAfter: [],
+        }),
+        next: { revalidate: 60 },
+      },
+    )
+
+    if (res.status === 404) {
+      // Custom object not yet created in GHL — expected "not configured" state.
+      return []
+    }
+
+    if (!res.ok) {
+      console.error('[GHL Endorsements] search failed:', res.status, await res.text())
+      return []
+    }
+
+    const data = await res.json()
+    const records = data.records ?? []
+
+    return records
+      .map(normalizeEndorsement)
+      .filter((e) => e.name)
+      .sort((a, b) => {
+        if (a.featured !== b.featured) return a.featured ? -1 : 1
+        if (a.sortOrder !== b.sortOrder) return a.sortOrder - b.sortOrder
+        return a.name.localeCompare(b.name)
+      })
+  } catch (error) {
+    console.error('[GHL Endorsements]:', error)
     return []
   }
 }

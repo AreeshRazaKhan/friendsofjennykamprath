@@ -11,7 +11,7 @@ const PRIORITIES = [
   },
   {
     number: '02',
-    title: 'Cut Red Tape Strangling Building & Business',
+    title: 'Cut Red Tape Strangling Building, Business & Affordability',
     items: [
       'Reduce regulations that drive up housing costs',
       'Streamline permitting and approvals for builders',

@@ -1,10 +1,17 @@
-const WEBHOOK_URL =
-  'https://services.leadconnectorhq.com/hooks/qGdzrYgvraCHvfner4DJ/webhook-trigger/758eee73-7348-4a77-a756-0382ca6fec13'
+import { normalizePhoneForSubmit } from '@/lib/phone'
+
+const WEBHOOK_URLS = [
+  'https://services.leadconnectorhq.com/hooks/qGdzrYgvraCHvfner4DJ/webhook-trigger/758eee73-7348-4a77-a756-0382ca6fec13',
+  'https://services.leadconnectorhq.com/hooks/BlWviZhz7Vyrg1cbGSYr/webhook-trigger/c3eaa710-9d7c-4a9c-8b4f-838d105bd1ca',
+]
 
 export async function POST(request) {
   try {
     const body = await request.json()
-    const { name, email, category, location, subject, description } = body
+    const {
+      name, email, phone, category, location, subject, description,
+      smsConsent, promoConsent,
+    } = body
 
     if (!name?.trim() || !email?.trim() || !subject?.trim() || !description?.trim()) {
       return Response.json({ error: 'Missing required fields' }, { status: 400 })
@@ -19,23 +26,33 @@ export async function POST(request) {
       firstName,
       lastName,
       email: email.trim(),
+      phone: normalizePhoneForSubmit(phone),
       issue_category: category || '',
       issue_location: location?.trim() || '',
       issue_subject: subject.trim(),
       issue_description: description.trim(),
       issue_image: '',
+      sms_updates: smsConsent ? 'Yes' : 'No',
+      sms_promo: promoConsent ? 'Yes' : 'No',
       source: 'src_issue',
       submitted_at: new Date().toISOString(),
     }
 
-    const res = await fetch(WEBHOOK_URL, {
-      method: 'POST',
-      headers: { 'Content-Type': 'application/json' },
-      body: JSON.stringify(payload),
-    })
+    const results = await Promise.all(
+      WEBHOOK_URLS.map((url) =>
+        fetch(url, {
+          method: 'POST',
+          headers: { 'Content-Type': 'application/json' },
+          body: JSON.stringify(payload),
+        }).catch((err) => {
+          console.error('[Ask Jenny API] webhook error:', err)
+          return { ok: false }
+        })
+      )
+    )
 
-    if (!res.ok) {
-      console.error('[Ask Jenny API] GHL webhook failed:', res.status)
+    if (!results.some((r) => r.ok)) {
+      console.error('[Ask Jenny API] All GHL webhooks failed')
       return Response.json({ error: 'Webhook delivery failed' }, { status: 502 })
     }
 

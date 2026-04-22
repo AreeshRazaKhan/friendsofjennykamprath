@@ -1,12 +1,13 @@
 'use client'
 
-import { useState } from 'react'
+import { useEffect, useState } from 'react'
 
 import Link from 'next/link'
 import { Mail, Phone, MapPin } from 'lucide-react'
 
 import Navbar from '@/components/layout/navbar'
 import SiteFooter from '@/components/layout/site-footer'
+import { formatPhoneInput } from '@/lib/phone'
 
 const Contact = () => {
   const [formData, setFormData] = useState({
@@ -21,6 +22,14 @@ const Contact = () => {
   const [submitting, setSubmitting] = useState(false)
   const [submitted, setSubmitted] = useState(false)
   const [error, setError] = useState('')
+
+  const hasPhone = formData.phone.trim().length > 0
+
+  useEffect(() => {
+    if (!hasPhone) {
+      setFormData((prev) => ({ ...prev, smsConsent: false, promoConsent: false }))
+    }
+  }, [hasPhone])
 
   const handleChange = (field) => (e) => {
     const value = e.target.type === 'checkbox' ? e.target.checked : e.target.value
@@ -222,7 +231,11 @@ const Contact = () => {
                     <input
                       type="tel"
                       value={formData.phone}
-                      onChange={handleChange('phone')}
+                      onChange={(e) => {
+                        setFormData((prev) => ({ ...prev, phone: formatPhoneInput(e.target.value) }))
+                        setError('')
+                      }}
+                      placeholder="(503) 555-0123"
                       className="w-full bg-white border border-warm-100 rounded-lg px-4 py-3 text-navy-900 font-body text-base focus:outline-none focus:border-patriot-red transition-colors"
                     />
                   </div>
@@ -240,15 +253,23 @@ const Contact = () => {
                     />
                   </div>
 
-                  {/* A2P Consent checkboxes — at bottom, above submit */}
-                  <label className="flex gap-3 items-start cursor-pointer mt-2">
+                  {/* A2P Consent checkboxes — disabled until phone is entered */}
+                  {!hasPhone && (
+                    <p className="font-body text-xs text-warm-400 italic mt-2">
+                      Enter a phone number above to opt in to SMS messages.
+                    </p>
+                  )}
+
+                  <label className={`flex gap-3 items-start mt-2 ${hasPhone ? 'cursor-pointer' : 'cursor-not-allowed'}`}>
                     <input
                       type="checkbox"
                       checked={formData.smsConsent}
                       onChange={handleChange('smsConsent')}
-                      className="mt-1 flex-shrink-0 accent-patriot-red"
+                      disabled={!hasPhone}
+                      required={hasPhone}
+                      className="mt-1 flex-shrink-0 accent-patriot-red disabled:opacity-40 disabled:cursor-not-allowed"
                     />
-                    <span className="font-body text-xs text-warm-400 leading-relaxed">
+                    <span className={`font-body text-xs leading-relaxed ${hasPhone ? 'text-warm-400' : 'text-warm-400/50'}`}>
                       I agree to receive SMS updates from Friends of Jenny Kamprath
                       regarding campaign updates, event reminders, and volunteer
                       coordination. Message frequency varies. Message &amp; data
@@ -256,14 +277,16 @@ const Contact = () => {
                     </span>
                   </label>
 
-                  <label className="flex gap-3 items-start cursor-pointer">
+                  <label className={`flex gap-3 items-start ${hasPhone ? 'cursor-pointer' : 'cursor-not-allowed'}`}>
                     <input
                       type="checkbox"
                       checked={formData.promoConsent}
                       onChange={handleChange('promoConsent')}
-                      className="mt-1 flex-shrink-0 accent-patriot-red"
+                      disabled={!hasPhone}
+                      required={hasPhone}
+                      className="mt-1 flex-shrink-0 accent-patriot-red disabled:opacity-40 disabled:cursor-not-allowed"
                     />
-                    <span className="font-body text-xs text-warm-400 leading-relaxed">
+                    <span className={`font-body text-xs leading-relaxed ${hasPhone ? 'text-warm-400' : 'text-warm-400/50'}`}>
                       I agree to receive promotional SMS messages from Friends of
                       Jenny Kamprath, including fundraising requests and donation
                       drives. Message frequency varies. Message &amp; data rates

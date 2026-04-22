@@ -1,6 +1,6 @@
 'use client'
 
-import { useState } from 'react'
+import { useEffect, useState } from 'react'
 
 import Image from 'next/image'
 import Link from 'next/link'
@@ -9,6 +9,7 @@ import { ArrowRight, MessageCircle, Shield, Landmark, Home, Store, TreePine } fr
 import Navbar from '@/components/layout/navbar'
 import SiteFooter from '@/components/layout/site-footer'
 import ISSUE_CATEGORIES from '@/constants/issues'
+import { formatPhoneInput } from '@/lib/phone'
 
 const POPULAR_TOPICS = [
   {
@@ -37,17 +38,29 @@ const AskJenny = () => {
   const [formData, setFormData] = useState({
     name: '',
     email: '',
+    phone: '',
     category: '',
     location: '',
     subject: '',
     description: '',
+    smsConsent: false,
+    promoConsent: false,
   })
   const [submitting, setSubmitting] = useState(false)
   const [submitted, setSubmitted] = useState(false)
   const [error, setError] = useState('')
 
+  const hasPhone = formData.phone.trim().length > 0
+
+  useEffect(() => {
+    if (!hasPhone) {
+      setFormData((prev) => ({ ...prev, smsConsent: false, promoConsent: false }))
+    }
+  }, [hasPhone])
+
   const handleChange = (field) => (e) => {
-    setFormData((prev) => ({ ...prev, [field]: e.target.value }))
+    const value = e.target.type === 'checkbox' ? e.target.checked : e.target.value
+    setFormData((prev) => ({ ...prev, [field]: value }))
     setError('')
   }
 
@@ -222,21 +235,40 @@ const AskJenny = () => {
                       />
                     </div>
 
-                    {/* Email */}
-                    <div>
-                      <label className="block font-body text-xs font-medium uppercase tracking-[1px] text-warm-400 mb-2">
-                        Email *
-                      </label>
-                      <input
-                        type="email"
-                        required
-                        value={formData.email}
-                        onChange={handleChange('email')}
-                        placeholder="you@email.com"
-                        className="w-full bg-white border-b-2 border-warm-200 px-0 py-3
-                          text-navy-900 font-body text-base focus:outline-none
-                          focus:border-patriot-red transition-colors placeholder:text-warm-200"
-                      />
+                    {/* Email + Phone */}
+                    <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
+                      <div>
+                        <label className="block font-body text-xs font-medium uppercase tracking-[1px] text-warm-400 mb-2">
+                          Email *
+                        </label>
+                        <input
+                          type="email"
+                          required
+                          value={formData.email}
+                          onChange={handleChange('email')}
+                          placeholder="you@email.com"
+                          className="w-full bg-white border-b-2 border-warm-200 px-0 py-3
+                            text-navy-900 font-body text-base focus:outline-none
+                            focus:border-patriot-red transition-colors placeholder:text-warm-200"
+                        />
+                      </div>
+                      <div>
+                        <label className="block font-body text-xs font-medium uppercase tracking-[1px] text-warm-400 mb-2">
+                          Phone
+                        </label>
+                        <input
+                          type="tel"
+                          value={formData.phone}
+                          onChange={(e) => {
+                            setFormData((prev) => ({ ...prev, phone: formatPhoneInput(e.target.value) }))
+                            setError('')
+                          }}
+                          placeholder="(503) 555-0123"
+                          className="w-full bg-white border-b-2 border-warm-200 px-0 py-3
+                            text-navy-900 font-body text-base focus:outline-none
+                            focus:border-patriot-red transition-colors placeholder:text-warm-200"
+                        />
+                      </div>
                     </div>
 
                     {/* Category */}
@@ -308,6 +340,49 @@ const AskJenny = () => {
                           focus:border-patriot-red transition-colors resize-none
                           placeholder:text-warm-200"
                       />
+                    </div>
+
+                    {/* A2P consent checkboxes — disabled until phone is entered */}
+                    <div className="space-y-3 pt-2">
+                      {!hasPhone && (
+                        <p className="font-body text-xs text-warm-400 italic">
+                          Enter a phone number above to opt in to SMS messages.
+                        </p>
+                      )}
+
+                      <label className={`flex gap-3 items-start ${hasPhone ? 'cursor-pointer' : 'cursor-not-allowed'}`}>
+                        <input
+                          type="checkbox"
+                          checked={formData.smsConsent}
+                          onChange={handleChange('smsConsent')}
+                          disabled={!hasPhone}
+                          required={hasPhone}
+                          className="mt-1 flex-shrink-0 accent-patriot-red disabled:opacity-40 disabled:cursor-not-allowed"
+                        />
+                        <span className={`font-body text-xs leading-relaxed ${hasPhone ? 'text-warm-400' : 'text-warm-400/50'}`}>
+                          I agree to receive SMS updates from Friends of Jenny Kamprath
+                          regarding campaign updates, event reminders, and volunteer
+                          coordination. Message frequency varies. Message &amp; data
+                          rates may apply. Reply STOP to unsubscribe or HELP for help.
+                        </span>
+                      </label>
+
+                      <label className={`flex gap-3 items-start ${hasPhone ? 'cursor-pointer' : 'cursor-not-allowed'}`}>
+                        <input
+                          type="checkbox"
+                          checked={formData.promoConsent}
+                          onChange={handleChange('promoConsent')}
+                          disabled={!hasPhone}
+                          required={hasPhone}
+                          className="mt-1 flex-shrink-0 accent-patriot-red disabled:opacity-40 disabled:cursor-not-allowed"
+                        />
+                        <span className={`font-body text-xs leading-relaxed ${hasPhone ? 'text-warm-400' : 'text-warm-400/50'}`}>
+                          I agree to receive promotional SMS messages from Friends of
+                          Jenny Kamprath, including fundraising requests and donation
+                          drives. Message frequency varies. Message &amp; data rates
+                          may apply. Reply STOP to unsubscribe or HELP for help.
+                        </span>
+                      </label>
                     </div>
 
                     {/* Submit */}

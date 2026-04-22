@@ -85,8 +85,10 @@ const MeetJenny = () => {
                 <span className="text-patriot-red">Fresh Perspective.</span>
               </h1>
               <p className="font-body text-lg text-white/60 leading-relaxed max-w-xl">
-                Jenny Kamprath is a former small business owner, entrepreneur,
-                and strong leader — not a career politician. She is running to
+                Jenny Kamprath is in the trenches every day — working in sales,
+                talking with Oregon business owners big and small, and hearing
+                first-hand how today&apos;s policies are making it harder to
+                stay in business. Not a career politician, she is running to
                 represent the overlooked taxpayers of Washington County.
               </p>
             </div>
@@ -137,10 +139,12 @@ const MeetJenny = () => {
                 </h2>
                 <p className="font-body text-lg text-warm-600 leading-[1.7] mb-4">
                   Jenny Kamprath is not an entrenched incumbent or a career
-                  politician. She is not running to protect the status quo. She is
-                  a former small business owner and entrepreneur with practical,
-                  real-world experience — running to represent the overlooked
-                  taxpayers of Washington County.
+                  politician. She is not running to protect the status quo.
+                  She is in the trenches every day — working in sales, talking
+                  with Oregon business owners big and small, and hearing
+                  first-hand how policies out of Salem and the county are
+                  making it harder to stay in business. She is a working
+                  Oregonian who decided to stop complaining and start running.
                 </p>
                 <p className="font-body text-lg text-warm-600 leading-[1.7]">
                   She offers leadership with a fresh perspective, free of old
@@ -222,6 +226,26 @@ const MeetJenny = () => {
               </div>
             </div>
 
+          </div>
+        </section>
+
+        {/* Pull quote — deserves a leader */}
+        <section className="relative py-20 lg:py-28 bg-off-white overflow-hidden">
+          <div className="absolute -top-20 -left-20 w-72 h-72 rounded-full
+            border border-navy-900/[0.04]" />
+          <div className="absolute -bottom-24 -right-16 w-80 h-80 rounded-full
+            bg-patriot-red/[0.03]" />
+          <div className="relative z-[1] mx-auto max-w-[1290px] px-6 lg:px-10">
+            <div className="lg:ml-[12%] max-w-4xl">
+              <div className="w-16 h-[3px] bg-patriot-red mb-8" />
+              <blockquote className="font-display font-bold
+                text-[clamp(1.75rem,3.5vw,2.5rem)] leading-[1.25] text-navy-900">
+                Washington County deserves a leader who will
+                <span className="text-patriot-red">
+                  {' '}listen and act, and deliver real change.
+                </span>
+              </blockquote>
+            </div>
           </div>
         </section>
 

@@ -54,9 +54,10 @@ const Hero = () => {
           </h1>
 
           <p className="font-body text-lg leading-relaxed text-white/70 max-w-xl mb-10">
-            Jenny Kamprath — a former small business owner and entrepreneur,
-            not a career politician. Running to stop overspending, cut red
-            tape, and fight for taxpayers.
+            Jenny Kamprath — in the trenches every day, working in sales and
+            talking with Oregon business owners big and small. Not a career
+            politician. Running to stop overspending, cut red tape, and fight
+            for taxpayers.
           </p>
 
           <div className="flex flex-wrap gap-4">
@@ -94,7 +95,7 @@ const Hero = () => {
             <ul className="space-y-4 mb-8 relative z-[1]">
               {[
                 'Stop overspending — say NO to new taxes',
-                'Cut the red tape strangling building and business',
+                'Cut the red tape strangling building, business, and affordability',
                 'Support public safety, no transient housing in suburban neighborhoods',
                 'Listen to taxpayers and residents — not insiders',
               ].map((item) => (

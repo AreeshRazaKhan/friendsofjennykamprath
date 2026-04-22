@@ -32,11 +32,21 @@ const PoweredByPeople = () => {
             <span className="text-patriot-red">Not Political Insiders.</span>
           </h2>
 
-          <p className="font-body text-xl leading-[1.7] text-warm-600 max-w-2xl">
-            This campaign has no bureaucratic or organizational endorsements.
-            It is powered by the people. Jenny has no allegiance to political
-            insiders or special interests — her sole interest is representing
-            Washington County citizens.
+          <blockquote className="font-display font-bold text-[clamp(1.5rem,2.5vw,1.875rem)]
+            leading-[1.35] text-navy-900 max-w-2xl mb-6">
+            &ldquo;If we keep electing the same insiders and entrenched
+            approaches, we can&rsquo;t expect different results. It&rsquo;s
+            time to bring a new perspective and accountability to county
+            leadership.{' '}
+            <span className="text-patriot-red">
+              Washington County deserves a leader who will listen and act, and
+              deliver real change.
+            </span>
+            &rdquo;
+          </blockquote>
+          <p className="font-body text-base font-semibold uppercase tracking-[2px]
+            text-warm-400">
+            — Jenny Kamprath
           </p>
         </div>
       </div>

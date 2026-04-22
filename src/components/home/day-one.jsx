@@ -1,7 +1,7 @@
 const DAY_ONE_ACTIONS = [
   'Demand a full audit of county spending to find and eliminate waste',
   'Oppose any new taxes or fees on working families and seniors',
-  'Cut red tape that blocks housing and burdens small business',
+  'Cut red tape that blocks housing, affordability, and small business',
   'Stand firmly behind law enforcement and first responders',
   'Oppose placing transient housing in stable suburban neighborhoods',
 ]

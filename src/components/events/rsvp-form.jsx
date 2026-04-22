@@ -1,8 +1,10 @@
 'use client'
 
-import { useState } from 'react'
+import { useEffect, useState } from 'react'
 
 import PropTypes from 'prop-types'
+
+import { formatPhoneInput } from '@/lib/phone'
 
 const RsvpForm = ({ eventTitle, eventDate, eventTime, eventCategory }) => {
   const [formData, setFormData] = useState({
@@ -16,6 +18,14 @@ const RsvpForm = ({ eventTitle, eventDate, eventTime, eventCategory }) => {
   const [submitting, setSubmitting] = useState(false)
   const [submitted, setSubmitted] = useState(false)
   const [error, setError] = useState('')
+
+  const hasPhone = formData.phone.trim().length > 0
+
+  useEffect(() => {
+    if (!hasPhone) {
+      setFormData((prev) => ({ ...prev, smsConsent: false, promoConsent: false }))
+    }
+  }, [hasPhone])
 
   const handleChange = (field) => (e) => {
     const value = e.target.type === 'checkbox' ? e.target.checked : e.target.value
@@ -175,7 +185,10 @@ const RsvpForm = ({ eventTitle, eventDate, eventTime, eventCategory }) => {
             <input
               type="tel"
               value={formData.phone}
-              onChange={handleChange('phone')}
+              onChange={(e) => {
+                setFormData((prev) => ({ ...prev, phone: formatPhoneInput(e.target.value) }))
+                setError('')
+              }}
               className="w-full bg-white/[0.08] border border-white/[0.12]
                 rounded-lg px-3 py-2.5 text-white placeholder:text-white/30
                 font-body text-sm focus:outline-none focus:border-patriot-red
@@ -185,14 +198,22 @@ const RsvpForm = ({ eventTitle, eventDate, eventTime, eventCategory }) => {
           </div>
 
           <div className="space-y-2.5 pt-1">
-            <label className="flex gap-2.5 items-start cursor-pointer">
+            {!hasPhone && (
+              <p className="font-body text-[11px] text-white/40 italic">
+                Enter a phone number above to opt in to SMS messages.
+              </p>
+            )}
+
+            <label className={`flex gap-2.5 items-start ${hasPhone ? 'cursor-pointer' : 'cursor-not-allowed'}`}>
               <input
                 type="checkbox"
                 checked={formData.smsConsent}
                 onChange={handleChange('smsConsent')}
-                className="mt-0.5 flex-shrink-0 accent-patriot-red"
+                disabled={!hasPhone}
+                required={hasPhone}
+                className="mt-0.5 flex-shrink-0 accent-patriot-red disabled:opacity-40 disabled:cursor-not-allowed"
               />
-              <span className="font-body text-[11px] text-white/50 leading-relaxed">
+              <span className={`font-body text-[11px] leading-relaxed ${hasPhone ? 'text-white/50' : 'text-white/25'}`}>
                 I agree to receive SMS updates from Friends of Jenny Kamprath
                 regarding campaign updates, event reminders, and volunteer
                 coordination. Message frequency varies. Message &amp; data
@@ -200,14 +221,16 @@ const RsvpForm = ({ eventTitle, eventDate, eventTime, eventCategory }) => {
               </span>
             </label>
 
-            <label className="flex gap-2.5 items-start cursor-pointer">
+            <label className={`flex gap-2.5 items-start ${hasPhone ? 'cursor-pointer' : 'cursor-not-allowed'}`}>
               <input
                 type="checkbox"
                 checked={formData.promoConsent}
                 onChange={handleChange('promoConsent')}
-                className="mt-0.5 flex-shrink-0 accent-patriot-red"
+                disabled={!hasPhone}
+                required={hasPhone}
+                className="mt-0.5 flex-shrink-0 accent-patriot-red disabled:opacity-40 disabled:cursor-not-allowed"
               />
-              <span className="font-body text-[11px] text-white/50 leading-relaxed">
+              <span className={`font-body text-[11px] leading-relaxed ${hasPhone ? 'text-white/50' : 'text-white/25'}`}>
                 I agree to receive promotional SMS messages from Friends of
                 Jenny Kamprath, including fundraising requests and donation
                 drives. Message frequency varies. Message &amp; data rates

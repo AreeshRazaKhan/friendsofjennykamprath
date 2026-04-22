@@ -1,29 +1,21 @@
 import Image from 'next/image'
+import Link from 'next/link'
+import { ArrowRight, Quote } from 'lucide-react'
 
-const ENDORSEMENTS = [
-  {
-    name: 'Oregon Taxpayers United',
-    type: 'Organization',
-    quote: 'We need leaders who will say no to new taxes. Jenny Kamprath has proven she will hold the line for taxpayers.',
-  },
-  {
-    name: 'Washington County Small Business Alliance',
-    type: 'Organization',
-    quote: 'Jenny is the only candidate who truly understands the burdens regulations place on local businesses. She has our full endorsement.',
-  },
-  {
-    name: 'Sheriff Tom Henderson (Ret.)',
-    type: 'Community Leader',
-    quote: "Jenny's commitment to public safety is unwavering. She'll make sure our first responders have the support they need.",
-  },
-  {
-    name: 'Pastor Rebecca Owens',
-    type: 'Community Leader',
-    quote: "Jenny genuinely cares about our neighborhoods and families. She listens, and she acts. That's rare in politics.",
-  },
-]
+import { fetchGHLEndorsements } from '@/lib/ghl'
 
-const Endorsements = () => {
+const getInitials = (name) => {
+  if (!name) return ''
+  const parts = name.trim().split(/\s+/)
+  return (parts[0]?.[0] ?? '') + (parts.length > 1 ? parts[parts.length - 1][0] : '')
+}
+
+const Endorsements = async () => {
+  const ALL = await fetchGHLEndorsements()
+  if (ALL.length === 0) return null
+
+  const ENDORSEMENTS = ALL.slice(0, 4)
+
   return (
     <section className="relative py-24 lg:py-32 bg-warm-50 overflow-hidden">
       {/* Floating circles */}
@@ -48,56 +40,79 @@ const Endorsements = () => {
           </p>
         </div>
 
-        {/* Asymmetric 2-column grid with varied sizes */}
         <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
-          {ENDORSEMENTS.map((endorsement, idx) => (
-            <div
-              key={idx}
-              className={`relative bg-white border border-warm-100 rounded-2xl
-                p-8 lg:p-10 overflow-hidden
-                ${idx === 0 ? 'md:col-span-2 lg:grid lg:grid-cols-[1fr_2fr] lg:gap-10 lg:items-center' : ''}
-                `}
+          {ENDORSEMENTS.map((endorser) => (
+            <article
+              key={endorser.id}
+              className="relative bg-white border border-warm-100 rounded-2xl
+                p-8 lg:p-10 overflow-hidden flex flex-col"
             >
-              {/* Decorative accent */}
-              {idx === 0 && (
-                <div className="hidden lg:block">
-                  <div className="bg-navy-900 rounded-xl h-full min-h-[180px]
-                    relative overflow-hidden flex items-center justify-center">
+              <div className="flex items-center gap-4 mb-5">
+                {endorser.photo ? (
+                  <div className="relative flex-shrink-0 w-14 h-14 rounded-full
+                    overflow-hidden bg-navy-900">
                     <Image
-                      src="/images/neighborhood.jpg"
-                      alt="Supporters gathered at a Washington County campaign event"
+                      src={endorser.photo}
+                      alt={endorser.name}
                       fill
-                      className="object-cover opacity-40"
-                      sizes="33vw"
+                      unoptimized
+                      className="object-cover"
+                      sizes="56px"
                     />
-                    <div className="absolute -bottom-6 -left-6 w-20 h-20 rounded-full
-                      border border-white/[0.08] z-[1]" />
-                    <span className="font-display font-black text-3xl text-white/20
-                      tracking-[6px] select-none relative z-[1]">
-                      OTU
+                  </div>
+                ) : (
+                  <div className="flex-shrink-0 w-14 h-14 rounded-full bg-navy-900
+                    flex items-center justify-center border border-white/[0.1]">
+                    <span className="font-display font-black text-lg text-white
+                      tracking-[1px]">
+                      {getInitials(endorser.name)}
                     </span>
                   </div>
+                )}
+                <div className="min-w-0">
+                  <h3 className="font-display font-bold text-xl text-navy-900
+                    leading-[1.25] mb-0.5">
+                    {endorser.name}
+                  </h3>
+                  {endorser.title && (
+                    <p className="font-body text-sm text-warm-600 leading-snug">
+                      {endorser.title}
+                    </p>
+                  )}
                 </div>
+              </div>
+
+              {endorser.type && (
+                <span className="inline-block self-start font-body text-[10px]
+                  font-bold uppercase tracking-[2px] text-patriot-red
+                  bg-patriot-red/[0.08] px-3 py-1 rounded-full mb-4">
+                  {endorser.type}
+                </span>
               )}
 
-              <div>
-                <div className="flex items-center gap-3 mb-4">
-                  <span className="font-body text-xs font-bold uppercase tracking-[2px]
-                    text-patriot-red bg-patriot-red/[0.08] px-3 py-1 rounded-full">
-                    {endorsement.type}
-                  </span>
+              {endorser.quote && (
+                <div className="relative">
+                  <Quote className="absolute -top-1 -left-1 w-5 h-5
+                    text-patriot-red/20" />
+                  <p className="font-body text-base text-warm-600 leading-relaxed
+                    pl-6">
+                    &ldquo;{endorser.quote}&rdquo;
+                  </p>
                 </div>
-
-                <h3 className="font-display font-bold text-xl text-navy-900 mb-4">
-                  {endorsement.name}
-                </h3>
-
-                <p className="font-body text-base text-warm-600 leading-relaxed">
-                  &#34;{endorsement.quote}&#34;
-                </p>
-              </div>
-            </div>
+              )}
+            </article>
           ))}
+        </div>
+
+        <div className="mt-12 flex justify-center lg:justify-start">
+          <Link
+            href="/endorsements"
+            className="inline-flex items-center gap-2 font-body font-semibold
+              text-base text-patriot-red hover:gap-3 transition-all duration-200"
+          >
+            See all endorsements
+            <ArrowRight className="w-4 h-4" />
+          </Link>
         </div>
       </div>
     </section>

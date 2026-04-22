@@ -1,5 +1,9 @@
-const WEBHOOK_URL =
-  'https://services.leadconnectorhq.com/hooks/qGdzrYgvraCHvfner4DJ/webhook-trigger/X6yJU8L3iXBWeYnYs4Tu'
+import { normalizePhoneForSubmit } from '@/lib/phone'
+
+const WEBHOOK_URLS = [
+  'https://services.leadconnectorhq.com/hooks/qGdzrYgvraCHvfner4DJ/webhook-trigger/X6yJU8L3iXBWeYnYs4Tu',
+  'https://services.leadconnectorhq.com/hooks/BlWviZhz7Vyrg1cbGSYr/webhook-trigger/c3eaa710-9d7c-4a9c-8b4f-838d105bd1ca',
+]
 
 export async function POST(request) {
   try {
@@ -15,7 +19,7 @@ export async function POST(request) {
       firstName: firstName.trim(),
       lastName: lastName.trim(),
       email: email.trim(),
-      phone: phone?.trim() || '',
+      phone: normalizePhoneForSubmit(phone),
       message: message.trim(),
       sms_updates: smsConsent ? 'Yes' : 'No',
       sms_promo: promoConsent ? 'Yes' : 'No',
@@ -23,14 +27,21 @@ export async function POST(request) {
       submitted_at: new Date().toISOString(),
     }
 
-    const res = await fetch(WEBHOOK_URL, {
-      method: 'POST',
-      headers: { 'Content-Type': 'application/json' },
-      body: JSON.stringify(payload),
-    })
+    const results = await Promise.all(
+      WEBHOOK_URLS.map((url) =>
+        fetch(url, {
+          method: 'POST',
+          headers: { 'Content-Type': 'application/json' },
+          body: JSON.stringify(payload),
+        }).catch((err) => {
+          console.error('[Contact API] webhook error:', err)
+          return { ok: false }
+        })
+      )
+    )
 
-    if (!res.ok) {
-      console.error('[Contact API] GHL webhook failed:', res.status)
+    if (!results.some((r) => r.ok)) {
+      console.error('[Contact API] All GHL webhooks failed')
       return Response.json({ error: 'Webhook delivery failed' }, { status: 502 })
     }
 

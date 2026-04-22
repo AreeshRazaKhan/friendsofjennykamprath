@@ -1,7 +1,10 @@
+import { normalizePhoneForSubmit } from '@/lib/phone'
+
 const WEBHOOK_URLS = [
   'https://services.leadconnectorhq.com/hooks/qGdzrYgvraCHvfner4DJ/webhook-trigger/ZaWVyWTAP1IrkoHxnHme',
   'https://services.leadconnectorhq.com/hooks/qGdzrYgvraCHvfner4DJ/webhook-trigger/AMelyMyID9BrBSQ9C4oE',
   'https://services.leadconnectorhq.com/hooks/qGdzrYgvraCHvfner4DJ/webhook-trigger/AqdXiIYm0cXFNQToBEec',
+  'https://services.leadconnectorhq.com/hooks/BlWviZhz7Vyrg1cbGSYr/webhook-trigger/c3eaa710-9d7c-4a9c-8b4f-838d105bd1ca',
 ]
 
 export async function POST(request) {
@@ -22,7 +25,7 @@ export async function POST(request) {
       firstName: firstName.trim(),
       lastName: lastName.trim(),
       email: email.trim(),
-      phone: phone?.trim() || '',
+      phone: normalizePhoneForSubmit(phone),
       zipCode: zipCode?.trim() || '',
       county: county || '',
       region: region || '',
