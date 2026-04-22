@@ -151,6 +151,7 @@ const normalizeEndorsement = (record) => {
     id: record?.id ?? '',
     title,
     photo,
+    createdAt: record?.createdAt ?? '',
     source: 'ghl',
   }
 }
@@ -189,7 +190,11 @@ export const fetchGHLEndorsements = async () => {
     return records
       .map(normalizeEndorsement)
       .filter((e) => e.title)
-      .sort((a, b) => a.title.localeCompare(b.title))
+      .sort((a, b) => {
+        const ta = a.createdAt ? Date.parse(a.createdAt) : 0
+        const tb = b.createdAt ? Date.parse(b.createdAt) : 0
+        return tb - ta
+      })
   } catch (error) {
     console.error('[GHL Endorsements]:', error)
     return []
