@@ -115,15 +115,14 @@ const MeetJenny = () => {
             {/* Section 1 — Washington County Native */}
             <div className="grid grid-cols-1 lg:grid-cols-[1fr_55%] gap-12 lg:gap-20 items-center mb-20 lg:mb-28">
               <div className="relative">
-                <div className="bg-navy-900 rounded-2xl aspect-[4/3] relative overflow-hidden">
+                <div className="bg-navy-900 rounded-2xl aspect-[4/5] lg:aspect-[4/5] relative overflow-hidden">
                   <Image
-                    src="/images/community.jpg"
-                    alt="Washington County community"
+                    src="/images/jenny-hops-game.webp"
+                    alt="Jenny Kamprath with the Hillsboro Hops mascot and an opposing team mascot at a local ballgame"
                     fill
-                    className="object-cover"
+                    className="object-cover object-top"
                     sizes="(max-width: 1024px) 100vw, 45vw"
                   />
-                  <div className="absolute inset-0 bg-navy-900/30" />
                 </div>
               </div>
               <div>
