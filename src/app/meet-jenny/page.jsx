@@ -188,13 +188,12 @@ const MeetJenny = () => {
               <div className="relative">
                 <div className="bg-navy-900 rounded-2xl aspect-[4/3] relative overflow-hidden">
                   <Image
-                    src="/images/volunteers.jpg"
-                    alt="Community volunteers"
+                    src="/images/jenny-doorknocking.webp"
+                    alt="Jenny Kamprath with volunteers out doorknocking for the campaign"
                     fill
                     className="object-cover"
                     sizes="(max-width: 1024px) 100vw, 45vw"
                   />
-                  <div className="absolute inset-0 bg-navy-900/30" />
                 </div>
               </div>
               <div>
