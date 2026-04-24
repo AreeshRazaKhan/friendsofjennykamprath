@@ -1,54 +1,65 @@
-import Image from 'next/image'
-import Link from 'next/link'
-import { ArrowRight, Sparkles } from 'lucide-react'
+import Image from "next/image";
+import Link from "next/link";
+import { ArrowRight, Sparkles } from "lucide-react";
 
-import Navbar from '@/components/layout/navbar'
-import SiteFooter from '@/components/layout/site-footer'
-import { fetchGHLEndorsements } from '@/lib/ghl'
+import Navbar from "@/components/layout/navbar";
+import SiteFooter from "@/components/layout/site-footer";
+import { fetchGHLEndorsements } from "@/lib/ghl";
 
-export const revalidate = 60
+export const revalidate = 60;
 
 export const metadata = {
-  title: 'Endorsements — Friends of Jenny Kamprath',
+  title: "Endorsements — Friends of Jenny Kamprath",
   description:
-    'Community members, leaders, and organizations across Washington County who endorse Jenny Kamprath for County Chair.',
-}
+    "Community members, leaders, and organizations across Washington County who endorse Jenny Kamprath for County Chair.",
+};
 
 const EndorsementsPage = async () => {
-  const ENDORSEMENTS = await fetchGHLEndorsements()
+  const ENDORSEMENTS = await fetchGHLEndorsements();
 
   return (
     <>
       <Navbar />
       <main className="pt-[72px]">
-
         {/* Hero */}
         <section className="relative py-20 lg:py-28 bg-sign-gradient overflow-hidden">
-          <div className="absolute -top-16 -right-16 w-64 h-64 rounded-full
-            border border-white/[0.05]" />
-          <div className="absolute bottom-12 left-[8%] w-36 h-36 rounded-full
-            border border-white/[0.04]" />
+          <div
+            className="absolute -top-16 -right-16 w-64 h-64 rounded-full
+            border border-white/[0.05]"
+          />
+          <div
+            className="absolute bottom-12 left-[8%] w-36 h-36 rounded-full
+            border border-white/[0.04]"
+          />
 
-          <div aria-hidden="true" className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2
+          <div
+            aria-hidden="true"
+            className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2
             font-display font-black text-[160px] text-white/[0.02] tracking-[10px]
-            whitespace-nowrap select-none pointer-events-none hidden lg:block">
+            whitespace-nowrap select-none pointer-events-none hidden lg:block"
+          >
             ENDORSED
           </div>
 
           <div className="relative z-[5] mx-auto max-w-[1290px] px-6 lg:px-10">
-            <div className="max-w-2xl">
-              <p className="font-body text-xs font-bold uppercase tracking-[3px]
-                text-patriot-red mb-6">
+            <div className="max-w-[650px]">
+              <p
+                className="font-body text-xs font-bold uppercase tracking-[3px]
+                text-patriot-red mb-6"
+              >
                 Community Voices
               </p>
-              <h1 className="font-display font-black text-[clamp(2.5rem,5vw,3.5rem)]
-                leading-[1.08] text-white mb-6">
+              <h1
+                className="font-display font-black text-[clamp(2.5rem,5vw,3.5rem)]
+                leading-[1.08] text-white mb-6"
+              >
                 Endorsed by Washington County
               </h1>
               <p className="font-body text-lg text-white/70 leading-relaxed max-w-xl">
-                Real neighbors, real business owners, real leaders — backing Jenny
-                because they know she&apos;ll fight for fiscal responsibility, safe
-                neighborhoods, and a county government that listens.
+                Real neighbors, real business owners, real leaders — backing
+                Jenny because they know she&apos;ll fight for fiscal
+                responsibility, safe neighborhoods, and a county government that
+                listens.
               </p>
             </div>
           </div>
@@ -58,39 +69,56 @@ const EndorsementsPage = async () => {
         {ENDORSEMENTS.length === 0 && (
           <section className="py-20 lg:py-28 bg-off-white">
             <div className="mx-auto max-w-[1290px] px-6 lg:px-10">
-              <div className="relative bg-white border border-warm-100 rounded-3xl
-                px-8 py-16 lg:px-16 lg:py-24 overflow-hidden text-center">
-                <div className="absolute -top-20 -right-20 w-64 h-64 rounded-full
-                  border border-patriot-red/[0.06] pointer-events-none" />
-                <div className="absolute -bottom-16 -left-16 w-52 h-52 rounded-full
-                  border border-navy-900/[0.04] pointer-events-none" />
+              <div
+                className="relative bg-white border border-warm-100 rounded-3xl
+                px-8 py-16 lg:px-16 lg:py-24 overflow-hidden text-center"
+              >
+                <div
+                  className="absolute -top-20 -right-20 w-64 h-64 rounded-full
+                  border border-patriot-red/[0.06] pointer-events-none"
+                />
+                <div
+                  className="absolute -bottom-16 -left-16 w-52 h-52 rounded-full
+                  border border-navy-900/[0.04] pointer-events-none"
+                />
 
-                <div aria-hidden="true" className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2
+                <div
+                  aria-hidden="true"
+                  className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2
                   font-display font-black text-[140px] text-warm-100/50 tracking-[8px]
-                  whitespace-nowrap select-none pointer-events-none hidden lg:block">
+                  whitespace-nowrap select-none pointer-events-none hidden lg:block"
+                >
                   SOON
                 </div>
 
                 <div className="relative z-[1] max-w-2xl mx-auto">
-                  <div className="inline-flex items-center justify-center w-20 h-20
+                  <div
+                    className="inline-flex items-center justify-center w-20 h-20
                     rounded-2xl bg-patriot-red/[0.08] border border-patriot-red/[0.15]
-                    mb-8">
+                    mb-8"
+                  >
                     <Sparkles className="w-9 h-9 text-red-dark" />
                   </div>
 
-                  <p className="font-body text-xs font-bold uppercase tracking-[3px]
-                    text-red-dark mb-4">
+                  <p
+                    className="font-body text-xs font-bold uppercase tracking-[3px]
+                    text-red-dark mb-4"
+                  >
                     Coming Soon
                   </p>
-                  <h2 className="font-display font-extrabold
-                    text-[clamp(2rem,4vw,2.75rem)] leading-[1.15] text-navy-900 mb-5">
+                  <h2
+                    className="font-display font-extrabold
+                    text-[clamp(2rem,4vw,2.75rem)] leading-[1.15] text-navy-900 mb-5"
+                  >
                     Endorsements Rolling In
                   </h2>
-                  <p className="font-body text-lg text-warm-600 leading-[1.7] mb-10
-                    max-w-xl mx-auto">
-                    We&apos;re adding endorsements as community members, local leaders,
-                    and organizations step forward to publicly back Jenny. Check back
-                    soon — or add your voice today.
+                  <p
+                    className="font-body text-lg text-warm-600 leading-[1.7] mb-10
+                    max-w-xl mx-auto"
+                  >
+                    We&apos;re adding endorsements as community members, local
+                    leaders, and organizations step forward to publicly back
+                    Jenny. Check back soon — or add your voice today.
                   </p>
 
                   <div className="flex flex-col sm:flex-row gap-3 justify-center items-center">
@@ -101,8 +129,10 @@ const EndorsementsPage = async () => {
                         px-8 py-4 rounded-lg transition-colors duration-200 group/btn"
                     >
                       Endorse Jenny
-                      <ArrowRight className="w-4 h-4 transition-transform
-                        group-hover/btn:translate-x-1" />
+                      <ArrowRight
+                        className="w-4 h-4 transition-transform
+                        group-hover/btn:translate-x-1"
+                      />
                     </Link>
                     <Link
                       href="/volunteer"
@@ -136,21 +166,27 @@ const EndorsementsPage = async () => {
                       transition-all duration-300"
                   >
                     <Image
-                      src={endorser.photo || '/images/flag-avatar.webp'}
+                      src={endorser.photo || "/images/flag-avatar.webp"}
                       alt=""
                       fill
                       unoptimized={!!endorser.photo}
                       className="object-cover transition-transform duration-500 group-hover:scale-105"
                       sizes="(max-width: 640px) 50vw, (max-width: 1024px) 33vw, 25vw"
                     />
-                    <div aria-hidden="true"
+                    <div
+                      aria-hidden="true"
                       className="absolute inset-0 bg-gradient-to-t
-                        from-navy-900 via-navy-900/75 to-navy-900/30" />
-                    <div aria-hidden="true"
-                      className="absolute top-0 inset-x-0 h-[3px] bg-patriot-red" />
+                        from-navy-900 via-navy-900/75 to-navy-900/30"
+                    />
+                    <div
+                      aria-hidden="true"
+                      className="absolute top-0 inset-x-0 h-[3px] bg-patriot-red"
+                    />
                     <div className="absolute inset-x-0 bottom-0 px-4 py-5">
-                      <h3 className="font-display font-bold text-base lg:text-lg text-white
-                        leading-[1.2] text-center line-clamp-3">
+                      <h3
+                        className="font-display font-bold text-base lg:text-lg text-white
+                        leading-[1.2] text-center line-clamp-3"
+                      >
                         {endorser.title}
                       </h3>
                     </div>
@@ -170,24 +206,32 @@ const EndorsementsPage = async () => {
             className="object-cover opacity-15 mix-blend-overlay"
             sizes="100vw"
           />
-          <div className="absolute -top-12 right-[10%] w-40 h-40 rounded-full
-            border border-white/[0.1]" />
-          <div className="absolute bottom-8 left-[8%] w-28 h-28 rounded-full
-            border border-white/[0.08]" />
+          <div
+            className="absolute -top-12 right-[10%] w-40 h-40 rounded-full
+            border border-white/[0.1]"
+          />
+          <div
+            className="absolute bottom-8 left-[8%] w-28 h-28 rounded-full
+            border border-white/[0.08]"
+          />
 
           <div className="relative z-[1] mx-auto max-w-[1290px] px-6 lg:px-10">
             <div className="max-w-3xl mx-auto text-center">
               <div className="w-16 h-[3px] bg-white/40 mx-auto mb-8" />
-              <h2 className="font-display font-black
-                text-[clamp(2rem,4.5vw,3rem)] leading-[1.08] text-white mb-6">
+              <h2
+                className="font-display font-black
+                text-[clamp(2rem,4.5vw,3rem)] leading-[1.08] text-white mb-6"
+              >
                 Add Your Voice
               </h2>
 
-              <p className="font-body text-lg text-white/70 leading-relaxed mb-10
-                max-w-2xl mx-auto">
+              <p
+                className="font-body text-lg text-white/70 leading-relaxed mb-10
+                max-w-2xl mx-auto"
+              >
                 If you&apos;re ready to publicly endorse Jenny Kamprath for
-                Washington County Chair, we&apos;d be honored to have you. Reach out
-                and we&apos;ll add your name to this page.
+                Washington County Chair, we&apos;d be honored to have you. Reach
+                out and we&apos;ll add your name to this page.
               </p>
 
               <div className="flex flex-wrap gap-4 justify-center">
@@ -198,8 +242,10 @@ const EndorsementsPage = async () => {
                     px-10 py-4 rounded-lg transition-colors duration-200 group/btn"
                 >
                   Endorse Jenny
-                  <ArrowRight className="w-4 h-4 transition-transform
-                    group-hover/btn:translate-x-1" />
+                  <ArrowRight
+                    className="w-4 h-4 transition-transform
+                    group-hover/btn:translate-x-1"
+                  />
                 </Link>
                 <Link
                   href="/volunteer"
@@ -214,11 +260,10 @@ const EndorsementsPage = async () => {
             </div>
           </div>
         </section>
-
       </main>
       <SiteFooter />
     </>
-  )
-}
+  );
+};
 
-export default EndorsementsPage
+export default EndorsementsPage;

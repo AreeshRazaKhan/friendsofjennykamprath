@@ -1,67 +1,66 @@
-import Image from 'next/image'
-import Link from 'next/link'
-import { ArrowRight } from 'lucide-react'
+import Image from "next/image";
+import Link from "next/link";
+import { ArrowRight } from "lucide-react";
 
-import Navbar from '@/components/layout/navbar'
-import SiteFooter from '@/components/layout/site-footer'
+import Navbar from "@/components/layout/navbar";
+import SiteFooter from "@/components/layout/site-footer";
 
 export const metadata = {
-  title: 'Meet Jenny — Friends of Jenny Kamprath',
+  title: "Meet Jenny — Friends of Jenny Kamprath",
   description:
-    'Get to know Jenny Kamprath — a taxpayer advocate, community leader, and candidate for Washington County Chair.',
-}
+    "Get to know Jenny Kamprath — a taxpayer advocate, community leader, and candidate for Washington County Chair.",
+};
 
 const TIMELINE = [
   {
-    label: 'Roots in Washington County',
-    text: 'Raised in the communities she seeks to serve — Beaverton, Hillsboro, and surrounding neighborhoods.',
+    label: "Roots in Washington County",
+    text: "Raised her family in the communities she seeks to serve — Beaverton, Hillsboro, and surrounding neighborhoods.",
   },
   {
-    label: 'Career in Business & Finance',
-    text: 'Built a career managing budgets, cutting waste, and holding organizations accountable for every dollar spent.',
+    label: "Career in Business & Finance",
+    text: "Built a career managing budgets, cutting waste, and holding organizations accountable for every dollar spent.",
   },
   {
-    label: 'Community Advocate',
-    text: 'Became a vocal advocate for taxpayers, small business owners, and families burdened by rising costs and government overreach.',
+    label: "Community Advocate",
+    text: "Became a vocal advocate for taxpayers, small business owners, and families burdened by rising costs and government overreach.",
   },
   {
-    label: 'Taxpayer Watchdog',
-    text: 'Testified before local government bodies on spending accountability, opposing new taxes and fees that hurt working families.',
+    label: "Taxpayer Watchdog",
+    text: "Testified before local government bodies on spending accountability, opposing new taxes and fees that hurt working families.",
   },
   {
-    label: 'Neighborhood Leader',
-    text: 'Organized neighbors to push back on policies that threatened public safety and neighborhood stability.',
+    label: "Neighborhood Leader",
+    text: "Organized neighbors to push back on policies that threatened public safety and neighborhood stability.",
   },
   {
-    label: '2026 — Running for County Chair',
-    text: 'Announced her campaign to bring fiscal discipline, common-sense leadership, and real accountability to Washington County.',
+    label: "2026 — Running for County Chair",
+    text: "Announced her campaign to bring fiscal discipline, common-sense leadership, and real accountability to Washington County.",
   },
-]
+];
 
 const VALUES = [
   {
-    number: '01',
-    title: 'Fiscal Accountability',
-    text: 'Every tax dollar belongs to the people who earned it. County spending must be transparent, justified, and efficient — no blank checks, no hidden line items.',
+    number: "01",
+    title: "Fiscal Accountability",
+    text: "Every tax dollar belongs to the people who earned it. County spending must be transparent, justified, and efficient — no blank checks, no hidden line items.",
   },
   {
-    number: '02',
-    title: 'Common-Sense Leadership',
-    text: 'Decisions grounded in real-world experience, not political games. Policy should serve working families, seniors, and small business owners — not bureaucrats.',
+    number: "02",
+    title: "Common-Sense Leadership",
+    text: "Decisions grounded in real-world experience, not political games. Policy should serve working families, seniors, and small business owners — not bureaucrats.",
   },
   {
-    number: '03',
-    title: 'Community First',
-    text: 'Safe neighborhoods, thriving local businesses, and a government that answers to its residents. Washington County deserves leadership that listens.',
+    number: "03",
+    title: "Community First",
+    text: "Safe neighborhoods, thriving local businesses, and a government that answers to its residents. Washington County deserves leadership that listens.",
   },
-]
+];
 
 const MeetJenny = () => {
   return (
     <>
       <Navbar />
       <main className="pt-[72px]">
-
         {/* Hero */}
         <section className="relative py-24 lg:py-36 bg-sign-gradient overflow-hidden">
           {/* Floating circles */}
@@ -69,9 +68,12 @@ const MeetJenny = () => {
           <div className="absolute bottom-20 left-[10%] w-40 h-40 rounded-full border border-white/[0.04]" />
 
           {/* Watermark */}
-          <div aria-hidden="true" className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2
+          <div
+            aria-hidden="true"
+            className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2
             font-display font-black text-[160px] text-white/[0.02] tracking-[10px]
-            whitespace-nowrap select-none pointer-events-none hidden lg:block">
+            whitespace-nowrap select-none pointer-events-none hidden lg:block"
+          >
             KAMPRATH
           </div>
 
@@ -80,13 +82,17 @@ const MeetJenny = () => {
               <div className="w-16 h-[3px] bg-patriot-red mb-8" />
 
               {/* Candidate identity — primary page H1 */}
-              <h1 className="font-display font-black leading-[0.95] tracking-tight
-                text-[clamp(3rem,7vw,5.5rem)] mb-4">
-                <span className="text-patriot-red">JENNY</span>{' '}
+              <h1
+                className="font-display font-black leading-[0.95] tracking-tight
+                text-[clamp(3rem,7vw,5.5rem)] mb-4"
+              >
+                <span className="text-patriot-red">JENNY</span>{" "}
                 <span className="text-white">KAMPRATH</span>
               </h1>
-              <p className="font-body font-semibold uppercase tracking-[3px]
-                text-[clamp(1rem,1.5vw,1.25rem)] text-white mb-10">
+              <p
+                className="font-body font-semibold uppercase tracking-[3px]
+                text-[clamp(1rem,1.5vw,1.25rem)] text-white mb-10"
+              >
                 For Washington County Chair
               </p>
 
@@ -95,7 +101,7 @@ const MeetJenny = () => {
                 About the Candidate
               </p>
               <h2 className="font-display font-extrabold text-[clamp(1.75rem,3.5vw,2.5rem)] leading-[1.1] text-white mb-6">
-                Leadership with a{' '}
+                Leadership with a{" "}
                 <span className="text-patriot-red">Fresh Perspective.</span>
               </h2>
               <p className="font-body text-lg text-white/70 leading-relaxed max-w-xl">
@@ -107,11 +113,9 @@ const MeetJenny = () => {
           </div>
         </section>
 
-
         {/* Bio sections */}
         <section className="py-24 lg:py-32 bg-white overflow-hidden">
           <div className="mx-auto max-w-[1290px] px-6 lg:px-10">
-
             {/* Section 1 — Washington County Native */}
             <div className="grid grid-cols-1 lg:grid-cols-[1fr_55%] gap-12 lg:gap-20 items-center mb-20 lg:mb-28">
               <div className="relative">
@@ -158,9 +162,9 @@ const MeetJenny = () => {
                   In the Trenches With Real Businesses
                 </h2>
                 <p className="font-body text-lg text-warm-600 leading-[1.7] mb-4">
-                  Jenny works in sales and talks with businesses of every size,
-                  every day. She hears first-hand how hard it is to stay in
-                  business in this state and county — the kind of perspective
+                  Jenny is a sales leader and talks with businesses of every
+                  size, every day. She hears first-hand how hard it is to stay
+                  in business in this state and county — the kind of perspective
                   most county leaders never hear, because they are not in those
                   conversations.
                 </p>
@@ -207,21 +211,19 @@ const MeetJenny = () => {
                 <p className="font-body text-lg text-warm-600 leading-[1.7] mb-4">
                   Jenny is committed to serving with integrity, focusing on
                   results, and ensuring the voices of our community are heard.
-                  She will listen and collaborate with community members to create
-                  practical solutions that benefit residents, families, and local
-                  businesses.
+                  She will listen and collaborate with community members to
+                  create practical solutions that benefit residents, families,
+                  and local businesses.
                 </p>
                 <p className="font-body text-lg text-warm-600 leading-[1.7]">
                   She humbly asks for your vote so that together we can bring
-                  thoughtful, effective leadership to Washington County and build
-                  a stronger future for everyone.
+                  thoughtful, effective leadership to Washington County and
+                  build a stronger future for everyone.
                 </p>
               </div>
             </div>
-
           </div>
         </section>
-
 
         {/* Core Values */}
         <section className="relative py-24 lg:py-32 bg-navy-900 overflow-hidden">
@@ -230,8 +232,11 @@ const MeetJenny = () => {
           <div className="absolute -bottom-20 right-[15%] w-64 h-64 rounded-full border border-white/[0.03]" />
 
           {/* Watermark */}
-          <div aria-hidden="true" className="absolute bottom-10 left-10 font-display font-black text-[140px]
-            text-white/[0.02] tracking-[8px] select-none pointer-events-none hidden xl:block">
+          <div
+            aria-hidden="true"
+            className="absolute bottom-10 left-10 font-display font-black text-[140px]
+            text-white/[0.02] tracking-[8px] select-none pointer-events-none hidden xl:block"
+          >
             VALUES
           </div>
 
@@ -253,9 +258,12 @@ const MeetJenny = () => {
                   className="relative bg-white/[0.05] border border-white/[0.08] rounded-2xl
                     p-8 lg:p-10 group hover:bg-white/[0.08] transition-colors duration-300"
                 >
-                  <span aria-hidden="true" className="absolute top-4 right-6 font-display font-black text-[80px]
+                  <span
+                    aria-hidden="true"
+                    className="absolute top-4 right-6 font-display font-black text-[80px]
                     leading-none text-white/[0.04] select-none pointer-events-none
-                    group-hover:text-red-dark/10 transition-colors duration-300">
+                    group-hover:text-red-dark/10 transition-colors duration-300"
+                  >
                     {value.number}
                   </span>
                   <div className="w-10 h-1.5 bg-patriot-red rounded-full mb-6" />
@@ -275,7 +283,6 @@ const MeetJenny = () => {
         <section className="py-24 lg:py-32 bg-white overflow-hidden">
           <div className="mx-auto max-w-[1290px] px-6 lg:px-10">
             <div className="grid grid-cols-1 lg:grid-cols-[40%_1fr] gap-12 lg:gap-20">
-
               {/* Left — heading */}
               <div className="lg:sticky lg:top-40 lg:self-start">
                 <p className="font-body text-xs font-bold uppercase tracking-[3px] text-red-dark mb-4">
@@ -285,10 +292,10 @@ const MeetJenny = () => {
                   From Neighbor to Candidate
                 </h2>
                 <p className="font-body text-lg text-warm-600 leading-relaxed">
-                  Jenny did not wake up one day and decide to run for office. Her
-                  path to this campaign was built over years of watching county
-                  government fail its residents — and deciding to do something
-                  about it.
+                  Jenny did not wake up one day and decide to run for office.
+                  Her path to this campaign was built over years of watching
+                  county government fail its residents — and deciding to do
+                  something about it.
                 </p>
               </div>
 
@@ -299,12 +306,14 @@ const MeetJenny = () => {
                     key={idx}
                     className="group flex gap-5 py-7 border-b border-warm-100 last:border-b-0"
                   >
-                    <span className="flex-shrink-0 w-12 h-12 rounded-xl bg-off-white
+                    <span
+                      className="flex-shrink-0 w-12 h-12 rounded-xl bg-off-white
                       flex items-center justify-center font-display font-bold text-lg
                       text-red-dark group-hover:bg-red-dark group-hover:text-white
                       transition-all duration-300 border border-warm-100
-                      group-hover:border-patriot-red">
-                      {String(idx + 1).padStart(2, '0')}
+                      group-hover:border-patriot-red"
+                    >
+                      {String(idx + 1).padStart(2, "0")}
                     </span>
                     <div>
                       <h4 className="font-display font-bold text-lg text-navy-900 mb-1.5">
@@ -317,7 +326,6 @@ const MeetJenny = () => {
                   </div>
                 ))}
               </div>
-
             </div>
           </div>
         </section>
@@ -344,9 +352,9 @@ const MeetJenny = () => {
 
               <p className="font-body text-lg text-white/70 leading-relaxed mb-10 max-w-2xl mx-auto">
                 Vote for a new direction. Vote for Jenny Kamprath for Washington
-                County Chair. Whether you volunteer, knock on doors, or contribute
-                financially — every bit of support moves us closer to the
-                accountable government Washington County deserves.
+                County Chair. Whether you volunteer, knock on doors, or
+                contribute financially — every bit of support moves us closer to
+                the accountable government Washington County deserves.
               </p>
 
               <div className="flex flex-wrap gap-4 justify-center">
@@ -360,7 +368,9 @@ const MeetJenny = () => {
                   <ArrowRight className="w-4 h-4 transition-transform group-hover/btn:translate-x-1" />
                 </Link>
                 <Link
-                  href="https://secure.anedot.com/b2002057-9fe3-4cb5-8e5a-93539cdc75d4/b2002057-9fe3-4cb5-8e5a-93539cdc75d4" target="_blank" rel="noopener noreferrer"
+                  href="https://secure.anedot.com/b2002057-9fe3-4cb5-8e5a-93539cdc75d4/b2002057-9fe3-4cb5-8e5a-93539cdc75d4"
+                  target="_blank"
+                  rel="noopener noreferrer"
                   className="inline-flex items-center gap-3 font-body font-semibold
                     text-base text-white border-2 border-white/30
                     hover:border-white/60 px-10 py-4 rounded-lg
@@ -372,11 +382,10 @@ const MeetJenny = () => {
             </div>
           </div>
         </section>
-
       </main>
       <SiteFooter />
     </>
-  )
-}
+  );
+};
 
-export default MeetJenny
+export default MeetJenny;
