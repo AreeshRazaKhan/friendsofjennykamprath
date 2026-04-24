@@ -1,7 +1,7 @@
 const PRIORITIES = [
   {
     number: '01',
-    title: 'Stop Overspending\n— Say NO to New Taxes and Fees',
+    title: 'Stop Overspending\n— Say NO to New\nTaxes and Fees',
     items: [
       'Demand a full audit of county spending to find and eliminate waste',
       'Oppose any new taxes or fees on working families and seniors',
