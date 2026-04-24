@@ -1,7 +1,7 @@
 const PRIORITIES = [
   {
     number: '01',
-    title: 'Stop Overspending — Say NO to New Taxes and Fees',
+    title: 'Stop Overspending — Say NO to New Taxes',
     items: [
       'Demand a full audit of county spending to find and eliminate waste',
       'Oppose any new taxes or fees on working families and seniors',
@@ -11,7 +11,7 @@ const PRIORITIES = [
   },
   {
     number: '02',
-    title: 'Cut the red tape strangling construction, business, and economic growth',
+    title: 'Cut Red Tape Strangling Building, Business & Affordability',
     items: [
       'Reduce regulations that drive up housing costs',
       'Streamline permitting and approvals for builders',
@@ -21,10 +21,11 @@ const PRIORITIES = [
   },
   {
     number: '03',
-    title: 'Public safety is government’s primary responsibility',
+    title: 'Support Public Safety — Protect Neighborhoods',
     items: [
-      'No Transitional housing in suburban neighborhoods',
-      'Support law enforcement and first responders',
+      'Public safety is government\'s primary responsibility',
+      'Oppose placing transient housing in stable suburban neighborhoods',
+      'Stand firmly behind law enforcement and first responders',
     ],
     accent: 'bg-navy-900',
   },
