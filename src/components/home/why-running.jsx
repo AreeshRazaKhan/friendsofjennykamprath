@@ -18,7 +18,7 @@ const WhyRunning = () => {
           <div className="relative">
             <div className="bg-navy-900 rounded-2xl aspect-[4/5] relative overflow-hidden">
               <Image
-                src="/images/jenny-portrait.webp"
+                src="/images/jenny-portrait.png"
                 alt="Jenny Kamprath"
                 fill
                 className="object-cover object-top"
