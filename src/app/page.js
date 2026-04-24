@@ -4,7 +4,6 @@ import Navbar from '@/components/layout/navbar'
 import Hero from '@/components/home/hero'
 import WhyRunning from '@/components/home/why-running'
 import Priorities from '@/components/home/priorities'
-import DayOne from '@/components/home/day-one'
 import PoweredByPeople from '@/components/home/powered-by-people'
 import Endorsements from '@/components/home/endorsements'
 import Events from '@/components/home/events'
@@ -19,7 +18,6 @@ export default function Home() {
         <Hero />
         <WhyRunning />
         <Priorities />
-        <DayOne />
         <PoweredByPeople />
         <Endorsements />
         <Events />

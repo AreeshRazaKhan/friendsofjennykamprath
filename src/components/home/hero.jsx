@@ -101,26 +101,11 @@ const Hero = () => {
               Jenny&apos;s Promise
             </h2>
 
-            <ul className="space-y-4 mb-8 relative z-[1]">
-              {[
-                'Stop overspending — say NO to new taxes',
-                'Cut the red tape strangling building, business, and affordability',
-                'Support public safety, no transient housing in suburban neighborhoods',
-                'Listen to taxpayers and residents — not insiders',
-              ].map((item) => (
-                <li key={item} className="flex gap-3 items-start">
-                  <span className="mt-2 flex-shrink-0 w-2 h-2 rounded-full bg-patriot-red" />
-                  <span className="font-body text-base text-white/70 leading-relaxed">
-                    {item}
-                  </span>
-                </li>
-              ))}
-            </ul>
-
-            <p className="font-body text-sm text-white/70 leading-relaxed mb-8 relative z-[1]">
-              I promise a new vision, transparency, no new taxes, and
-              leadership that will fight for the rights of taxpayers.
-              It&apos;s time to take our county government back.
+            <p className="font-body text-base text-white/80 leading-relaxed mb-8 relative z-[1]">
+              From day one, I will listen to taxpayers and residents —
+              not insiders — and fight for them with transparency,
+              accountability, and real leadership. It&apos;s time to
+              take our county government back.
             </p>
 
             <Link

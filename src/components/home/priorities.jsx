@@ -3,8 +3,8 @@ const PRIORITIES = [
     number: '01',
     title: 'Stop Overspending — Say NO to New Taxes',
     items: [
-      'Initiate a full audit for spending transparency',
-      'Eliminate waste and cut bureaucratic bloat',
+      'Demand a full audit of county spending to find and eliminate waste',
+      'Oppose any new taxes or fees on working families and seniors',
       'Make government live within its means like families do',
     ],
     accent: 'bg-patriot-red',
@@ -24,8 +24,8 @@ const PRIORITIES = [
     title: 'Support Public Safety — Protect Neighborhoods',
     items: [
       'Public safety is government\'s primary responsibility',
-      'No transient housing in suburban neighborhoods',
-      'Stop deprioritizing police and first responders',
+      'Oppose placing transient housing in stable suburban neighborhoods',
+      'Stand firmly behind law enforcement and first responders',
     ],
     accent: 'bg-navy-900',
   },
