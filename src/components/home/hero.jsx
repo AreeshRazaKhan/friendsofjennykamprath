@@ -101,11 +101,27 @@ const Hero = () => {
               Jenny&apos;s Platform
             </h2>
 
-            <p className="font-body text-base text-white/80 leading-relaxed mb-8 relative z-[1]">
-              From day one, I will listen to taxpayers and residents —
-              not insiders — and fight for them with transparency,
-              accountability, and real leadership. It&apos;s time to
-              take our county government back.
+            <ul className="space-y-3 mb-8 relative z-[1]">
+              {[
+                'Stop overspending — say NO to new taxes and fees',
+                'Cut the red tape strangling construction, business, and economic growth',
+                'Support public safety and law enforcement',
+                'No transient housing in suburban neighborhoods',
+                'Listen to taxpayers and citizens — not insiders',
+              ].map((item) => (
+                <li key={item} className="flex gap-3 items-start">
+                  <span className="mt-1.5 flex-shrink-0 w-1.5 h-1.5 rounded-full bg-patriot-red" />
+                  <span className="font-body text-sm text-white/85 leading-relaxed">
+                    {item}
+                  </span>
+                </li>
+              ))}
+            </ul>
+
+            <p className="font-body text-sm text-white/80 leading-relaxed mb-8 relative z-[1] italic">
+              I promise a new vision, transparency, no new taxes or fees,
+              and leadership that will fight for the rights of taxpayers.
+              It&apos;s time to take our county government back.
             </p>
 
             <Link
