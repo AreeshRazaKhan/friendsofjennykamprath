@@ -1,7 +1,7 @@
 const PRIORITIES = [
   {
     number: '01',
-    title: 'Stop Overspending — Say NO to New Taxes and Fees',
+    title: 'Stop Overspending\n— Say NO to New Taxes and Fees',
     items: [
       'Demand a full audit of county spending to find and eliminate waste',
       'Oppose any new taxes or fees on working families and seniors',
@@ -75,7 +75,7 @@ const Priorities = () => {
               <div className={`w-12 h-1.5 ${priority.accent} rounded-full mb-8`} />
 
               <h3 className="font-display font-bold text-xl lg:text-2xl
-                text-navy-900 mb-6 relative z-[1] leading-[1.3]">
+                text-navy-900 mb-6 relative z-[1] leading-[1.3] whitespace-pre-line">
                 {priority.title}
               </h3>
 
