@@ -672,9 +672,9 @@ const Volunteer = () => {
                         className="block font-body text-sm text-red-dark hover:underline">
                         jenny@jennykamprath.com
                       </a>
-                      <a href="tel:5038281439"
+                      <a href="tel:9713655668"
                         className="block font-body text-sm text-red-dark hover:underline">
-                        (503) 828-1439
+                        (971) 365-5668
                       </a>
                     </div>
                   </div>
