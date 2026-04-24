@@ -1,13 +1,13 @@
-import Link from 'next/link'
+import Link from "next/link";
 
-import Navbar from '@/components/layout/navbar'
-import SiteFooter from '@/components/layout/site-footer'
+import Navbar from "@/components/layout/navbar";
+import SiteFooter from "@/components/layout/site-footer";
 
 export const metadata = {
-  title: 'Privacy Policy — Friends of Jenny Kamprath',
+  title: "Privacy Policy — Friends of Jenny Kamprath",
   description:
-    'Privacy Policy for the Friends of Jenny Kamprath website, including SMS data practices.',
-}
+    "Privacy Policy for the Friends of Jenny Kamprath website, including SMS data practices.",
+};
 
 const PrivacyPolicy = () => {
   return (
@@ -30,23 +30,22 @@ const PrivacyPolicy = () => {
 
         <section className="py-16 lg:py-20">
           <div className="mx-auto max-w-[800px] px-6 lg:px-10 font-body text-base text-warm-600 leading-[1.8] space-y-10">
-
             {/* Intro */}
             <p>
-              Friends of Jenny Kamprath (the &quot;Committee,&quot; &quot;we,&quot;
-              &quot;us,&quot; or &quot;our&quot;) operates the Friends of Jenny
-              Kamprath website (the &quot;Website&quot;) and is committed to
-              protecting the privacy of our visitors, supporters, and contributors.
-              This Privacy Policy outlines how we collect, use, disclose, and
-              safeguard your personal information in compliance with the Oregon
-              Consumer Privacy Act (OCPA), Oregon campaign finance law (ORS
-              Chapter 260), the CAN-SPAM Act (15 U.S.C. &sect; 7701 et seq.),
-              and applicable federal laws.
+              Friends of Jenny Kamprath (the &quot;Committee,&quot;
+              &quot;we,&quot; &quot;us,&quot; or &quot;our&quot;) operates the
+              Friends of Jenny Kamprath website (the &quot;Website&quot;) and is
+              committed to protecting the privacy of our visitors, supporters,
+              and contributors. This Privacy Policy outlines how we collect,
+              use, disclose, and safeguard your personal information in
+              compliance with the Oregon Consumer Privacy Act (OCPA), Oregon
+              campaign finance law (ORS Chapter 260), the CAN-SPAM Act (15
+              U.S.C. &sect; 7701 et seq.), and applicable federal laws.
             </p>
             <p>
               By accessing or using the Website, you consent to the practices
-              described in this Privacy Policy. If you do not agree, please refrain
-              from using the Website.
+              described in this Privacy Policy. If you do not agree, please
+              refrain from using the Website.
             </p>
 
             {/* Section 1 */}
@@ -64,15 +63,15 @@ const PrivacyPolicy = () => {
                 1.1. Information You Provide
               </h3>
               <p className="mb-4">
-                We may collect the following personal information when you engage
-                with the Website:
+                We may collect the following personal information when you
+                engage with the Website:
               </p>
               <ul className="list-disc pl-6 space-y-3 mb-4">
                 <li>
-                  <strong>Contact Information:</strong> Name, email address, phone
-                  number, mailing address, or other identifiers provided through
-                  forms (e.g., volunteer sign-ups, newsletter subscriptions, or
-                  contact inquiries).
+                  <strong>Contact Information:</strong> Name, email address,
+                  phone number, mailing address, or other identifiers provided
+                  through forms (e.g., volunteer sign-ups, newsletter
+                  subscriptions, or contact inquiries).
                 </li>
                 <li>
                   <strong>Contribution Information:</strong> For donations, we
@@ -82,14 +81,14 @@ const PrivacyPolicy = () => {
                   information where required for reporting purposes.
                 </li>
                 <li>
-                  <strong>User-Submitted Content:</strong> Comments, feedback, or
-                  other submissions provided via the Website.
+                  <strong>User-Submitted Content:</strong> Comments, feedback,
+                  or other submissions provided via the Website.
                 </li>
                 <li>
                   <strong>Text Messaging Opt-In Data:</strong> We will not share
                   or sell your text messaging opt-in data, consent, or related
-                  personal information with any third parties, unless required by
-                  law.
+                  personal information with any third parties, unless required
+                  by law.
                 </li>
               </ul>
 
@@ -97,13 +96,14 @@ const PrivacyPolicy = () => {
                 1.2. Information Collected Automatically
               </h3>
               <p className="mb-4">
-                We use cookies, web beacons, and similar technologies to collect:
+                We use cookies, web beacons, and similar technologies to
+                collect:
               </p>
               <ul className="list-disc pl-6 space-y-3">
                 <li>
                   <strong>Usage Data:</strong> IP address, browser type, device
-                  information, operating system, pages visited, time spent on the
-                  Website, and referring URLs.
+                  information, operating system, pages visited, time spent on
+                  the Website, and referring URLs.
                 </li>
                 <li>
                   <strong>Analytics Data:</strong> Aggregated data on user
@@ -129,9 +129,9 @@ const PrivacyPolicy = () => {
               <ul className="list-disc pl-6 space-y-3">
                 <li>
                   <strong>Campaign Operations:</strong> To communicate with you
-                  about campaign events, updates, or volunteer opportunities, and
-                  to process contributions in compliance with Oregon campaign
-                  finance law (ORS Chapter 260).
+                  about campaign events, updates, or volunteer opportunities,
+                  and to process contributions in compliance with Oregon
+                  campaign finance law (ORS Chapter 260).
                 </li>
                 <li>
                   <strong>Compliance with Campaign Finance Laws:</strong> To
@@ -141,14 +141,14 @@ const PrivacyPolicy = () => {
                   under Oregon law.
                 </li>
                 <li>
-                  <strong>Marketing and Outreach:</strong> To send newsletters or
-                  promotional emails, subject to your consent under the CAN-SPAM
-                  Act. You may opt out at any time via the unsubscribe link in
-                  emails.
+                  <strong>Marketing and Outreach:</strong> To send newsletters
+                  or promotional emails, subject to your consent under the
+                  CAN-SPAM Act. You may opt out at any time via the unsubscribe
+                  link in emails.
                 </li>
                 <li>
-                  <strong>Website Improvement:</strong> To analyze usage patterns
-                  and enhance Website performance and accessibility.
+                  <strong>Website Improvement:</strong> To analyze usage
+                  patterns and enhance Website performance and accessibility.
                 </li>
                 <li>
                   <strong>Legal Obligations:</strong> To comply with applicable
@@ -175,13 +175,13 @@ const PrivacyPolicy = () => {
                 <li>
                   <strong>Service Providers:</strong> With third-party vendors
                   (e.g., payment processors, email service providers) who assist
-                  with campaign operations, subject to confidentiality agreements
-                  and applicable data protection requirements.
+                  with campaign operations, subject to confidentiality
+                  agreements and applicable data protection requirements.
                 </li>
                 <li>
-                  <strong>Legal Compliance:</strong> With the Oregon Secretary of
-                  State for contribution reporting, or with law enforcement if
-                  required by law (e.g., subpoenas, court orders).
+                  <strong>Legal Compliance:</strong> With the Oregon Secretary
+                  of State for contribution reporting, or with law enforcement
+                  if required by law (e.g., subpoenas, court orders).
                 </li>
                 <li>
                   <strong>Public Disclosure:</strong> Certain contributor
@@ -206,9 +206,9 @@ const PrivacyPolicy = () => {
                 4. SMS / Text Messaging Privacy
               </h2>
               <p className="mb-6">
-                Friends of Jenny Kamprath offers SMS messaging for supporters who
-                opt in through our website forms. This section describes how we
-                handle your phone number and text messaging data.
+                Friends of Jenny Kamprath offers SMS messaging for supporters
+                who opt in through our website forms. This section describes how
+                we handle your phone number and text messaging data.
               </p>
 
               <h3 className="font-display font-semibold text-lg text-navy-900 mb-3">
@@ -216,9 +216,9 @@ const PrivacyPolicy = () => {
               </h3>
               <p className="mb-4">
                 When you provide your phone number and check an SMS consent
-                checkbox on our website, we collect your mobile phone number, the
-                date and time of your consent, and the specific consent language
-                you agreed to.
+                checkbox on our website, we collect your mobile phone number,
+                the date and time of your consent, and the specific consent
+                language you agreed to.
               </p>
 
               <h3 className="font-display font-semibold text-lg text-navy-900 mb-3">
@@ -228,7 +228,8 @@ const PrivacyPolicy = () => {
                 Your phone number is used solely to send you the types of SMS
                 messages you consented to receive, including campaign updates,
                 event reminders, volunteer coordination, and/or fundraising and
-                promotional messages, depending on which consent boxes you checked.
+                promotional messages, depending on which consent boxes you
+                checked.
               </p>
 
               <h3 className="font-display font-semibold text-lg text-navy-900 mb-3">
@@ -245,8 +246,8 @@ const PrivacyPolicy = () => {
               </h3>
               <p className="mb-4">
                 We retain your phone number and consent records for the duration
-                of the campaign and for a reasonable period afterward as required
-                for legal compliance. Consent records are maintained to
+                of the campaign and for a reasonable period afterward as
+                required for legal compliance. Consent records are maintained to
                 demonstrate compliance with TCPA regulations.
               </p>
 
@@ -254,27 +255,38 @@ const PrivacyPolicy = () => {
                 Data Deletion
               </h3>
               <p className="mb-4">
-                You may request deletion of your phone number and SMS consent data
-                at any time by contacting us at{' '}
-                <a href="mailto:jenny@jennykamprath.com" className="text-red-dark hover:underline">
+                You may request deletion of your phone number and SMS consent
+                data at any time by contacting us at{" "}
+                <a
+                  href="mailto:jenny@jennykamprath.com"
+                  className="text-red-dark hover:underline"
+                >
                   jenny@jennykamprath.com
-                </a>{' '}
-                or calling{' '}
-                <a href="tel:9713655668" className="text-red-dark hover:underline">
+                </a>{" "}
+                or calling{" "}
+                <a
+                  href="tel:9713655668"
+                  className="text-red-dark hover:underline"
+                >
                   (971) 365-5668
-                </a>. We will process your request within 10 business days.
+                </a>
+                . We will process your request within 10 business days.
               </p>
 
               <h3 className="font-display font-semibold text-lg text-navy-900 mb-3">
                 Opt-Out
               </h3>
               <p>
-                You can opt out of SMS messages at any time by replying{' '}
-                <strong>STOP</strong> to any message you receive from us. You may
-                also opt out by contacting us directly at{' '}
-                <a href="mailto:jenny@jennykamprath.com" className="text-red-dark hover:underline">
+                You can opt out of SMS messages at any time by replying{" "}
+                <strong>STOP</strong> to any message you receive from us. You
+                may also opt out by contacting us directly at{" "}
+                <a
+                  href="mailto:jenny@jennykamprath.com"
+                  className="text-red-dark hover:underline"
+                >
                   jenny@jennykamprath.com
-                </a>. Opt-out requests are processed within 10 business days.
+                </a>
+                . Opt-out requests are processed within 10 business days.
               </p>
             </div>
 
@@ -305,8 +317,8 @@ const PrivacyPolicy = () => {
                 </li>
                 <li>
                   <strong>Right to Opt-Out:</strong> Opt out of targeted
-                  advertising, data sales, or profiling (note: we do not engage in
-                  these activities).
+                  advertising, data sales, or profiling (note: we do not engage
+                  in these activities).
                 </li>
                 <li>
                   <strong>Right to Data Portability:</strong> Request your
@@ -314,9 +326,9 @@ const PrivacyPolicy = () => {
                 </li>
               </ul>
               <p className="mt-4">
-                To exercise these rights, contact us at the information below. We
-                will respond within 45 days, as required by Oregon law, and may
-                extend this period for complex requests as permitted.
+                To exercise these rights, contact us at the information below.
+                We will respond within 45 days, as required by Oregon law, and
+                may extend this period for complex requests as permitted.
               </p>
             </div>
 
@@ -330,7 +342,9 @@ const PrivacyPolicy = () => {
                 safeguards to protect your personal information, including:
               </p>
               <ul className="list-disc pl-6 space-y-3">
-                <li>Encryption of payment data via PCI DSS-compliant processors.</li>
+                <li>
+                  Encryption of payment data via PCI DSS-compliant processors.
+                </li>
                 <li>
                   Secure storage of contributor information in compliance with
                   Oregon campaign finance regulations.
@@ -355,8 +369,8 @@ const PrivacyPolicy = () => {
               </p>
               <ul className="list-disc pl-6 space-y-3">
                 <li>
-                  Contribution records are retained in accordance with ORS Chapter
-                  260 and applicable record retention requirements.
+                  Contribution records are retained in accordance with ORS
+                  Chapter 260 and applicable record retention requirements.
                 </li>
                 <li>
                   Contact information for newsletters is retained until you
@@ -376,9 +390,9 @@ const PrivacyPolicy = () => {
               </h2>
               <p>
                 The Website may contain links to external sites (e.g., social
-                media platforms). We are not responsible for the privacy practices
-                of these sites. Review their privacy policies before providing
-                personal information.
+                media platforms). We are not responsible for the privacy
+                practices of these sites. Review their privacy policies before
+                providing personal information.
               </p>
             </div>
 
@@ -404,9 +418,9 @@ const PrivacyPolicy = () => {
               </h2>
               <p>
                 We strive to make the Website accessible in accordance with
-                Section 508 of the Rehabilitation Act (29 U.S.C. &sect; 794d) and
-                the Americans with Disabilities Act (42 U.S.C. &sect; 12101 et
-                seq.). Contact us if you encounter accessibility issues.
+                Section 508 of the Rehabilitation Act (29 U.S.C. &sect; 794d)
+                and the Americans with Disabilities Act (42 U.S.C. &sect; 12101
+                et seq.). Contact us if you encounter accessibility issues.
               </p>
             </div>
 
@@ -419,9 +433,9 @@ const PrivacyPolicy = () => {
                 We may update this Privacy Policy to reflect changes in our
                 practices or legal requirements. Updates will be posted on this
                 page with the &quot;Last Updated&quot; date revised. If you have
-                provided an email address, we may notify you of material changes.
-                Continued use of the Website constitutes acceptance of the updated
-                Policy.
+                provided an email address, we may notify you of material
+                changes. Continued use of the Website constitutes acceptance of
+                the updated Policy.
               </p>
             </div>
 
@@ -431,39 +445,50 @@ const PrivacyPolicy = () => {
                 12. Contact Information
               </h2>
               <p className="mb-4">
-                For questions, requests, or concerns about this Privacy Policy or
-                your personal information, contact:
+                For questions, requests, or concerns about this Privacy Policy
+                or your personal information, contact:
               </p>
               <div className="bg-warm-50 rounded-xl p-6 space-y-1 border border-warm-100">
-                <p className="font-semibold text-navy-900">Friends of Jenny Kamprath</p>
+                <p className="font-semibold text-navy-900">
+                  Friends of Jenny Kamprath
+                </p>
                 <p>PO Box 122, Beaverton, OR 97075</p>
                 <p>
-                  Email:{' '}
-                  <a href="mailto:jenny@jennykamprath.com" className="text-red-dark hover:underline">
+                  Email:{" "}
+                  <a
+                    href="mailto:jenny@jennykamprath.com"
+                    className="text-red-dark hover:underline"
+                  >
                     jenny@jennykamprath.com
                   </a>
                 </p>
                 <p>
-                  Phone:{' '}
-                  <a href="tel:9713655668" className="text-red-dark hover:underline">
+                  Phone:{" "}
+                  <a
+                    href="tel:9713655668"
+                    className="text-red-dark hover:underline"
+                  >
                     (971) 365-5668
                   </a>
                 </p>
               </div>
               <p className="mt-4">
-                See also our{' '}
-                <Link href="/terms-of-service" className="text-red-dark hover:underline">
+                See also our{" "}
+                <Link
+                  href="/terms-of-service"
+                  className="text-red-dark hover:underline"
+                >
                   Terms of Service
-                </Link>.
+                </Link>
+                .
               </p>
             </div>
-
           </div>
         </section>
       </main>
       <SiteFooter />
     </>
-  )
-}
+  );
+};
 
-export default PrivacyPolicy
+export default PrivacyPolicy;
