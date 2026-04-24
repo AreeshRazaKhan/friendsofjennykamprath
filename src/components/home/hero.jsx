@@ -42,10 +42,9 @@ const Hero = () => {
 
       {/* Content */}
       <div className="relative z-[5] mx-auto max-w-[1290px] px-6 lg:px-10
-        flex flex-col lg:flex-row items-center min-h-[calc(100vh-72px)]">
+        flex items-center min-h-[calc(100vh-72px)]">
 
-        {/* Left — 55% content */}
-        <div className="flex-[0_0_55%] py-20 lg:py-0 lg:pr-16">
+        <div className="max-w-3xl py-20 lg:py-0">
           <div className="w-16 h-[3px] bg-patriot-red mb-8" />
 
           {/* Candidate identity — primary page H1 */}
@@ -85,54 +84,6 @@ const Hero = () => {
                 hover:border-white/50 px-10 py-4 rounded-lg transition-all duration-200"
             >
               Get Involved
-            </Link>
-          </div>
-        </div>
-
-        {/* Right — 45% promise card */}
-        <div className="flex-[0_0_45%] flex justify-center lg:justify-end w-full pb-20 lg:pb-0">
-          <div className="w-full max-w-md mx-auto lg:mx-0 bg-white/[0.05] backdrop-blur-sm
-            border border-white/[0.1] rounded-2xl p-8 lg:p-10 relative overflow-hidden">
-            {/* Card floating circle */}
-            <div className="absolute -top-8 -right-8 w-24 h-24 rounded-full
-              border border-white/[0.08]" />
-
-            <h2 className="font-display font-bold text-2xl text-white mb-6 relative z-[1]">
-              Jenny&apos;s Platform
-            </h2>
-
-            <ul className="space-y-3 mb-8 relative z-[1]">
-              {[
-                'Stop overspending — say NO to new taxes and fees',
-                'Cut the red tape strangling construction, business, and economic growth',
-                'Support public safety and law enforcement',
-                'No transient housing in suburban neighborhoods',
-                'Listen to taxpayers and citizens — not insiders',
-              ].map((item) => (
-                <li key={item} className="flex gap-3 items-start">
-                  <span className="mt-1.5 flex-shrink-0 w-1.5 h-1.5 rounded-full bg-patriot-red" />
-                  <span className="font-body text-sm text-white/85 leading-relaxed">
-                    {item}
-                  </span>
-                </li>
-              ))}
-            </ul>
-
-            <p className="font-body text-sm text-white/80 leading-relaxed mb-8 relative z-[1] italic">
-              I promise a new vision, transparency, no new taxes or fees,
-              and leadership that will fight for the rights of taxpayers.
-              It&apos;s time to take our county government back.
-            </p>
-
-            <Link
-              href="https://secure.anedot.com/b2002057-9fe3-4cb5-8e5a-93539cdc75d4/b2002057-9fe3-4cb5-8e5a-93539cdc75d4"
-              target="_blank"
-              rel="noopener noreferrer"
-              className="block w-full text-center font-body font-semibold text-base
-                text-white bg-red-dark hover:bg-red-hover py-4 rounded-lg
-                transition-colors duration-200 relative z-[1]"
-            >
-              Donate to the Campaign
             </Link>
           </div>
         </div>
