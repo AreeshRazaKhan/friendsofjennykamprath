@@ -418,7 +418,7 @@ const AskJenny = () => {
 
                     <div className="relative z-[1]">
                       <h3 className="font-display font-bold text-xl text-white mb-4">
-                        Jenny&apos;s Promise
+                        Jenny&apos;s Platform
                       </h3>
                       <ul className="space-y-4">
                         {[

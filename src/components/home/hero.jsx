@@ -98,7 +98,7 @@ const Hero = () => {
               border border-white/[0.08]" />
 
             <h2 className="font-display font-bold text-2xl text-white mb-6 relative z-[1]">
-              Jenny&apos;s Promise
+              Jenny&apos;s Platform
             </h2>
 
             <p className="font-body text-base text-white/80 leading-relaxed mb-8 relative z-[1]">
