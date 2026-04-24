@@ -47,7 +47,7 @@ const Navbar = () => {
               <Link
                 key={link.href}
                 href={link.href}
-                className={`font-body text-[13px] font-medium uppercase tracking-[1px]
+                className={`font-[Arial,Helvetica,sans-serif] text-[13px] font-medium uppercase tracking-[1px]
                   transition-colors duration-200
                   ${isActive(link.href)
                     ? 'text-red-dark font-semibold'
@@ -98,7 +98,7 @@ const Navbar = () => {
                 key={link.href}
                 href={link.href}
                 onClick={() => setIsOpen(false)}
-                className={`font-body text-sm font-medium uppercase tracking-[1px]
+                className={`font-[Arial,Helvetica,sans-serif] text-sm font-medium uppercase tracking-[1px]
                   py-3 transition-colors
                   ${isActive(link.href)
                     ? 'text-red-dark font-semibold'
