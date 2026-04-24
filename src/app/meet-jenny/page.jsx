@@ -141,25 +141,9 @@ const MeetJenny = () => {
                   dealing with — and that&apos;s the perspective she&apos;ll
                   bring to county government.
                 </p>
-                <p className="font-body text-lg text-warm-600 leading-[1.7] mb-8">
+                <p className="font-body text-lg text-warm-600 leading-[1.7]">
                   No old allegiances. No obligations. Just a focus on solving
                   problems and getting things done.
-                </p>
-
-                <h3 className="font-display font-bold text-xl text-navy-900 mb-3">
-                  In the trenches:
-                </h3>
-                <p className="font-body text-lg text-warm-600 leading-[1.7] mb-8">
-                  Jenny is a sales leader and talks with businesses of every
-                  size…
-                </p>
-
-                <h3 className="font-display font-bold text-xl text-navy-900 mb-3">
-                  Roots in Washington County:
-                </h3>
-                <p className="font-body text-lg text-warm-600 leading-[1.7]">
-                  Raised her family in the communities she seeks to serve —
-                  Beaverton and surrounding neighborhoods.
                 </p>
               </div>
             </div>
