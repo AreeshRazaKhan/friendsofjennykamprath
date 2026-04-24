@@ -1,12 +1,6 @@
-import { Playfair_Display, Montserrat } from 'next/font/google'
+import { Montserrat } from 'next/font/google'
 
 import './globals.css'
-
-const playfair = Playfair_Display({
-  variable: '--font-display',
-  subsets: ['latin'],
-  weight: ['400', '500', '600', '700', '800', '900'],
-})
 
 const montserrat = Montserrat({
   variable: '--font-body',
@@ -25,7 +19,7 @@ export default function RootLayout({ children }) {
   return (
     <html
       lang="en"
-      className={`${playfair.variable} ${montserrat.variable} h-full antialiased`}
+      className={`${montserrat.variable} h-full antialiased`}
     >
       <body className="min-h-full flex flex-col font-body text-navy-800">
         {children}
