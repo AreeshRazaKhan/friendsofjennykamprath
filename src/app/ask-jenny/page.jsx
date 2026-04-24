@@ -463,9 +463,9 @@ const AskJenny = () => {
                         className="block font-body text-sm text-red-dark hover:underline">
                         jenny@jennykamprath.com
                       </a>
-                      <a href="tel:9713655668"
+                      <a href="tel:5038281439"
                         className="block font-body text-sm text-red-dark hover:underline">
-                        (971) 365-5668
+                        (503) 828-1439
                       </a>
                     </div>
                   </div>

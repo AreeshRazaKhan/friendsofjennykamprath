@@ -260,8 +260,8 @@ const PrivacyPolicy = () => {
                   jenny@jennykamprath.com
                 </a>{' '}
                 or calling{' '}
-                <a href="tel:9713655668" className="text-red-dark hover:underline">
-                  (971) 365-5668
+                <a href="tel:5038281439" className="text-red-dark hover:underline">
+                  (503) 828-1439
                 </a>. We will process your request within 10 business days.
               </p>
 
@@ -445,8 +445,8 @@ const PrivacyPolicy = () => {
                 </p>
                 <p>
                   Phone:{' '}
-                  <a href="tel:9713655668" className="text-red-dark hover:underline">
-                    (971) 365-5668
+                  <a href="tel:5038281439" className="text-red-dark hover:underline">
+                    (503) 828-1439
                   </a>
                 </p>
               </div>
