@@ -8,7 +8,7 @@ const Endorsements = async () => {
   const ALL = await fetchGHLEndorsements()
   if (ALL.length === 0) return null
 
-  const ENDORSEMENTS = ALL.slice(0, 6)
+  const ENDORSEMENTS = ALL.slice(0, 4)
 
   return (
     <section className="relative py-24 lg:py-32 bg-warm-50 overflow-hidden">
