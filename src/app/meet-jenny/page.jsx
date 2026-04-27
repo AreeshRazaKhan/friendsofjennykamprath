@@ -177,7 +177,7 @@ const MeetJenny = () => {
               <div className="relative">
                 <div className="bg-navy-900 rounded-2xl aspect-[4/3] relative overflow-hidden">
                   <Image
-                    src="/images/neighborhood.jpg"
+                    src="/images/neighborhood.webp"
                     alt="Supporters gathered at a Washington County campaign event"
                     fill
                     className="object-cover"
