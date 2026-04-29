@@ -210,7 +210,6 @@ const RsvpForm = ({ eventTitle, eventDate, eventTime, eventCategory }) => {
                 checked={formData.smsConsent}
                 onChange={handleChange('smsConsent')}
                 disabled={!hasPhone}
-                required={hasPhone}
                 className="mt-0.5 flex-shrink-0 accent-patriot-red disabled:opacity-40 disabled:cursor-not-allowed"
               />
               <span className={`font-body text-[11px] leading-relaxed ${hasPhone ? 'text-white/70' : 'text-white/25'}`}>
@@ -227,7 +226,6 @@ const RsvpForm = ({ eventTitle, eventDate, eventTime, eventCategory }) => {
                 checked={formData.promoConsent}
                 onChange={handleChange('promoConsent')}
                 disabled={!hasPhone}
-                required={hasPhone}
                 className="mt-0.5 flex-shrink-0 accent-patriot-red disabled:opacity-40 disabled:cursor-not-allowed"
               />
               <span className={`font-body text-[11px] leading-relaxed ${hasPhone ? 'text-white/70' : 'text-white/25'}`}>

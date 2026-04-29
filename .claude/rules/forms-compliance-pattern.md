@@ -169,17 +169,17 @@ const payload = {
 Every form in scope renders one or more consent checkboxes. The exact
 **number of checkboxes and their copy are site-specific** — do not
 hardcode assumptions about which regime they satisfy. This rule
-governs only the enable / required / reset mechanics.
+governs only the enable / reset mechanics.
 
 ### CRITICAL
 
 1. **Checkboxes are disabled when the phone field is empty.**
    Use `disabled={!hasPhone}` on every consent checkbox.
 
-2. **Checkboxes are required when the phone field has a value.**
-   Use `required={hasPhone}`. The browser's built-in form validation
-   will block submit until the user either ticks the boxes or clears
-   the phone field.
+2. **Checkboxes are always optional — never `required`.**
+   Once the phone field has a value the boxes become interactive but
+   stay opt-in. Do not set `required` on consent inputs; submission
+   must succeed whether they are ticked or not.
 
 3. **Checkboxes auto-clear when the user empties the phone.**
    A user who checks the boxes with a phone entered and then deletes
@@ -230,7 +230,6 @@ useEffect(() => {
     checked={formData.smsConsent}
     onChange={handleChange('smsConsent')}
     disabled={!hasPhone}
-    required={hasPhone}
     className="accent-patriot-red disabled:opacity-40 disabled:cursor-not-allowed"
   />
   <span className={hasPhone ? 'text-warm-400' : 'text-warm-400/50'}>
@@ -271,9 +270,9 @@ to an existing form — verify all of the following:
 3. [ ] `hasPhone` derived from `formData.phone.trim().length > 0`.
 4. [ ] `useEffect` resets every consent flag to `false` whenever
        `hasPhone` is false.
-5. [ ] Each consent checkbox has `disabled={!hasPhone}` and
-       `required={hasPhone}`; label styles react to `hasPhone`; the
-       helper line appears while `!hasPhone`.
+5. [ ] Each consent checkbox has `disabled={!hasPhone}` and is NOT
+       marked `required`; label styles react to `hasPhone`; the helper
+       line appears while `!hasPhone`.
 6. [ ] API route's `WEBHOOK_URLS` array includes both the form's
        primary webhook and the shared compliance webhook.
 7. [ ] API route uses `Promise.all` fan-out with per-URL `.catch`;

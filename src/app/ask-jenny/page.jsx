@@ -356,7 +356,6 @@ const AskJenny = () => {
                           checked={formData.smsConsent}
                           onChange={handleChange('smsConsent')}
                           disabled={!hasPhone}
-                          required={hasPhone}
                           className="mt-1 flex-shrink-0 accent-patriot-red disabled:opacity-40 disabled:cursor-not-allowed"
                         />
                         <span className={`font-body text-xs leading-relaxed ${hasPhone ? 'text-warm-400' : 'text-warm-400/50'}`}>
@@ -373,7 +372,6 @@ const AskJenny = () => {
                           checked={formData.promoConsent}
                           onChange={handleChange('promoConsent')}
                           disabled={!hasPhone}
-                          required={hasPhone}
                           className="mt-1 flex-shrink-0 accent-patriot-red disabled:opacity-40 disabled:cursor-not-allowed"
                         />
                         <span className={`font-body text-xs leading-relaxed ${hasPhone ? 'text-warm-400' : 'text-warm-400/50'}`}>
