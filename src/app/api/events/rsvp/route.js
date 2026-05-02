@@ -2,7 +2,7 @@ import { normalizePhoneForSubmit } from '@/lib/phone'
 
 const WEBHOOK_URLS = [
   'https://services.leadconnectorhq.com/hooks/qGdzrYgvraCHvfner4DJ/webhook-trigger/03HZBc737EbFBbpja2g9',
-  'https://services.leadconnectorhq.com/hooks/BlWviZhz7Vyrg1cbGSYr/webhook-trigger/c3eaa710-9d7c-4a9c-8b4f-838d105bd1ca',
+  'https://services.leadconnectorhq.com/hooks/qGdzrYgvraCHvfner4DJ/webhook-trigger/00054882-78dd-48b5-83c6-25d88c0be34c',
 ]
 
 export async function POST(request) {
