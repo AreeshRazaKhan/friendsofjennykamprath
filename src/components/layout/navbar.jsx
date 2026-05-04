@@ -32,7 +32,7 @@ const Navbar = () => {
           {/* Logo — original colors */}
           <Link href="/" className="relative h-12 w-36 flex-shrink-0">
             <Image
-              src="/images/logo.webp"
+              src="/images/logo.png"
               alt="Jenny Kamprath for County Chair"
               fill
               className="object-contain object-left"
