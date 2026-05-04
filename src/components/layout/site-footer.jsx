@@ -30,7 +30,7 @@ const SiteFooter = () => {
           <div>
             <Link href="/" className="relative block h-16 w-48 mb-6">
               <Image
-                src="/images/logo.webp"
+                src="/images/logo.png"
                 alt="Jenny Kamprath for County Chair"
                 fill
                 className="object-contain object-left brightness-0 invert"
