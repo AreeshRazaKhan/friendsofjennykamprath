@@ -195,6 +195,12 @@ const SiteFooter = () => {
             Operation 1776
           </a>
         </div>
+
+        <div className="mt-4 text-center font-body text-[11px] italic
+          text-white/45 leading-relaxed max-w-2xl mx-auto px-4">
+          Some images, audio, video, or written content may be created or
+          enhanced using artificial intelligence (AI) tools.
+        </div>
       </div>
     </footer>
   )
