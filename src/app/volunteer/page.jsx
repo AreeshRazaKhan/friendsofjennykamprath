@@ -8,7 +8,7 @@ import { ArrowRight, Users, Phone, Megaphone, DoorOpen, Heart, Share2 } from 'lu
 
 import Navbar from '@/components/layout/navbar'
 import SiteFooter from '@/components/layout/site-footer'
-import { formatPhoneInput } from '@/lib/phone'
+import { formatPhoneInput, isPhoneEntryValid } from '@/lib/phone'
 
 const HELP_OPTIONS = [
   { id: 'door-knocking', label: 'Door Knocking', icon: DoorOpen },
@@ -149,6 +149,11 @@ const Volunteer = () => {
 
     if (formData.helpOptions.length === 0) {
       setError('Please select at least one way you would like to help.')
+      return
+    }
+
+    if (!isPhoneEntryValid(formData.phone)) {
+      setError('Please enter a complete 10-digit phone number, or leave the field blank.')
       return
     }
 
@@ -386,6 +391,8 @@ const Volunteer = () => {
                           setError('')
                         }}
                         placeholder="+1 (503) 555-0123"
+                        pattern="\+1 \(\d{3}\) \d{3}-\d{4}"
+                        title="Enter a complete 10-digit phone number, or leave this field blank."
                         className="w-full bg-white border-b-2 border-warm-200 px-0 py-3
                           text-navy-900 font-body text-base focus:outline-none
                           focus:border-patriot-red transition-colors placeholder:text-warm-200"

@@ -15,6 +15,14 @@ export const formatPhoneInput = (raw) => {
   return `+1 (${digits.slice(0, 3)}) ${digits.slice(3, 6)}-${digits.slice(6)}`
 }
 
+export const isPhoneComplete = (raw) => extractDigits(raw).length === 10
+
+/** Phone is optional — blank passes, but a partial entry must block submission. */
+export const isPhoneEntryValid = (raw) => {
+  const digits = extractDigits(raw)
+  return digits.length === 0 || digits.length === 10
+}
+
 export const normalizePhoneForSubmit = (raw) => {
   const digits = extractDigits(raw)
   if (digits.length !== 10) return ''

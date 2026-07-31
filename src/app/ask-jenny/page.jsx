@@ -9,7 +9,7 @@ import { ArrowRight, MessageCircle, Shield, Landmark, Home, Store, TreePine } fr
 import Navbar from '@/components/layout/navbar'
 import SiteFooter from '@/components/layout/site-footer'
 import ISSUE_CATEGORIES from '@/constants/issues'
-import { formatPhoneInput } from '@/lib/phone'
+import { formatPhoneInput, isPhoneEntryValid } from '@/lib/phone'
 
 const POPULAR_TOPICS = [
   {
@@ -75,6 +75,11 @@ const AskJenny = () => {
 
     if (!/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(formData.email)) {
       setError('Please enter a valid email address.')
+      return
+    }
+
+    if (!isPhoneEntryValid(formData.phone)) {
+      setError('Please enter a complete 10-digit phone number, or leave the field blank.')
       return
     }
 
@@ -264,6 +269,8 @@ const AskJenny = () => {
                             setError('')
                           }}
                           placeholder="+1 (503) 555-0123"
+                          pattern="\+1 \(\d{3}\) \d{3}-\d{4}"
+                          title="Enter a complete 10-digit phone number, or leave this field blank."
                           className="w-full bg-white border-b-2 border-warm-200 px-0 py-3
                             text-navy-900 font-body text-base focus:outline-none
                             focus:border-patriot-red transition-colors placeholder:text-warm-200"

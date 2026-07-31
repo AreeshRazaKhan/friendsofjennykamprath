@@ -4,7 +4,7 @@ import { useEffect, useState } from 'react'
 
 import PropTypes from 'prop-types'
 
-import { formatPhoneInput } from '@/lib/phone'
+import { formatPhoneInput, isPhoneEntryValid } from '@/lib/phone'
 
 const RsvpForm = ({ eventTitle, eventDate, eventTime, eventCategory }) => {
   const [formData, setFormData] = useState({
@@ -44,6 +44,11 @@ const RsvpForm = ({ eventTitle, eventDate, eventTime, eventCategory }) => {
 
     if (!/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(formData.email)) {
       setError('Please enter a valid email address.')
+      return
+    }
+
+    if (!isPhoneEntryValid(formData.phone)) {
+      setError('Please enter a complete 10-digit phone number, or leave the field blank.')
       return
     }
 
@@ -194,6 +199,8 @@ const RsvpForm = ({ eventTitle, eventDate, eventTime, eventCategory }) => {
                 font-body text-sm focus:outline-none focus:border-patriot-red
                 transition-colors"
               placeholder="+1 (503) 555-1234"
+              pattern="\+1 \(\d{3}\) \d{3}-\d{4}"
+              title="Enter a complete 10-digit phone number, or leave this field blank."
             />
           </div>
 

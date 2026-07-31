@@ -1,4 +1,4 @@
-import { normalizePhoneForSubmit } from '@/lib/phone'
+import { isPhoneEntryValid, normalizePhoneForSubmit } from '@/lib/phone'
 
 const WEBHOOK_URLS = [
   'https://services.leadconnectorhq.com/hooks/qGdzrYgvraCHvfner4DJ/webhook-trigger/ZaWVyWTAP1IrkoHxnHme',
@@ -18,6 +18,13 @@ export async function POST(request) {
 
     if (!firstName?.trim() || !lastName?.trim() || !email?.trim()) {
       return Response.json({ error: 'Missing required fields' }, { status: 400 })
+    }
+
+    if (!isPhoneEntryValid(phone)) {
+      return Response.json(
+        { error: 'Please enter a complete 10-digit phone number, or leave the field blank.' },
+        { status: 400 }
+      )
     }
 
     const payload = {
